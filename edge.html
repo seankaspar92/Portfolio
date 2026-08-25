@@ -1,0 +1,91 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>EDGE Sports Analytics | Sean Kaspar</title><link rel="stylesheet" href="styles.css"><link rel="icon" href="favicon.svg" type="image/svg+xml"><meta property="og:type" content="website"><meta property="og:title" content="Sean Kaspar | AI-Enabled Decision Systems"><meta property="og:description" content="EDGE Sports Analytics case study covering NFL EDGE and MLB EDGE analytics engineering, validation, provenance, and research methodology."></head><body>
+<header class="site-header">
+  <a class="brand" href="index.html"><span class="brand-mark">SK</span><span>Sean Kaspar</span></a>
+  <nav class="nav"><a href="index.html#work">Work</a><a href="index.html#capabilities">Capabilities</a><a href="resume.html">Resume</a><a href="index.html#about">About</a><a href="https://github.com/seankaspar92" target="_blank" rel="noreferrer">GitHub</a></nav>
+</header>
+<main>
+<section class="case-hero"><div class="eyebrow">CASE STUDY 02 · DATA & ANALYTICS</div><h1>EDGE Sports Analytics</h1><p class="case-intro">Two domain-specific sports analytics systems built around a shared engineering philosophy: reliable data, explicit validation, research discipline, and decision-support outputs.</p><div class="button-row"><a class="button secondary" href="index.html">Back to portfolio</a></div></section>
+<section class="case-section"><div class="case-grid"><div class="native-visual">
+<div class="eyebrow">EDGE SPORTS ANALYTICS</div>
+<div class="split-visual">
+  <div class="split-panel"><h3>NFL EDGE</h3><div class="stack"><div>Structured snapshot + decision dashboard</div><div>Research firewall</div><div>Historical provenance</div><div>Authentic price integrity</div><div>Chronological replay foundation</div></div></div>
+  <div class="split-panel"><h3>MLB EDGE</h3><div class="stack"><div>Statcast-oriented ingestion</div><div>Blocking data-quality validation</div><div>Research methodology</div><div>Feature development</div><div>Active build · repo audit pending</div></div></div>
+</div>
+<div class="flow-row"><span class="flow-node">Data</span><span class="flow-arrow">→</span><span class="flow-node">Validation</span><span class="flow-arrow">→</span><span class="flow-node">Research / Models</span><span class="flow-arrow">→</span><span class="flow-node safe">Decision Support</span></div>
+</div><div><h2>One methodology, two sports</h2><p><strong>NFL EDGE</strong> emphasizes weekly analytical cycles, provenance, historical replay, automated testing, and model-informed decision support.</p><p><strong>MLB EDGE</strong> emphasizes Statcast-oriented ingestion, blocking data-quality controls, research methodology, experimentation, and Baseball Operations-style analytical thinking.</p><p class="note">Performance percentages visible inside the generated graphic are not published as evidence. Only reproducible repo/run outputs should be used in a final metrics section.</p></div></div></section>
+<section class="case-section">
+<h2>Verified NFL EDGE evidence</h2>
+<div class="three-col">
+  <div class="evidence-card">
+    <h3>Connected decision dashboard</h3>
+    <p>v2.7 exposes a local dashboard that refreshes structured snapshot data and populates Command Center KPIs, opportunity cards, Best Bets, activity, exposure, Model Registry, and Research Lab views.</p>
+  </div>
+  <div class="evidence-card">
+    <h3>Transport-only connector</h3>
+    <p>The connector does not calculate picks, change signal state, resize stakes, or promote research models. Production output stays upstream of presentation.</p>
+  </div>
+  <div class="evidence-card">
+    <h3>Research firewall</h3>
+    <p>Payloads with an explicitly unlocked research firewall fail validation. Research remains in a separate namespace and cannot create production opportunities through the connector.</p>
+  </div>
+  <div class="evidence-card">
+    <h3>Fail-visible fallback</h3>
+    <p>Missing, malformed, invalid, or unreachable live data switches the interface to an explicit DEMO FALLBACK state rather than silently presenting demo data as live.</p>
+  </div>
+  <div class="evidence-card">
+    <h3>Feature provenance</h3>
+    <p>Historical features must satisfy the temporal invariant <code>available_at &lt;= prediction_lock_at</code>, with immutable manifest and feature-level provenance records.</p>
+  </div>
+  <div class="evidence-card">
+    <h3>Authentic historical prices</h3>
+    <p>Historical evaluation does not invent synthetic -110 odds. Unpriced observations can support football-result diagnostics but are excluded from profit/ROI gates.</p>
+  </div>
+</div>
+
+<div class="callout" style="margin-top:20px">
+  <strong>Historical replay maturity:</strong> the v2.7 chronological/rolling-origin replay foundation is documented as validated in isolation, with tests for prediction-lock timing, provenance, non-overlapping windows, label availability, authentic-price coverage, deterministic identity, and idempotent persistence. Real historical replay data and validated model performance are still explicitly not claimed.
+</div>
+
+<div class="source-links">
+  <a class="source-link" href="https://github.com/seankaspar92/FOOTBALL-EDGE-V2" target="_blank" rel="noreferrer">NFL EDGE repository ↗</a>
+</div>
+</section>
+
+<section class="case-section">
+<h2>NFL EDGE evidence boundaries</h2>
+<div class="two-col">
+  <div>
+    <ul class="check-list">
+      <li>Historical provenance contract is implemented as an isolated foundation.</li>
+      <li>Unverified and retrospective-only temporal classes fail predictive eligibility.</li>
+      <li>Feature registration is immutable, version-preserving, and idempotent.</li>
+      <li>Batch provenance registration is atomic when validation fails.</li>
+      <li>Missing historical market prices remain unavailable.</li>
+      <li>ROI-dependent sample gates use authentically priced observations.</li>
+    </ul>
+  </div>
+  <div class="callout">
+    <strong>Not claimed:</strong> real leakage-controlled historical model performance, measured historical price coverage, production model improvement, or a completed real historical replay dataset.
+  </div>
+</div>
+</section>
+
+<section class="case-section">
+<h2>MLB EDGE current boundary</h2>
+<div class="two-col">
+  <div>
+    <p>MLB EDGE remains an active local build oriented toward Statcast ingestion, blocking data-quality validation, research methodology, feature development, and Baseball Operations-style analytics.</p>
+    <p>The portfolio can safely describe the direction and documented working behaviors, but it should not publish model-performance metrics or represent the platform as a released GitHub product until the current repository is published and audited.</p>
+  </div>
+  <div class="callout">
+    <strong>Next evidence gate:</strong> publish or connect the current MLB EDGE repository, then audit its ingestion code, validation suite, research modules, tests, and reproducible outputs before replacing this boundary statement with exact evidence.
+  </div>
+</div>
+</section>
+<section class="case-section">
+<h2>Publication status</h2>
+<div class="callout">
+  <strong>Current state:</strong> NFL EDGE v2.7 now has repository-grounded portfolio evidence. MLB EDGE remains an active local build pending repository publication/audit. The combined EDGE case study therefore presents verified NFL architecture and controls alongside a clearly bounded MLB development track.
+</div>
+</section>
+</main><footer><span>Sean Kaspar · AI-enabled decision systems</span><span>Portfolio v1.8</span></footer><script src="script.js"></script></body></html>

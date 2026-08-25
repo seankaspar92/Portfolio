@@ -1,0 +1,32 @@
+{
+  "version": "1.7",
+  "html_pages_checked": [
+    "aios.html",
+    "career.html",
+    "edge.html",
+    "evidence.html",
+    "gots.html",
+    "index.html",
+    "resume.html"
+  ],
+  "internal_link_count": 55,
+  "asset_reference_count": 10,
+  "external_link_count": 18,
+  "issues": [],
+  "required_files": {
+    "resume_pdf": true,
+    "resume_docx": true,
+    "styles": true,
+    "script": true,
+    "favicon": true,
+    "404": true,
+    "nojekyll": true,
+    "robots": true,
+    "sitemap": true
+  },
+  "launch_blockers": [
+    "Replace YOUR-DOMAIN.example in robots.txt and sitemap.xml after the live URL is known.",
+    "MLB EDGE remains an active build pending repository publication/audit.",
+    "Concept graphics should remain labeled illustrative until replaced by real screenshots or evidence-native visuals."
+  ]
+}

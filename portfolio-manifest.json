@@ -1,0 +1,34 @@
+{
+  "version": "1.8",
+  "pages": [
+    "index.html",
+    "aios.html",
+    "edge.html",
+    "gots.html",
+    "career.html",
+    "evidence.html",
+    "resume.html"
+  ],
+  "evidence_policy": "Only verified implementation, documented workflow, retained validation, or sanitized real operating-use claims are public evidence.",
+  "concept_graphics": [],
+  "evidence_replacement_status": {
+    "aios": "verified evidence panel added",
+    "edge": "NFL EDGE repository audit complete; MLB EDGE repository publication/audit pending",
+    "gots": "sanitized operating and career-evidence examples added",
+    "career": "sanitized end-to-end opportunity evaluation case added"
+  },
+  "resume": {
+    "source": "Sean_Kaspar_Resume.docx",
+    "formats": [
+      "files/Sean_Kaspar_Resume.docx",
+      "files/Sean_Kaspar_Resume.pdf"
+    ],
+    "status": "integrated",
+    "browser_page": "resume.html"
+  },
+  "launch_ready": true,
+  "deployment_target": "GitHub Pages",
+  "qa_report": "QA_REPORT.json",
+  "visual_strategy": "native HTML/CSS evidence visuals; generated PNG concept assets removed from deploy build",
+  "expected_pages_url": "https://seankaspar92.github.io/Portfolio/"
+}
