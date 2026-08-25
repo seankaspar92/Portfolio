@@ -1,5 +1,5 @@
 {
-  "version": "1.8",
+  "version": "1.9",
   "pages": [
     "index.html",
     "aios.html",
@@ -23,12 +23,17 @@
       "files/Sean_Kaspar_Resume.docx",
       "files/Sean_Kaspar_Resume.pdf"
     ],
-    "status": "integrated",
+    "status": "integrated; portfolio URL replaces GitHub on resume",
     "browser_page": "resume.html"
   },
   "launch_ready": true,
   "deployment_target": "GitHub Pages",
   "qa_report": "QA_REPORT.json",
   "visual_strategy": "native HTML/CSS evidence visuals; generated PNG concept assets removed from deploy build",
-  "expected_pages_url": "https://seankaspar92.github.io/Portfolio/"
+  "expected_pages_url": "https://seankaspar92.github.io/Portfolio/",
+  "portrait": {
+    "uniform": "images/sean-uniform.jpg",
+    "business": "images/sean-business.jpg",
+    "effect": "animated split transition with reduced-motion fallback"
+  }
 }

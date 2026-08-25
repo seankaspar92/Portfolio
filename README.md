@@ -1,4 +1,4 @@
-# Sean Kaspar Portfolio v1.7
+# Sean Kaspar Portfolio v1.9
 
 Public-ready static-site structure for the AI portfolio.
 
@@ -18,7 +18,7 @@ This build deliberately separates:
 
 Generated images are labeled as illustrative and are not the source of truth for metrics or implementation status.
 
-## v1.7 evidence replacement
+## v1.9 evidence replacement
 - AIOS mock proof has been replaced with exact released evidence and source links.
 - Site-level evidence policy added.
 
@@ -32,33 +32,39 @@ Generated images are labeled as illustrative and are not the source of truth for
 7. Deploy to GitHub Pages, Vercel, Netlify, or equivalent.
 
 
-## v1.7 EDGE evidence audit
+## v1.9 EDGE evidence audit
 - NFL EDGE v2.7 repository-grounded evidence added.
 - Historical provenance, authentic-price integrity, research firewall, explicit fallback, and isolated replay maturity are documented.
 - MLB EDGE remains bounded as an active local build pending repo publication/audit.
 
 
-## v1.7 GOTS evidence pass
+## v1.9 GOTS evidence pass
 - Added sanitized requirement-control demonstration.
 - Added fictionalized NCOER/OER-to-civilian evidence transformation example.
 - Preserved strict privacy and unsupported-claim boundaries.
 
-## v1.7 Career Intelligence evidence pass
+## v1.9 Career Intelligence evidence pass
 - Added a fictionalized Program Operations Manager evaluation.
 - Demonstrates requirement extraction, evidence mapping, gap analysis, uncertainty handling, practical-fit review, explainable decision, and application strategy.
 - Deliberately avoids fabricated match percentages or hiring-probability claims.
 
-## v1.7 Resume integration
+## v1.9 Resume integration
 - Added browser-native resume page.
 - Added downloadable user-provided DOCX.
 - Added visually verified PDF conversion.
 - Added Resume navigation and landing-page CTA.
 - Resume page uses only claims present in the supplied resume.
 
-## v1.7 Launch QA
+## v1.9 Launch QA
 - Internal links and local assets checked.
 - GitHub Pages support added via `.nojekyll`.
 - 404 page added.
 - Favicon and basic Open Graph metadata added.
 - robots.txt, sitemap.xml, launch guide, and QA report added.
 - Resume PDF/DOCX presence verified.
+
+## v1.9 Portrait + resume link update
+- Added real military and business portraits to the homepage hero.
+- Added an animated split transition with reduced-motion fallback.
+- Replaced GitHub with the live portfolio URL in the downloadable resume.
+- Updated browser resume page to link to the portfolio.
