@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="Governed AI skills, capability architecture, validation lifecycle, and production evidence across Sean Kaspar's AI systems portfolio.">
+  <title>AI Skills Command Center | Sean Kaspar</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="skills.css">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+</head>
+<body class="skills-body">
+<header class="skills-header">
+  <a class="skills-brand" href="index.html"><span>SK</span><div><strong>SEAN KASPAR</strong><small>AI SKILLS COMMAND CENTER</small></div></a>
+  <nav><a href="index.html">Home</a><a href="aios.html">AI Operating System</a><a class="active" href="skills.html">AI Skills</a><a href="evidence.html">Evidence</a><a href="https://github.com/seankaspar92" target="_blank" rel="noreferrer">GitHub ↗</a></nav>
+</header>
+<main>
+  <section class="skills-hero">
+    <div class="hero-copy">
+      <span class="eyebrow">GOVERNED CAPABILITY SYSTEM</span>
+      <h1>AI Skills<br><em>Command Center</em></h1>
+      <p>A versioned capability layer for reusable AI workflows. Every skill has an owner, lifecycle state, behavioral contract, evaluation criteria, and evidence trail.</p>
+      <div class="hero-actions"><a href="#registry">Explore registry ↓</a><a href="#architecture">View architecture</a></div>
+    </div>
+    <div class="hero-metrics" id="heroMetrics"></div>
+  </section>
+
+  <section class="portfolio-story">
+    <article><span>01</span><strong>SPECIFY</strong><p>Convert recurring work into bounded, testable skill contracts.</p></article>
+    <article><span>02</span><strong>VALIDATE</strong><p>Run controlled and representative field cases against explicit failure rules.</p></article>
+    <article><span>03</span><strong>PROMOTE</strong><p>Move capabilities to Active only after evidence gates are satisfied.</p></article>
+    <article><span>04</span><strong>ORCHESTRATE</strong><p>Resolve the current skill/version at runtime and compose the smallest correct workflow.</p></article>
+    <article><span>05</span><strong>IMPROVE</strong><p>Detect repeatable failure modes, test reversible changes, and preserve rollback.</p></article>
+  </section>
+
+  <section id="architecture" class="skills-section">
+    <div class="section-heading"><span>CAPABILITY ARCHITECTURE</span><h2>From intent to governed execution</h2><p>The portfolio exposes the system as a capability graph, not a prompt collection.</p></div>
+    <div class="architecture-flow">
+      <div class="arch-node intent"><small>INPUT</small><b>User / Agent Intent</b></div>
+      <div class="arch-arrow">→</div>
+      <div class="arch-node control"><small>CONTROL PLANE</small><b>Workflow Orchestration</b><span>SKL-029 · SKL-046</span></div>
+      <div class="arch-arrow">→</div>
+      <div class="arch-node semantic"><small>SEMANTIC LAYER</small><b>Context + Provenance</b><span>SKL-004–010</span></div>
+      <div class="arch-arrow">→</div>
+      <div class="arch-node domain"><small>DOMAIN SKILLS</small><b>Career · Ops · Analytics · Engineering</b></div>
+      <div class="arch-arrow">→</div>
+      <div class="arch-node verify"><small>QUALITY GATE</small><b>Evidence + Evaluation</b><span>SKL-014 · SKL-044</span></div>
+    </div>
+    <div class="architecture-groups" id="architectureGroups"></div>
+  </section>
+
+  <section class="skills-section lifecycle-section">
+    <div class="section-heading"><span>LIFECYCLE</span><h2>Capabilities earn autonomy through evidence</h2></div>
+    <div class="lifecycle-flow">
+      <div><b>Need</b><small>Recurring capability identified</small></div><i>→</i>
+      <div><b>Specification</b><small>Trigger · inputs · rules · outputs</small></div><i>→</i>
+      <div><b>Testing</b><small>Controlled + field validation</small></div><i>→</i>
+      <div><b>Review Ready</b><small>Threshold met · zero critical failures</small></div><i>→</i>
+      <div class="active-stage"><b>Active</b><small>Production eligible within permissions</small></div><i>→</i>
+      <div><b>Improve</b><small>Monitor · diagnose · version</small></div>
+    </div>
+  </section>
+
+  <section class="skills-section case-study">
+    <div class="section-heading"><span>CASE STUDY</span><h2>From external learning to production capability</h2></div>
+    <div class="case-chain">
+      <div><small>SOURCE</small><b>Stanford CS329A Playlist</b><span>9-part Self-Improving AI Agents course</span></div><i>→</i>
+      <div><small>LEARN</small><b>SKL-045</b><span>Cross-video synthesis + method extraction</span></div><i>→</i>
+      <div><small>DISCOVER</small><b>Reusable Pattern</b><span>Propose → Verify → Feedback → Revise</span></div><i>→</i>
+      <div><small>BUILD</small><b>SKL-046</b><span>Controlled agent/workflow improvement</span></div><i>→</i>
+      <div><small>VALIDATE</small><b>5 / 5 Field Cases</b><span>0 critical failures</span></div><i>→</i>
+      <div class="case-live"><small>PRODUCTION</small><b>AI Operating System</b><span>CI-gated and merged to main</span></div>
+    </div>
+  </section>
+
+  <section id="registry" class="skills-section registry-section">
+    <div class="section-heading"><span>LIVE SNAPSHOT</span><h2>Governed Skills Registry</h2><p>Public portfolio snapshot generated from the authoritative private registry. Sensitive operational inputs and internal specification links are intentionally omitted.</p></div>
+    <div class="registry-controls">
+      <input id="skillSearch" type="search" placeholder="Search skills, domains, capabilities…" aria-label="Search skills">
+      <select id="statusFilter" aria-label="Filter by status"><option value="all">All statuses</option><option value="Active">Active</option><option value="Testing">Testing</option></select>
+      <select id="domainFilter" aria-label="Filter by domain"><option value="all">All domains</option></select>
+    </div>
+    <div class="registry-summary" id="registrySummary"></div>
+    <div class="skills-grid" id="skillsGrid"></div>
+  </section>
+
+  <dialog id="skillDialog" class="skill-dialog">
+    <button class="dialog-close" id="dialogClose" aria-label="Close">×</button>
+    <div id="dialogContent"></div>
+  </dialog>
+
+  <section class="skills-section evidence-section">
+    <div class="section-heading"><span>GOVERNANCE EVIDENCE</span><h2>What makes this different from a prompt library</h2></div>
+    <div class="evidence-grid">
+      <article><b>Canonical Registry</b><p>Sequential IDs, current versions, lifecycle state, purpose, and evaluation contract.</p></article>
+      <article><b>Semantic Layer</b><p>Canonical entities, metrics, source precedence, freshness, relationships, and provenance.</p></article>
+      <article><b>Field Validation</b><p>Representative cases, critical-failure tracking, promotion thresholds, and audit evidence.</p></article>
+      <article><b>Runtime Routing</b><p>Current Active versions are resolved dynamically instead of embedded as stale prompt assumptions.</p></article>
+      <article><b>Continuous Improvement</b><p>Changes are baseline-tested, reversible, evaluated on held-out cases, and inspected for regressions.</p></article>
+      <article><b>Production Controls</b><p>Active status never overrides tool permissions, human approval requirements, or external governance.</p></article>
+    </div>
+  </section>
+</main>
+<footer class="skills-footer"><span>Sean Kaspar · AI Skills & Agent Capability System</span><span>Registry snapshot <b id="snapshotDate"></b> · <a href="aios.html">AI Operating System</a></span></footer>
+<script src="skills-data.js"></script>
+<script src="skills.js"></script>
+</body>
+</html>
