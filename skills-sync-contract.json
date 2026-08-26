@@ -1,0 +1,62 @@
+{
+  "contract_version": "1.0",
+  "authoritative_source": {
+    "system": "Google Drive",
+    "artifact": "00_AI Skills Registry",
+    "sheet": "Skills Registry"
+  },
+  "public_snapshot": {
+    "repository": "seankaspar92/Portfolio",
+    "branch": "main",
+    "path": "skills-data.js",
+    "global_name": "window.SKILLS_REGISTRY"
+  },
+  "allowed_public_fields": [
+    "Skill ID",
+    "Canonical Name",
+    "Version",
+    "Status",
+    "Curriculum Stage",
+    "Purpose",
+    "Evaluation Criteria",
+    "Last Updated"
+  ],
+  "never_publish_fields": [
+    "Primary Inputs",
+    "Primary Outputs",
+    "Specification File",
+    "Notes",
+    "private Drive URLs",
+    "personal operational evidence",
+    "sensitive or identifying user data"
+  ],
+  "status_allowlist": ["Active", "Testing", "Draft", "Deprecated", "Superseded"],
+  "drift_triggers": [
+    "skill added or removed",
+    "canonical name changed",
+    "version changed",
+    "status changed",
+    "curriculum stage changed",
+    "purpose materially changed",
+    "evaluation criteria materially changed",
+    "library counts changed"
+  ],
+  "generation_rules": {
+    "sort": "ascending Skill ID",
+    "counts": "derive from current rows, never hard-code",
+    "generatedAt": "use authoritative registry observation date",
+    "domain": "derive from Curriculum Stage using the public domain mapping already used by skills-data.js",
+    "sanitize": true,
+    "preserve_testing_as_testing": true,
+    "do_not_infer_active": true
+  },
+  "change_control": {
+    "branch_prefix": "sync/skills-registry-",
+    "pr_title": "Sync AI Skills Command Center registry snapshot",
+    "open_pr_only_on_drift": true,
+    "never_push_snapshot_directly_to_main": true,
+    "verify_diff_before_pr": true,
+    "do_not_merge_automatically": true
+  },
+  "no_change_behavior": "Do nothing and do not notify unless a material sync error or governance defect is detected."
+}
