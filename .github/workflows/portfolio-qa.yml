@@ -53,3 +53,14 @@ jobs:
           for(const text of required) if(!html.includes(text)) throw new Error('EDGE maturity regression: '+text);
           console.log('EDGE maturity checks passed');
           NODE
+      - name: MBA decision-brief regression
+        run: |
+          node - <<'NODE'
+          const fs=require('fs');
+          const html=fs.readFileSync('mba.html','utf8');
+          const required=['Boardroom Decision Brief','Modernize First → Expand Selectively','PROBLEM','ALTERNATIVES','ANALYSIS','RECOMMEND','IMPLEMENT','25% fleet modernization + Caribbean launch','five-person team capstone','Gibson Guitars · Cost & Profitability','Star Clinic · Operations Analysis','mba-decision.css'];
+          for(const text of required) if(!html.includes(text)) throw new Error('MBA decision-brief regression: '+text);
+          if(html.includes('Gibson Agency')) throw new Error('Stale MBA case identity remains');
+          if(html.includes('Star Clinic · Inventory Operations')) throw new Error('Stale Star Clinic framing remains');
+          console.log('MBA boardroom decision-brief checks passed');
+          NODE
