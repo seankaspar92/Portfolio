@@ -1,0 +1,25 @@
+import fs from 'node:fs';
+const claims=JSON.parse(fs.readFileSync('portfolio-claims.json','utf8'));
+const index=fs.readFileSync('index.html','utf8');
+const skills=fs.readFileSync('skills-data.js','utf8');
+const career=JSON.parse(fs.readFileSync('career-score-contract.json','utf8'));
+const aios=fs.readFileSync('aios.html','utf8');
+const army=fs.readFileSync('army.html','utf8');
+const mba=fs.readFileSync('mba.html','utf8');
+let failures=0;
+const fail=m=>{console.error('FAIL | '+m);failures++};const pass=m=>console.log('PASS | '+m);
+if(claims.schema!=='portfolio-public-claims-v1.0')fail('unexpected claim schema');else pass('canonical claim schema');
+const refs=[...index.matchAll(/data-claim="([^"]+)"/g)].map(m=>m[1]);
+for(const key of new Set(refs)){const c=claims.claims[key];if(!c)fail(`unresolved homepage claim ${key}`);else if(c.public_safe!==true)fail(`non-public claim bound to homepage ${key}`);else pass(`homepage claim resolves: ${key}`)}
+const required=['service_years','soldiers_trained','featured_projects','aios_release','mba_credential','ai_skills_count','career_apply_threshold'];for(const key of required)if(!claims.claims[key])fail(`required canonical claim missing: ${key}`);
+const skillCount=Number((skills.match(/counts:\s*\{\s*total:\s*(\d+)/)||[])[1]);if(String(skillCount)!==claims.claims.ai_skills_count.value)fail(`AI skills count drift: registry ${skillCount} claims ${claims.claims.ai_skills_count.value}`);else pass('AI skills count reconciled to skills-data.js');
+if(`${career.decision_thresholds.apply_min.toFixed(1)}+`!==claims.claims.career_apply_threshold.value)fail('career APPLY threshold drift');else pass('Career threshold reconciled to CAR-M001 contract');
+const projectCount=(index.match(/class="landing-project-card(?:\s|\")/g)||[]).length;if(String(projectCount)!==claims.claims.featured_projects.value)fail(`featured-project count drift: ${projectCount}`);else pass('featured-project count derived from homepage cards');
+if(!aios.includes(claims.claims.aios_release.value))fail('AIOS release claim not evidenced on case-study page');else pass('AIOS release claim evidenced');
+if(!aios.includes('99cb97ab8c02714f22a92781c114602e52c190e3'))fail('AIOS release commit receipt missing');else pass('AIOS release commit receipt present');
+if(!army.includes('4,800'))fail('4,800 Soldiers claim not evidenced on Army page');else pass('Soldiers-trained claim evidenced');
+if(!mba.includes('MBA BUSINESS PORTFOLIO'))fail('MBA credential context missing');else pass('MBA credential context present');
+if(!index.includes('portfolio-claims.js'))fail('canonical claims binder not loaded');else pass('claims binder loaded');
+if(!index.includes('data-claim="ai_skills_count"'))fail('AI Skills count not migrated');
+if(!index.includes('data-claim="career_apply_threshold"'))fail('Career threshold not migrated');
+process.exitCode=failures?1:0;
