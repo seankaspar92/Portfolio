@@ -1,0 +1,25 @@
+name: Portfolio QA
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+jobs:
+  regression:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Career scoring regression suite
+        run: node tests/career-score-regression.mjs
+      - name: Canonical contract checks
+        run: |
+          node - <<'NODE'
+          const fs=require('fs');
+          const contract=JSON.parse(fs.readFileSync('career-score-contract.json','utf8'));
+          if(contract.decision_thresholds.apply_min!==8.0) throw new Error('APPLY threshold drift');
+          if(!contract.governance.no_keyword_only_scoring) throw new Error('semantic governance missing');
+          console.log('Canonical career contract checks passed');
+          NODE
