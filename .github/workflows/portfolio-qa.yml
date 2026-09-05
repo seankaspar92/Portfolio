@@ -14,6 +14,8 @@ jobs:
           node-version: '22'
       - name: Career scoring regression suite
         run: node tests/career-score-regression.mjs
+      - name: Canonical portfolio claims regression
+        run: node tests/portfolio-claims-regression.mjs
       - name: Canonical contract checks
         run: |
           node - <<'NODE'
@@ -33,7 +35,7 @@ jobs:
           const gots='Getting out of the service is not the same for everyone, so I built an evidence-based operating system';
           if(!html.includes(gots)) throw new Error('GOTS narrative regression');
           if(!html.includes('skills-home.css')) throw new Error('Skills semantic tile stylesheet not loaded');
-          if(!html.includes('<strong>46</strong><span>VERSIONED AI CAPABILITIES</span>')) throw new Error('Evidence-backed proof metric missing');
+          if(!html.includes('data-claim="ai_skills_count"')) throw new Error('Evidence-backed proof metric is not canonicalized');
           if(html.includes('<strong>AI</strong><span>FUTURE FOCUSED</span>')) throw new Error('Weak proof metric returned');
           console.log('Homepage Skills + GOTS + proof checks passed');
           NODE
