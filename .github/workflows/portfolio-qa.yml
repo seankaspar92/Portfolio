@@ -35,3 +35,12 @@ jobs:
           if(!html.includes('skills-home.css')) throw new Error('Skills semantic tile stylesheet not loaded');
           console.log('Homepage Skills + GOTS checks passed');
           NODE
+      - name: AIOS evidence-layer regression
+        run: |
+          node - <<'NODE'
+          const fs=require('fs');
+          const html=fs.readFileSync('aios.html','utf8');
+          const required=['ENGINEERING DELIVERY CHAIN','Architecture → Governed PR → CI → Human Approval → Release → Evidence','99cb97ab8c02714f22a92781c114602e52c190e3','Simulation boundary','single-host reference'];
+          for(const text of required) if(!html.includes(text)) throw new Error('AIOS evidence-layer regression: '+text);
+          console.log('AIOS evidence-layer checks passed');
+          NODE
