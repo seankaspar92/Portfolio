@@ -1,0 +1,83 @@
+{
+  "schema": "portfolio-public-claims-v1.0",
+  "generated_at": "2026-09-05",
+  "policy": {
+    "public_safe_only": true,
+    "fallback_behavior": "Keep evidence-reviewed HTML fallback when registry loading fails.",
+    "claim_states": ["VERIFIED", "BOUNDED", "DERIVED"]
+  },
+  "claims": {
+    "service_years": {
+      "value": "13+",
+      "label": "YEARS OF SERVICE",
+      "status": "VERIFIED",
+      "source_class": "career evidence",
+      "evidence_ref": "army.html",
+      "last_verified": "2026-09-05",
+      "public_safe": true
+    },
+    "soldiers_trained": {
+      "value": "4,800",
+      "label": "SOLDIERS TRAINED",
+      "status": "VERIFIED",
+      "source_class": "source-backed leadership evidence",
+      "evidence_ref": "army.html",
+      "last_verified": "2026-09-05",
+      "public_safe": true
+    },
+    "featured_projects": {
+      "value": "7",
+      "label": "FEATURED PROJECTS",
+      "status": "DERIVED",
+      "source_class": "portfolio structure",
+      "evidence_ref": "index.html#projects",
+      "last_verified": "2026-09-05",
+      "public_safe": true
+    },
+    "aios_release": {
+      "value": "v1.0.0",
+      "label": "AIOS RELEASE",
+      "status": "VERIFIED",
+      "source_class": "release evidence",
+      "evidence_ref": "aios.html#engineering-evidence",
+      "last_verified": "2026-09-05",
+      "public_safe": true
+    },
+    "aios_release_commit": {
+      "value": "99cb97a",
+      "label": "AIOS RELEASE COMMIT",
+      "status": "VERIFIED",
+      "source_class": "release commit",
+      "evidence_ref": "aios.html#engineering-evidence",
+      "last_verified": "2026-09-05",
+      "public_safe": true
+    },
+    "mba_credential": {
+      "value": "MBA",
+      "label": "BUSINESS LEADERSHIP",
+      "status": "VERIFIED",
+      "source_class": "education evidence",
+      "evidence_ref": "mba.html",
+      "last_verified": "2026-09-05",
+      "public_safe": true
+    },
+    "ai_skills_count": {
+      "value": "46",
+      "label": "VERSIONED AI CAPABILITIES",
+      "status": "VERIFIED",
+      "source_class": "governed skills registry snapshot",
+      "evidence_ref": "skills-data.js",
+      "last_verified": "2026-09-05",
+      "public_safe": true
+    },
+    "career_apply_threshold": {
+      "value": "8.0+",
+      "label": "GOVERNED APPLY GATE",
+      "status": "VERIFIED",
+      "source_class": "canonical scoring contract",
+      "evidence_ref": "career-score-contract.json",
+      "last_verified": "2026-09-05",
+      "public_safe": true
+    }
+  }
+}
