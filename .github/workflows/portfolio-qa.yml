@@ -33,7 +33,9 @@ jobs:
           const gots='Getting out of the service is not the same for everyone, so I built an evidence-based operating system';
           if(!html.includes(gots)) throw new Error('GOTS narrative regression');
           if(!html.includes('skills-home.css')) throw new Error('Skills semantic tile stylesheet not loaded');
-          console.log('Homepage Skills + GOTS checks passed');
+          if(!html.includes('<strong>46</strong><span>VERSIONED AI CAPABILITIES</span>')) throw new Error('Evidence-backed proof metric missing');
+          if(html.includes('<strong>AI</strong><span>FUTURE FOCUSED</span>')) throw new Error('Weak proof metric returned');
+          console.log('Homepage Skills + GOTS + proof checks passed');
           NODE
       - name: AIOS evidence-layer regression
         run: |
