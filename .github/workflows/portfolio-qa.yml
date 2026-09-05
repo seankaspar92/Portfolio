@@ -44,3 +44,12 @@ jobs:
           for(const text of required) if(!html.includes(text)) throw new Error('AIOS evidence-layer regression: '+text);
           console.log('AIOS evidence-layer checks passed');
           NODE
+      - name: EDGE maturity regression
+        run: |
+          node - <<'NODE'
+          const fs=require('fs');
+          const html=fs.readFileSync('edge.html','utf8');
+          const required=['MATURITY & VALIDATION MATRIX','NFL EDGE · VALIDATED CONNECTED FOUNDATION','MLB EDGE · FOUNDATION / ACTIVE BUILD','NO PARITY CLAIM','v0.2.2 strike-zone gate','maturity follows evidence'];
+          for(const text of required) if(!html.includes(text)) throw new Error('EDGE maturity regression: '+text);
+          console.log('EDGE maturity checks passed');
+          NODE
