@@ -1,0 +1,32 @@
+{
+  "schema": "career-score-contract-v1.0",
+  "model_id": "CAR-M001",
+  "name": "career_fit_score",
+  "version": "1.0",
+  "scale": {"min": 0, "max": 10},
+  "decision_thresholds": {"apply_min": 8.0, "maybe_min": 6.5},
+  "dimensions": [
+    {"id": "requirement_evidence", "weight": 0.50},
+    {"id": "transferable_capability", "weight": 0.25},
+    {"id": "role_context", "weight": 0.15},
+    {"id": "credentials_gates", "weight": 0.10}
+  ],
+  "requirement_states": ["MATCH", "PARTIAL", "GAP", "HARD_GATE"],
+  "hard_gate_policy": {
+    "fail_closed_categories": ["clearance", "citizenship", "license", "certification", "explicit_degree", "explicit_minimum_years"],
+    "preferred_qualifications_are_not_hard_gates": true,
+    "transferable_experience_must_not_be_presented_as_direct_experience": true
+  },
+  "decision_policy": {
+    "APPLY": "score >= 8.0 and zero unresolved hard gates",
+    "MAYBE": "score >= 6.5 and at most one unresolved hard gate or material uncertainty",
+    "PASS": "otherwise"
+  },
+  "precision_policy": "Numerical scoring is valid only when the complete job description and sufficient evidence are available. Otherwise return a provisional assessment.",
+  "governance": {
+    "canonical_threshold_source": true,
+    "no_keyword_only_scoring": true,
+    "no_score_inflation_to_match_prior_decisions": true,
+    "known_good_and_known_bad_regression_cases_required": true
+  }
+}
