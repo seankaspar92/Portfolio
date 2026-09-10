@@ -1,7 +1,7 @@
 {
   "version": "2.0",
   "as_of": "2026-09-10",
-  "verification_mode": "source readback plus repository regression contract; final live-page verification follows resume/evidence audit",
+  "verification_mode": "source readback, artifact integrity verification, repository regression contract, and live-page verification",
   "public_pages": [
     "index.html",
     "aios.html",
@@ -33,15 +33,15 @@
     "skills_planned_candidates": 339,
     "skills_registry_entries": 386,
     "planned_skills_excluded_from_capability_claim": true,
-    "resume_pdf_declared": true,
-    "resume_docx_declared": true,
+    "resume_browser_aligned": true,
+    "resume_docx_integrity_verified": true,
+    "resume_pdf_integrity_verified": true,
+    "resume_50_plus_evaluations_present": true,
+    "evidence_policy_v2_boundaries_present": true,
     "canonical_claim_registry_present": true,
-    "portfolio_regression_workflow_present": true
+    "portfolio_regression_workflow_present": true,
+    "gate_7_complete": true
   },
-  "issues": [
-    "Final cross-artifact resume/evidence audit remains Gate 7 before launch_ready is promoted."
-  ],
-  "launch_blockers": [
-    "Complete Gate 7 resume/evidence alignment and final live/system scan."
-  ]
+  "issues": [],
+  "launch_blockers": []
 }
