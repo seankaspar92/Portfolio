@@ -57,12 +57,11 @@ jobs:
           node - <<'NODE'
           const fs=require('fs');
           const html=fs.readFileSync('index.html','utf8');
-          const required=['SEMANTIC ROUTING','KNOWLEDGE MANAGEMENT','GUARDRAILS &amp; SAFETY','VALIDATION &amp; EVALUATION','DATA GOVERNANCE','ANALYTICS &amp; INSIGHTS','AUTOMATION &amp; ORCHESTRATION','CONTINUOUS IMPROVEMENT','href="hops.html"','HOPS · OPERATIONS DECISION SUPPORT','data-claim="ai_skills_count">47'];
+          const required=['SEMANTIC ROUTING','KNOWLEDGE MANAGEMENT','GUARDRAILS &amp; SAFETY','VALIDATION &amp; EVALUATION','DATA GOVERNANCE','ANALYTICS &amp; INSIGHTS','AUTOMATION &amp; ORCHESTRATION','CONTINUOUS IMPROVEMENT','href="hops.html"','HOPS · OPERATIONS DECISION SUPPORT','data-claim="ai_skills_count">47','data-claim="featured_projects">8'];
           for(const text of required) if(!html.includes(text)) throw new Error('Missing homepage capability: '+text);
           const gots='Getting out of the service is not the same for everyone, so I built an evidence-based operating system';
           if(!html.includes(gots)) throw new Error('GOTS narrative regression');
           if(!html.includes('skills-home.css')) throw new Error('Skills semantic tile stylesheet not loaded');
-          if(!html.includes('data-claim="ai_skills_count"')) throw new Error('Evidence-backed proof metric is not canonicalized');
           console.log('Homepage content checks passed');
           NODE
       - name: AI Skills lifecycle regression
@@ -107,6 +106,24 @@ jobs:
           if(html.includes('historical provenance infrastructure is wired into live prediction generation')) throw new Error('NFL historical provenance overclaim');
           console.log('EDGE maturity checks passed');
           NODE
+      - name: Gate 7 resume and evidence regression
+        run: |
+          node - <<'NODE'
+          const fs=require('fs');
+          const resume=fs.readFileSync('resume.html','utf8');
+          const evidence=fs.readFileSync('evidence.html','utf8');
+          const manifest=JSON.parse(fs.readFileSync('portfolio-manifest.json','utf8'));
+          const qa=JSON.parse(fs.readFileSync('QA_REPORT.json','utf8'));
+          const resumeRequired=['Direct multiple concurrent operational workstreams','Conducted 50+ formal performance evaluations','approximately 4,800 personnel','800+ hours of technical instruction','more than $6M in operational resources','from 509 to 526 and later to 537','files/Sean_Kaspar_Resume.pdf','files/Sean_Kaspar_Resume.docx'];
+          for(const text of resumeRequired) if(!resume.includes(text)) throw new Error('Resume evidence regression: '+text);
+          const evidenceRequired=['independently developed synthetic portfolio prototype','v0.3.0 remains a Candidate','Historical provenance infrastructure is not represented as live-prediction integration','Planned external candidates remain excluded','user-supplied canonical resume'];
+          for(const text of evidenceRequired) if(!evidence.includes(text)) throw new Error('Evidence-policy regression: '+text);
+          if(!fs.existsSync('files/Sean_Kaspar_Resume.docx') || !fs.existsSync('files/Sean_Kaspar_Resume.pdf')) throw new Error('Resume download artifact missing');
+          if(manifest.launch_ready!==true) throw new Error('Manifest launch_ready not promoted after Gate 7');
+          if(qa.checks.gate_7_passed!==true || qa.checks.final_system_scan_passed!==true) throw new Error('QA Gate 7/final scan state missing');
+          if(qa.launch_blockers.length!==0 || qa.issues.length!==0) throw new Error('Unresolved QA issue/blocker remains');
+          console.log('Gate 7 resume/evidence and final QA contract passed');
+          NODE
       - name: MBA decision-brief regression
         run: |
           node - <<'NODE'
@@ -117,15 +134,4 @@ jobs:
           if(html.includes('Gibson Agency')) throw new Error('Stale MBA case identity remains');
           if(html.includes('Star Clinic · Inventory Operations')) throw new Error('Stale Star Clinic framing remains');
           console.log('MBA boardroom decision-brief checks passed');
-          NODE
-      - name: Gate 6 QA metadata regression
-        run: |
-          node - <<'NODE'
-          const fs=require('fs');
-          const qa=JSON.parse(fs.readFileSync('QA_REPORT.json','utf8'));
-          if(qa.version!=='2.0') throw new Error('QA report version drift');
-          if(qa.public_pages.length!==11) throw new Error('QA page inventory drift');
-          if(qa.checks.skills_active_testing_count!==47) throw new Error('QA skill count drift');
-          if(qa.launch_blockers.length!==1) throw new Error('Unexpected Gate 6 blocker count');
-          console.log('Gate 6 QA metadata checks passed');
           NODE
