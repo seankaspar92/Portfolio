@@ -63,9 +63,10 @@ jobs:
           node - <<'NODE'
           const fs=require('fs');
           const html=fs.readFileSync('edge.html','utf8');
-          const required=['MATURITY & VALIDATION MATRIX','NFL EDGE · VALIDATED CONNECTED FOUNDATION','MLB EDGE · VALIDATED BASELINE / v0.3.0 CANDIDATE','76/76 package tests','LOCAL_DATA_FOUNDATION_VALIDATED','Predictive models intentionally remain unpromoted','NO PARITY CLAIM','maturity follows evidence'];
+          const required=['MATURITY & VALIDATION MATRIX','NFL EDGE · VALIDATED CONNECTED FOUNDATION','MLB EDGE · VALIDATED BASELINE / v0.3.0 CANDIDATE','76/76 package tests','LOCAL_DATA_FOUNDATION_VALIDATED','Predictive models intentionally remain unpromoted','DST-safe weekly report kickoff entrypoint','Kickoff-time hardening','NO PARITY CLAIM','maturity follows evidence'];
           for(const text of required) if(!html.includes(text)) throw new Error('EDGE maturity regression: '+text);
           if(html.includes('v0.2.2 strike-zone gate conflated')) throw new Error('Stale MLB validator defect language remains');
+          if(html.includes('historical provenance infrastructure is wired into live prediction generation')) throw new Error('NFL historical provenance overclaim');
           console.log('EDGE maturity checks passed');
           NODE
       - name: MBA decision-brief regression
