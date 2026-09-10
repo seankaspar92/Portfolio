@@ -51,12 +51,15 @@ No planned capability is presented as implemented merely because it appears in a
 - AIOS release evidence and claim boundaries retained.
 - GOTS and Career Intelligence sanitized examples retained.
 - Army and MBA evidence pages retained.
-- Resume and evidence policy remain part of final cross-artifact claim alignment.
+- Browser resume, downloadable DOCX/PDF, and Evidence Policy are aligned to the canonical Gate 7 source and public-claim rules.
 
 ## Deployment
 GitHub Pages target: `https://seankaspar92.github.io/Portfolio/`
 
-`robots.txt` and `sitemap.xml` use the live GitHub Pages base URL. The sitemap includes the v2.0 public pages.
+`robots.txt` and `sitemap.xml` use the live GitHub Pages base URL. The sitemap includes all v2.0 public pages.
 
 ## Release discipline
-`portfolio-claims.json` is the canonical public-claim registry for homepage proof metrics. Repository QA checks are expected to fail if HOPS independence boundaries, EDGE maturity boundaries, skill lifecycle counts, or other protected public claims drift.
+`portfolio-claims.json` is the canonical public-claim registry for homepage proof metrics. Repository QA checks are expected to fail if HOPS independence boundaries, EDGE maturity boundaries, skill lifecycle counts, resume/evidence alignment, or other protected public claims drift.
+
+## Release state
+Portfolio v2.0 completed the seven-gate reconciliation and final cross-system scan on September 10, 2026. `launch_ready` is true and the QA report has zero open blockers.
