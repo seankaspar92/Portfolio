@@ -25,19 +25,57 @@ jobs:
           if(!contract.governance.no_keyword_only_scoring) throw new Error('semantic governance missing');
           console.log('Canonical career contract checks passed');
           NODE
+      - name: Public page inventory and local-reference QA
+        run: |
+          node - <<'NODE'
+          const fs=require('fs');
+          const path=require('path');
+          const manifest=JSON.parse(fs.readFileSync('portfolio-manifest.json','utf8'));
+          if(manifest.version!=='2.0') throw new Error('Portfolio manifest is not v2.0');
+          if(manifest.pages.length!==11) throw new Error(`Expected 11 public pages, got ${manifest.pages.length}`);
+          for(const page of manifest.pages){if(!fs.existsSync(page)) throw new Error('Missing public page: '+page)}
+          const sitemap=fs.readFileSync('sitemap.xml','utf8');
+          const base='https://seankaspar92.github.io/Portfolio/';
+          for(const page of manifest.pages){if(!sitemap.includes(base+page)) throw new Error('Sitemap missing: '+page)}
+          const robots=fs.readFileSync('robots.txt','utf8');
+          if(!robots.includes(base+'sitemap.xml')) throw new Error('robots.txt sitemap URL drift');
+          for(const page of manifest.pages){
+            const html=fs.readFileSync(page,'utf8');
+            const refs=[...html.matchAll(/(?:href|src)="([^"]+)"/g)].map(m=>m[1]);
+            for(const ref of refs){
+              if(/^(?:https?:|mailto:|tel:|javascript:|data:|#)/i.test(ref)) continue;
+              const clean=ref.split('#')[0].split('?')[0];
+              if(!clean) continue;
+              const local=clean.startsWith('/') ? clean.replace(/^\/Portfolio\//,'').replace(/^\//,'') : clean;
+              if(!fs.existsSync(path.normalize(local))) throw new Error(`${page} references missing local asset: ${ref}`);
+            }
+          }
+          console.log('Public page inventory, sitemap, robots, and local references passed');
+          NODE
       - name: Homepage content regression
         run: |
           node - <<'NODE'
           const fs=require('fs');
           const html=fs.readFileSync('index.html','utf8');
-          const required=['SEMANTIC ROUTING','KNOWLEDGE MANAGEMENT','GUARDRAILS &amp; SAFETY','VALIDATION &amp; EVALUATION','DATA GOVERNANCE','ANALYTICS &amp; INSIGHTS','AUTOMATION &amp; ORCHESTRATION','CONTINUOUS IMPROVEMENT','href="hops.html"','HOPS · OPERATIONS DECISION SUPPORT'];
+          const required=['SEMANTIC ROUTING','KNOWLEDGE MANAGEMENT','GUARDRAILS &amp; SAFETY','VALIDATION &amp; EVALUATION','DATA GOVERNANCE','ANALYTICS &amp; INSIGHTS','AUTOMATION &amp; ORCHESTRATION','CONTINUOUS IMPROVEMENT','href="hops.html"','HOPS · OPERATIONS DECISION SUPPORT','data-claim="ai_skills_count">47'];
           for(const text of required) if(!html.includes(text)) throw new Error('Missing homepage capability: '+text);
           const gots='Getting out of the service is not the same for everyone, so I built an evidence-based operating system';
           if(!html.includes(gots)) throw new Error('GOTS narrative regression');
           if(!html.includes('skills-home.css')) throw new Error('Skills semantic tile stylesheet not loaded');
           if(!html.includes('data-claim="ai_skills_count"')) throw new Error('Evidence-backed proof metric is not canonicalized');
-          if(html.includes('<strong>AI</strong><span>FUTURE FOCUSED</span>')) throw new Error('Weak proof metric returned');
-          console.log('Homepage Skills + HOPS + GOTS + proof checks passed');
+          console.log('Homepage content checks passed');
+          NODE
+      - name: AI Skills lifecycle regression
+        run: |
+          node - <<'NODE'
+          const fs=require('fs');
+          const js=fs.readFileSync('skills-data.js','utf8');
+          const required=['generatedAt: "2026-09-10"','total: 47','active: 30','testing: 17','planned: 339','registryTotal: 386','id:"SKL-386"','name:"govern_operational_lessons"','status:"Testing"'];
+          for(const text of required) if(!js.includes(text)) throw new Error('AI Skills lifecycle regression: '+text);
+          const skillObjects=(js.match(/\{id:"SKL-/g)||[]).length;
+          if(skillObjects!==47) throw new Error(`Expected 47 public Active/Testing skill objects, got ${skillObjects}`);
+          if(js.includes('status:"Planned"')) throw new Error('Planned skill leaked into demonstrated public skill grid');
+          console.log('AI Skills lifecycle checks passed');
           NODE
       - name: HOPS independence and evidence regression
         run: |
@@ -79,4 +117,15 @@ jobs:
           if(html.includes('Gibson Agency')) throw new Error('Stale MBA case identity remains');
           if(html.includes('Star Clinic · Inventory Operations')) throw new Error('Stale Star Clinic framing remains');
           console.log('MBA boardroom decision-brief checks passed');
+          NODE
+      - name: Gate 6 QA metadata regression
+        run: |
+          node - <<'NODE'
+          const fs=require('fs');
+          const qa=JSON.parse(fs.readFileSync('QA_REPORT.json','utf8'));
+          if(qa.version!=='2.0') throw new Error('QA report version drift');
+          if(qa.public_pages.length!==11) throw new Error('QA page inventory drift');
+          if(qa.checks.skills_active_testing_count!==47) throw new Error('QA skill count drift');
+          if(qa.launch_blockers.length!==1) throw new Error('Unexpected Gate 6 blocker count');
+          console.log('Gate 6 QA metadata checks passed');
           NODE
