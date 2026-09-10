@@ -1,6 +1,6 @@
 {
   "schema": "portfolio-public-claims-v1.0",
-  "generated_at": "2026-09-05",
+  "generated_at": "2026-09-10",
   "policy": {
     "public_safe_only": true,
     "fallback_behavior": "Keep evidence-reviewed HTML fallback when registry loading fails.",
@@ -26,12 +26,12 @@
       "public_safe": true
     },
     "featured_projects": {
-      "value": "7",
+      "value": "8",
       "label": "FEATURED PROJECTS",
       "status": "DERIVED",
       "source_class": "portfolio structure",
       "evidence_ref": "index.html#projects",
-      "last_verified": "2026-09-05",
+      "last_verified": "2026-09-10",
       "public_safe": true
     },
     "aios_release": {
@@ -77,6 +77,24 @@
       "source_class": "canonical scoring contract",
       "evidence_ref": "career-score-contract.json",
       "last_verified": "2026-09-05",
+      "public_safe": true
+    },
+    "hops_release": {
+      "value": "v2.3 RC",
+      "label": "HOPS RELEASE CANDIDATE",
+      "status": "VERIFIED",
+      "source_class": "retained release-candidate test evidence",
+      "evidence_ref": "hops.html#validation",
+      "last_verified": "2026-09-10",
+      "public_safe": true
+    },
+    "hops_regression": {
+      "value": "74 / 74",
+      "label": "HOPS REGRESSION TESTS",
+      "status": "VERIFIED",
+      "source_class": "retained release-candidate test report",
+      "evidence_ref": "hops.html#validation",
+      "last_verified": "2026-09-10",
       "public_safe": true
     }
   }
