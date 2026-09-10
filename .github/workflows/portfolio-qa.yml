@@ -30,14 +30,24 @@ jobs:
           node - <<'NODE'
           const fs=require('fs');
           const html=fs.readFileSync('index.html','utf8');
-          const required=['SEMANTIC ROUTING','KNOWLEDGE MANAGEMENT','GUARDRAILS &amp; SAFETY','VALIDATION &amp; EVALUATION','DATA GOVERNANCE','ANALYTICS &amp; INSIGHTS','AUTOMATION &amp; ORCHESTRATION','CONTINUOUS IMPROVEMENT'];
-          for(const text of required) if(!html.includes(text)) throw new Error('Missing Skills capability: '+text);
+          const required=['SEMANTIC ROUTING','KNOWLEDGE MANAGEMENT','GUARDRAILS &amp; SAFETY','VALIDATION &amp; EVALUATION','DATA GOVERNANCE','ANALYTICS &amp; INSIGHTS','AUTOMATION &amp; ORCHESTRATION','CONTINUOUS IMPROVEMENT','href="hops.html"','HOPS · OPERATIONS DECISION SUPPORT'];
+          for(const text of required) if(!html.includes(text)) throw new Error('Missing homepage capability: '+text);
           const gots='Getting out of the service is not the same for everyone, so I built an evidence-based operating system';
           if(!html.includes(gots)) throw new Error('GOTS narrative regression');
           if(!html.includes('skills-home.css')) throw new Error('Skills semantic tile stylesheet not loaded');
           if(!html.includes('data-claim="ai_skills_count"')) throw new Error('Evidence-backed proof metric is not canonicalized');
           if(html.includes('<strong>AI</strong><span>FUTURE FOCUSED</span>')) throw new Error('Weak proof metric returned');
-          console.log('Homepage Skills + GOTS + proof checks passed');
+          console.log('Homepage Skills + HOPS + GOTS + proof checks passed');
+          NODE
+      - name: HOPS independence and evidence regression
+        run: |
+          node - <<'NODE'
+          const fs=require('fs');
+          const html=fs.readFileSync('hops.html','utf8');
+          const required=['independently developed','synthetic operations planning','74 / 74','30 / 30','29 / 29','Human authority is a design requirement','not presented as a product, internal system, or endorsed capability'];
+          for(const text of required) if(!html.includes(text)) throw new Error('HOPS evidence regression: '+text);
+          if(/HAVOC OPS|HAVOC SENTRY|HAVOC OPS \+ SENTRY/i.test(html)) throw new Error('Legacy prototype branding remains on public HOPS page');
+          console.log('HOPS independence and evidence checks passed');
           NODE
       - name: AIOS evidence-layer regression
         run: |
@@ -53,8 +63,9 @@ jobs:
           node - <<'NODE'
           const fs=require('fs');
           const html=fs.readFileSync('edge.html','utf8');
-          const required=['MATURITY & VALIDATION MATRIX','NFL EDGE · VALIDATED CONNECTED FOUNDATION','MLB EDGE · FOUNDATION / ACTIVE BUILD','NO PARITY CLAIM','v0.2.2 strike-zone gate','maturity follows evidence'];
+          const required=['MATURITY & VALIDATION MATRIX','NFL EDGE · VALIDATED CONNECTED FOUNDATION','MLB EDGE · VALIDATED BASELINE / v0.3.0 CANDIDATE','76/76 package tests','LOCAL_DATA_FOUNDATION_VALIDATED','Predictive models intentionally remain unpromoted','NO PARITY CLAIM','maturity follows evidence'];
           for(const text of required) if(!html.includes(text)) throw new Error('EDGE maturity regression: '+text);
+          if(html.includes('v0.2.2 strike-zone gate conflated')) throw new Error('Stale MLB validator defect language remains');
           console.log('EDGE maturity checks passed');
           NODE
       - name: MBA decision-brief regression
