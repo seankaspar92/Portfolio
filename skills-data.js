@@ -1,7 +1,8 @@
 window.SKILLS_REGISTRY = {
-  generatedAt: "2026-08-26",
-  source: "00_AI Skills Registry",
-  counts: { total: 46, active: 30, testing: 16 },
+  generatedAt: "2026-09-10",
+  source: "00_AI Skills Registry · canonical lifecycle snapshot",
+  counts: { total: 47, active: 30, testing: 17, planned: 339, registryTotal: 386 },
+  scopeNote: "Public governed-skill count includes Active and Testing skills only. Planned external candidates remain excluded until internal specification, safety/tool review, and representative validation gates are satisfied.",
   skills: [
     {id:"SKL-001",name:"evaluate_job_opportunity",version:"1.2",status:"Active",domain:"Career Intelligence",purpose:"Evaluate job opportunities with verified evidence, semantic context, Career Fit scoring, hard gates, source reconciliation, and provenance.",evaluation:"Governed scoring; >=80% evidence coverage for precise score; hard gates override score; material claims traceable."},
     {id:"SKL-002",name:"design_ai_specification",version:"1.0",status:"Active",domain:"Skill Engineering",purpose:"Convert an AI capability request into a bounded, executable, testable reusable-skill specification.",evaluation:"Design score >=90/100, no critical failures, explicit decision/safety rules, representative tests."},
@@ -48,6 +49,7 @@ window.SKILLS_REGISTRY = {
     {id:"SKL-043",name:"ai_system_risk_review",version:"1.0",status:"Active",domain:"Architecture & AI Governance",purpose:"Assess AI systems for model, data, tool, privacy, security, reliability, oversight, provenance, evaluation, and autonomy risks.",evaluation:"Critical risk categories covered; no autonomy increase with unresolved critical risks."},
     {id:"SKL-044",name:"ai_output_evaluator",version:"1.0",status:"Active",domain:"Architecture & AI Governance",purpose:"Evaluate AI outputs against requirements, factual grounding, completeness, semantic consistency, provenance, safety, usability, and critical failure rules.",evaluation:"100% seeded critical failures detected; low false-positive rate; defects tied to explicit obligations."},
     {id:"SKL-045",name:"learn_from_youtube_video",version:"1.1",status:"Testing",domain:"Knowledge Ingestion",purpose:"Turn YouTube videos and playlists into reliable reusable learning through transcript/audio and visual analysis, cross-checking, claim verification, method extraction, and skill synthesis.",evaluation:"Full source/access disclosure; zero unavailable-media claims; conflicts surfaced; five representative field cases before Active."},
-    {id:"SKL-046",name:"improve_agent_workflow",version:"1.0",status:"Active",domain:"Continuous Improvement",purpose:"Improve AI agents and governed workflows through a controlled propose, act/search, verify, feedback, revise, and evaluate loop without bypassing governance.",evaluation:"Frozen objective and baseline; held-out evaluation; zero critical governance/safety/provenance regressions; rollback required."}
+    {id:"SKL-046",name:"improve_agent_workflow",version:"1.0",status:"Active",domain:"Continuous Improvement",purpose:"Improve AI agents and governed workflows through a controlled propose, act/search, verify, feedback, revise, and evaluate loop without bypassing governance.",evaluation:"Frozen objective and baseline; held-out evaluation; zero critical governance/safety/provenance regressions; rollback required."},
+    {id:"SKL-386",name:"govern_operational_lessons",version:"1.0",status:"Testing",domain:"Continuous Improvement",purpose:"Convert AAR evidence into human-governed operational memory and recall only validated lessons at future decision points.",evaluation:"No machine activation; active-only/non-expired recall; provenance retained; no release-state mutation; field validation required before Active."}
   ]
 };
