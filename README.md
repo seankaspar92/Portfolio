@@ -1,70 +1,62 @@
-# Sean Kaspar Portfolio v1.9
+# Sean Kaspar Portfolio v2.0
 
-Public-ready static-site structure for the AI portfolio.
+Public portfolio for evidence-backed AI, analytics, operations, leadership, and business decision systems.
 
-## Pages
-- index.html — master landing page
-- aios.html — AI Operating System case study
-- edge.html — EDGE Sports Analytics case study
-- gots.html — GOTS + Career Evidence Engine case study
-- career.html — Career Intelligence System case study
+## Public pages
+- `index.html` — master landing page
+- `aios.html` — AI Operating System case study
+- `hops.html` — HOPS synthetic operations decision-support case study
+- `skills.html` — governed AI Skills Command Center
+- `edge.html` — NFL EDGE + MLB EDGE analytics case study
+- `gots.html` — GOTS + Career Evidence Engine case study
+- `career.html` — Career Intelligence System case study
+- `army.html` — Army leadership and operations evidence
+- `mba.html` — MBA business decision portfolio
+- `evidence.html` — public evidence policy
+- `resume.html` — browser resume and download entrypoint
 
 ## Evidence controls
-This build deliberately separates:
+The portfolio deliberately separates:
 - verified implementation claims
-- simulated validation
-- active/developing work
-- illustrative/generated graphics
+- bounded validation claims
+- active/testing work
+- planned candidates
+- synthetic demonstrations
+- public-safe evidence from private operational source material
 
-Generated images are labeled as illustrative and are not the source of truth for metrics or implementation status.
+No planned capability is presented as implemented merely because it appears in a registry or roadmap.
 
-## v1.9 evidence replacement
-- AIOS mock proof has been replaced with exact released evidence and source links.
-- Site-level evidence policy added.
+## v2.0 current state
 
-## Remaining before public deployment
-1. Add verified resume PDF.
-2. Capture real AIOS Command Center screenshots.
-3. Audit NFL EDGE + MLB EDGE current repos and replace concept metrics with reproducible evidence.
-4. Build sanitized GOTS/Career Evidence example.
-5. Build sanitized Career Intelligence example.
-6. Optionally replace concept graphics with cleaner visuals that contain no generated metrics/dates.
-7. Deploy to GitHub Pages, Vercel, Netlify, or equivalent.
+### HOPS
+- Independent synthetic operations planning and decision-support prototype.
+- Public branding is HOPS and does not present the prototype as a product or internal system of any employer or third party.
+- v2.3 release-candidate evidence: 74/74 automated regression tests, 30/30 security invariants, 29/29 browser QA assertions, and zero page/console errors in the retained release QA.
+- Human authority remains explicit for operational, legal, funding, acquisition, and release decisions.
 
+### EDGE Sports Analytics
+- NFL EDGE v2.7 connected foundation remains bounded to the repository evidence.
+- September 5 Week 1 hardening added DST-safe Eastern-to-UTC kickoff handling for weekly reporting with regression coverage.
+- Historical provenance infrastructure is not represented as wired into live prediction generation where the repository says it is not.
+- MLB EDGE v0.2.2 is the locally validated baseline with 20 local tests passed.
+- MLB EDGE v0.3.0 is a research-synchronized governed data-foundation Candidate. Its packaged build passed 76/76 tests, but it remains Candidate pending the authentic local-data validation gate.
 
-## v1.9 EDGE evidence audit
-- NFL EDGE v2.7 repository-grounded evidence added.
-- Historical provenance, authentic-price integrity, research firewall, explicit fallback, and isolated replay maturity are documented.
-- MLB EDGE remains bounded as an active local build pending repo publication/audit.
+### AI Skills
+- Canonical registry reconciled September 10, 2026.
+- 47 governed Active/Testing skills are represented publicly: 30 Active and 17 Testing.
+- 339 additional external skill candidates are Planned and explicitly excluded from demonstrated-capability counts until governance and validation gates are satisfied.
+- SKL-386 `govern_operational_lessons` is included as Testing and is associated with HOPS operational-learning controls.
 
+### Other evidence systems
+- AIOS release evidence and claim boundaries retained.
+- GOTS and Career Intelligence sanitized examples retained.
+- Army and MBA evidence pages retained.
+- Resume and evidence policy remain part of final cross-artifact claim alignment.
 
-## v1.9 GOTS evidence pass
-- Added sanitized requirement-control demonstration.
-- Added fictionalized NCOER/OER-to-civilian evidence transformation example.
-- Preserved strict privacy and unsupported-claim boundaries.
+## Deployment
+GitHub Pages target: `https://seankaspar92.github.io/Portfolio/`
 
-## v1.9 Career Intelligence evidence pass
-- Added a fictionalized Program Operations Manager evaluation.
-- Demonstrates requirement extraction, evidence mapping, gap analysis, uncertainty handling, practical-fit review, explainable decision, and application strategy.
-- Deliberately avoids fabricated match percentages or hiring-probability claims.
+`robots.txt` and `sitemap.xml` use the live GitHub Pages base URL. The sitemap includes the v2.0 public pages.
 
-## v1.9 Resume integration
-- Added browser-native resume page.
-- Added downloadable user-provided DOCX.
-- Added visually verified PDF conversion.
-- Added Resume navigation and landing-page CTA.
-- Resume page uses only claims present in the supplied resume.
-
-## v1.9 Launch QA
-- Internal links and local assets checked.
-- GitHub Pages support added via `.nojekyll`.
-- 404 page added.
-- Favicon and basic Open Graph metadata added.
-- robots.txt, sitemap.xml, launch guide, and QA report added.
-- Resume PDF/DOCX presence verified.
-
-## v1.9 Portrait + resume link update
-- Added real military and business portraits to the homepage hero.
-- Added an animated split transition with reduced-motion fallback.
-- Replaced GitHub with the live portfolio URL in the downloadable resume.
-- Updated browser resume page to link to the portfolio.
+## Release discipline
+`portfolio-claims.json` is the canonical public-claim registry for homepage proof metrics. Repository QA checks are expected to fail if HOPS independence boundaries, EDGE maturity boundaries, skill lifecycle counts, or other protected public claims drift.
