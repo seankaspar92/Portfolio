@@ -13,10 +13,10 @@
   const architectureGroups = document.getElementById('architectureGroups');
 
   metrics.innerHTML = `
-    <div class="metric-card"><strong>${registry.counts.total}</strong><span>GOVERNED SKILLS</span></div>
+    <div class="metric-card"><strong>${registry.counts.total}</strong><span>ACTIVE + TESTING SKILLS</span></div>
     <div class="metric-card active"><strong>${registry.counts.active}</strong><span>ACTIVE</span></div>
     <div class="metric-card testing"><strong>${registry.counts.testing}</strong><span>TESTING</span></div>
-    <div class="metric-card"><strong>v1.x</strong><span>VERSIONED CAPABILITY LAYER</span></div>`;
+    <div class="metric-card"><strong>${registry.counts.planned}</strong><span>PLANNED CANDIDATES</span></div>`;
 
   document.getElementById('snapshotDate').textContent = registry.generatedAt;
 
@@ -50,7 +50,7 @@
       const haystack = `${skill.id} ${skill.name} ${skill.domain} ${skill.purpose} ${skill.evaluation}`.toLowerCase();
       return (!q || haystack.includes(q)) && (status === 'all' || skill.status === status) && (domain === 'all' || skill.domain === domain);
     });
-    summary.textContent = `${filtered.length} of ${skills.length} skills shown · ${filtered.filter(s=>s.status==='Active').length} Active · ${filtered.filter(s=>s.status==='Testing').length} Testing`;
+    summary.textContent = `${filtered.length} of ${skills.length} governed Active/Testing skills shown · ${filtered.filter(s=>s.status==='Active').length} Active · ${filtered.filter(s=>s.status==='Testing').length} Testing · ${registry.counts.planned} Planned candidates excluded from this grid`;
     grid.innerHTML = filtered.map(skill => `
       <article class="skill-card" tabindex="0" role="button" data-skill="${skill.id}" aria-label="Open ${escapeAttr(skill.name)} details">
         <div class="topline"><span class="skill-id">${skill.id} · v${skill.version}</span><span class="skill-status ${skill.status}">${skill.status.toUpperCase()}</span></div>
