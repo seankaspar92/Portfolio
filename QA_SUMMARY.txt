@@ -1,21 +1,44 @@
-PORTFOLIO v1.7 LAUNCH QA
+PORTFOLIO v2.0 GATE 6 QA
 ========================
-Pages checked: 8
-Internal link references checked: 55
-Asset references checked: 10
-External links identified: 18
+As of: 2026-09-10
 
-Final local link/asset issues: 0
+Public page inventory: 11
+- Home
+- AI Operating System
+- HOPS
+- AI Skills
+- EDGE Sports Analytics
+- GOTS + Career Evidence Engine
+- Career Intelligence
+- Army Leadership & Operations
+- MBA Business Portfolio
+- Evidence
+- Resume
 
-Required launch files:
-- Resume PDF: PASS
-- Resume DOCX: PASS
-- CSS: PASS
-- JS: PASS
-- 404 page: PASS
-- .nojekyll: PASS
-- robots.txt: PASS
-- sitemap.xml: PASS
+CONFIGURATION CHECKS
+- GitHub Pages live base: PASS
+- robots.txt live sitemap URL: PASS
+- sitemap includes HOPS: PASS
+- sitemap includes AI Skills: PASS
+- v2.0 manifest page inventory: PASS
 
-Remaining pre-launch action:
-Replace YOUR-DOMAIN.example after GitHub Pages assigns the final URL.
+EVIDENCE-BOUNDARY CHECKS
+- HOPS independent/synthetic boundary: PASS
+- HOPS v2.3 release-candidate metrics: PASS
+- MLB EDGE v0.2.2 locally validated baseline: PASS
+- MLB EDGE v0.3.0 Candidate boundary: PASS
+- NFL EDGE Week 1 DST-safe kickoff hardening: PASS
+- NFL historical provenance live-prediction overclaim: BLOCKED BY POLICY/QA
+
+AI SKILLS LIFECYCLE CHECK
+- Active + Testing governed skills: 47
+- Active: 30
+- Testing: 17
+- Planned external candidates: 339
+- Canonical registry entries: 386
+- Planned candidates excluded from demonstrated capability count: PASS
+
+REMAINING RELEASE GATE
+- Gate 7: final resume/evidence cross-artifact audit and final system scan.
+
+launch_ready remains FALSE until Gate 7 passes.
