@@ -1,32 +1,47 @@
 {
-  "version": "1.7",
-  "html_pages_checked": [
-    "aios.html",
-    "career.html",
-    "edge.html",
-    "evidence.html",
-    "gots.html",
+  "version": "2.0",
+  "as_of": "2026-09-10",
+  "verification_mode": "source readback plus repository regression contract; final live-page verification follows resume/evidence audit",
+  "public_pages": [
     "index.html",
+    "aios.html",
+    "hops.html",
+    "skills.html",
+    "edge.html",
+    "gots.html",
+    "career.html",
+    "army.html",
+    "mba.html",
+    "evidence.html",
     "resume.html"
   ],
-  "internal_link_count": 55,
-  "asset_reference_count": 10,
-  "external_link_count": 18,
-  "issues": [],
-  "required_files": {
-    "resume_pdf": true,
-    "resume_docx": true,
-    "styles": true,
-    "script": true,
-    "favicon": true,
-    "404": true,
-    "nojekyll": true,
-    "robots": true,
-    "sitemap": true
+  "checks": {
+    "portfolio_version_2_0": true,
+    "live_github_pages_base_configured": true,
+    "robots_uses_live_sitemap": true,
+    "sitemap_contains_hops": true,
+    "sitemap_contains_skills": true,
+    "hops_independence_boundary_present": true,
+    "hops_v2_3_validation_metrics_present": true,
+    "mlb_v0_2_2_validated_baseline_present": true,
+    "mlb_v0_3_0_candidate_boundary_present": true,
+    "nfl_week1_kickoff_hardening_present": true,
+    "nfl_live_prediction_overclaim_blocked": true,
+    "skills_active_testing_count": 47,
+    "skills_active_count": 30,
+    "skills_testing_count": 17,
+    "skills_planned_candidates": 339,
+    "skills_registry_entries": 386,
+    "planned_skills_excluded_from_capability_claim": true,
+    "resume_pdf_declared": true,
+    "resume_docx_declared": true,
+    "canonical_claim_registry_present": true,
+    "portfolio_regression_workflow_present": true
   },
+  "issues": [
+    "Final cross-artifact resume/evidence audit remains Gate 7 before launch_ready is promoted."
+  ],
   "launch_blockers": [
-    "Replace YOUR-DOMAIN.example in robots.txt and sitemap.xml after the live URL is known.",
-    "MLB EDGE remains an active build pending repository publication/audit.",
-    "Concept graphics should remain labeled illustrative until replaced by real screenshots or evidence-native visuals."
+    "Complete Gate 7 resume/evidence alignment and final live/system scan."
   ]
 }
