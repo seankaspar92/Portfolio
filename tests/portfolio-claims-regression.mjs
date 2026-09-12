@@ -30,7 +30,11 @@ if(String(plannedCount)!==claims.claims.ai_skills_planned.value)fail(`AI planned
 if(String(registryTotal)!==claims.claims.ai_skills_registry_total.value)fail(`AI registry-total drift: registry ${registryTotal} claims ${claims.claims.ai_skills_registry_total.value}`);else pass('AI registry total reconciled to skills-data.js');
 if(skillCount!==activeCount+testingCount)fail('Active + Testing does not equal governed public skill total');else pass('Active + Testing relationship reconciled');
 if(registryTotal!==skillCount+plannedCount)fail('Governed public skills + Planned does not equal registry total');else pass('Registry lifecycle totals reconcile');
-if(!/\{id:"SKL-011",name:"tailor_resume_to_job",version:"1\.0",status:"Active"/.test(skills))fail('SKL-011 Active promotion missing or regressed');else pass('SKL-011 Active lifecycle promotion preserved');
+const mustBeActive=['SKL-004','SKL-005','SKL-006','SKL-007','SKL-008','SKL-009','SKL-010','SKL-011','SKL-031','SKL-032','SKL-033'];
+for(const id of mustBeActive){const re=new RegExp(`\\{id:\"${id}\",[^\\n]*status:\"Active\"`);if(!re.test(skills))fail(`${id} Active promotion missing or regressed`);else pass(`${id} Active lifecycle preserved`);}
+const mustRemainTesting=['SKL-003','SKL-034','SKL-037','SKL-038','SKL-045','SKL-386'];
+for(const id of mustRemainTesting){const re=new RegExp(`\\{id:\"${id}\",[^\\n]*status:\"Testing\"`);if(!re.test(skills))fail(`${id} Testing evidence gate missing or regressed`);else pass(`${id} Testing evidence gate preserved`);}
+if(activeCount!==41||testingCount!==6)fail(`Expected reconciled lifecycle composition 41 Active / 6 Testing, got ${activeCount}/${testingCount}`);else pass('Reconciled 41 Active / 6 Testing composition preserved');
 if(`${career.decision_thresholds.apply_min.toFixed(1)}+`!==claims.claims.career_apply_threshold.value)fail('career APPLY threshold drift');else pass('Career threshold reconciled to CAR-M001 contract');
 const projectCount=(index.match(/class="landing-project-card(?:\s|\")/g)||[]).length;
 if(String(projectCount)!==claims.claims.featured_projects.value)fail(`featured-project count drift: ${projectCount}`);else pass('featured-project count derived from homepage cards');
