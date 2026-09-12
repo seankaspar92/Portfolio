@@ -1,6 +1,6 @@
 {
-  "version": "2.0",
-  "generated_at": "2026-09-10",
+  "version": "2.1-sync",
+  "generated_at": "2026-09-12",
   "pages": [
     "index.html",
     "aios.html",
@@ -17,22 +17,27 @@
   "evidence_policy": "Only verified implementation, documented workflow, retained validation, or sanitized real operating-use claims are public evidence.",
   "concept_graphics": [],
   "evidence_replacement_status": {
-    "aios": "verified release evidence and source links present",
-    "hops": "sanitized independent v2.3 release-candidate case study added; employer branding excluded",
-    "skills": "canonical lifecycle snapshot reconciled: 47 Active/Testing governed skills; 339 Planned candidates excluded from capability claims",
-    "edge": "NFL EDGE current hardening reflected; MLB EDGE repository established and governed by explicit v0.2.2 Validated to v0.3.0 Candidate maturity gates",
-    "gots": "sanitized operating and career-evidence examples added",
-    "career": "sanitized end-to-end opportunity evaluation case added",
+    "aios": "v1.0.0 / Phase 24 remains the verified runtime release; Phase 25 is bounded post-v1 developer-context tooling",
+    "hops": "sanitized independent v2.6 release-candidate case study and public validation evidence added; synthetic/employer boundaries preserved",
+    "skills": "canonical lifecycle snapshot rechecked 2026-09-12: 47 Active/Testing governed skills; 339 Planned candidates excluded from capability claims",
+    "edge": "NFL EDGE current hardening retained; MLB EDGE remains governed by explicit v0.2.2 Validated to v0.3.0 Candidate maturity gates",
+    "gots": "sanitized operating and career-evidence examples retained",
+    "career": "sanitized end-to-end opportunity evaluation case retained",
     "army": "source-backed leadership and operations evidence retained",
     "mba": "boardroom decision-brief evidence retained"
   },
   "resume": {
-    "source": "Sean_Kaspar_Resume(6).docx",
+    "current_public_source": "Sean_Kaspar_Resume(6).docx",
+    "next_canonical_source": "Sean_Kaspar_Resume_12SEP26.docx",
     "formats": ["files/Sean_Kaspar_Resume.docx", "files/Sean_Kaspar_Resume.pdf"],
-    "status": "aligned across browser, DOCX, and PDF; Gate 7 complete",
+    "status": "v2.1 parity gate OPEN: new canonical resume verified, but browser/DOCX/PDF must be replaced and validated together before launch_ready may return true",
     "browser_page": "resume.html"
   },
-  "launch_ready": true,
+  "launch_ready": false,
+  "launch_blockers": [
+    "Synchronize browser resume, downloadable DOCX, and downloadable PDF to Sean_Kaspar_Resume_12SEP26.docx as one parity-controlled change.",
+    "Rerun Portfolio v2.1 QA after all public pages, claim registry, resume artifacts, sitemap/robots, and evidence controls are reconciled."
+  ],
   "deployment_target": "GitHub Pages",
   "live_url": "https://seankaspar92.github.io/Portfolio/",
   "qa_report": "QA_REPORT.json",

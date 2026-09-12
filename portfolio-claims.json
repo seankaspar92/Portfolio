@@ -1,23 +1,25 @@
 {
-  "schema": "portfolio-public-claims-v1.0",
-  "generated_at": "2026-09-10",
+  "schema": "portfolio-public-claims-v1.1",
+  "generated_at": "2026-09-12",
   "policy": {
     "public_safe_only": true,
     "fallback_behavior": "Keep evidence-reviewed HTML fallback when registry loading fails.",
     "claim_states": ["VERIFIED", "BOUNDED", "DERIVED"]
   },
   "claims": {
-    "service_years": {"value":"13+","label":"YEARS OF SERVICE","status":"VERIFIED","source_class":"career evidence","evidence_ref":"army.html","last_verified":"2026-09-05","public_safe":true},
-    "soldiers_trained": {"value":"4,800","label":"SOLDIERS TRAINED","status":"VERIFIED","source_class":"source-backed leadership evidence","evidence_ref":"army.html","last_verified":"2026-09-05","public_safe":true},
-    "featured_projects": {"value":"8","label":"FEATURED PROJECTS","status":"DERIVED","source_class":"portfolio structure","evidence_ref":"index.html#projects","last_verified":"2026-09-10","public_safe":true},
-    "aios_release": {"value":"v1.0.0","label":"AIOS RELEASE","status":"VERIFIED","source_class":"release evidence","evidence_ref":"aios.html#engineering-evidence","last_verified":"2026-09-05","public_safe":true},
-    "aios_release_commit": {"value":"99cb97a","label":"AIOS RELEASE COMMIT","status":"VERIFIED","source_class":"release commit","evidence_ref":"aios.html#engineering-evidence","last_verified":"2026-09-05","public_safe":true},
-    "mba_credential": {"value":"MBA","label":"BUSINESS LEADERSHIP","status":"VERIFIED","source_class":"education evidence","evidence_ref":"mba.html","last_verified":"2026-09-05","public_safe":true},
-    "ai_skills_count": {"value":"47","label":"ACTIVE + TESTING AI SKILLS","status":"VERIFIED","source_class":"canonical governed skills registry snapshot","evidence_ref":"skills-data.js","last_verified":"2026-09-10","public_safe":true},
-    "ai_skills_registry_total": {"value":"386","label":"REGISTERED SKILL ENTRIES","status":"VERIFIED","source_class":"canonical governed skills registry","evidence_ref":"skills-data.js","last_verified":"2026-09-10","public_safe":true},
-    "ai_skills_planned": {"value":"339","label":"PLANNED EXTERNAL CANDIDATES","status":"VERIFIED","source_class":"canonical governed skills registry","evidence_ref":"skills-data.js","last_verified":"2026-09-10","public_safe":true},
-    "career_apply_threshold": {"value":"8.0+","label":"GOVERNED APPLY GATE","status":"VERIFIED","source_class":"canonical scoring contract","evidence_ref":"career-score-contract.json","last_verified":"2026-09-05","public_safe":true},
-    "hops_release": {"value":"v2.3 RC","label":"HOPS RELEASE CANDIDATE","status":"VERIFIED","source_class":"retained release-candidate test evidence","evidence_ref":"hops.html#validation","last_verified":"2026-09-10","public_safe":true},
-    "hops_regression": {"value":"74 / 74","label":"HOPS REGRESSION TESTS","status":"VERIFIED","source_class":"retained release-candidate test report","evidence_ref":"hops.html#validation","last_verified":"2026-09-10","public_safe":true}
+    "service_years": {"value":"12+","label":"YEARS OF SERVICE","status":"VERIFIED","source_class":"career evidence","evidence_ref":"army.html","last_verified":"2026-09-12","public_safe":true},
+    "soldiers_trained": {"value":"4,800","label":"SOLDIERS TRAINED","status":"VERIFIED","source_class":"source-backed leadership evidence","evidence_ref":"army.html","last_verified":"2026-09-12","public_safe":true},
+    "featured_projects": {"value":"8","label":"FEATURED PROJECTS","status":"DERIVED","source_class":"portfolio structure","evidence_ref":"index.html#projects","last_verified":"2026-09-12","public_safe":true},
+    "aios_release": {"value":"v1.0.0","label":"AIOS RELEASE","status":"VERIFIED","source_class":"release evidence","evidence_ref":"aios.html#engineering-evidence","last_verified":"2026-09-12","public_safe":true},
+    "aios_release_commit": {"value":"99cb97a","label":"AIOS RELEASE COMMIT","status":"VERIFIED","source_class":"release commit","evidence_ref":"aios.html#engineering-evidence","last_verified":"2026-09-12","public_safe":true},
+    "mba_credential": {"value":"MBA","label":"BUSINESS LEADERSHIP","status":"VERIFIED","source_class":"education evidence","evidence_ref":"mba.html","last_verified":"2026-09-12","public_safe":true},
+    "ai_skills_count": {"value":"47","label":"ACTIVE + TESTING AI SKILLS","status":"VERIFIED","source_class":"canonical governed skills registry snapshot","evidence_ref":"skills-data.js","last_verified":"2026-09-12","public_safe":true},
+    "ai_skills_registry_total": {"value":"386","label":"REGISTERED SKILL ENTRIES","status":"VERIFIED","source_class":"canonical governed skills registry","evidence_ref":"skills-data.js","last_verified":"2026-09-12","public_safe":true},
+    "ai_skills_planned": {"value":"339","label":"PLANNED EXTERNAL CANDIDATES","status":"VERIFIED","source_class":"canonical governed skills registry","evidence_ref":"skills-data.js","last_verified":"2026-09-12","public_safe":true},
+    "career_apply_threshold": {"value":"8.0+","label":"GOVERNED APPLY GATE","status":"VERIFIED","source_class":"canonical scoring contract","evidence_ref":"career-score-contract.json","last_verified":"2026-09-12","public_safe":true},
+    "hops_release": {"value":"v2.6 RC","label":"HOPS RELEASE CANDIDATE","status":"VERIFIED","source_class":"retained synthetic release-candidate test evidence","evidence_ref":"evidence/HOPS_v2_6_PUBLIC_VALIDATION.md","last_verified":"2026-09-12","public_safe":true},
+    "hops_regression": {"value":"92 / 92","label":"HOPS AUTOMATED TESTS","status":"VERIFIED","source_class":"retained release-candidate test report","evidence_ref":"evidence/HOPS_v2_6_PUBLIC_VALIDATION.md","last_verified":"2026-09-12","public_safe":true},
+    "hops_security": {"value":"44 / 44","label":"HOPS SECURITY INVARIANTS","status":"VERIFIED","source_class":"retained release-candidate test report","evidence_ref":"evidence/HOPS_v2_6_PUBLIC_VALIDATION.md","last_verified":"2026-09-12","public_safe":true},
+    "hops_browser_qa": {"value":"50 / 50","label":"HOPS BROWSER QA","status":"VERIFIED","source_class":"retained release-candidate test report","evidence_ref":"evidence/HOPS_v2_6_PUBLIC_VALIDATION.md","last_verified":"2026-09-12","public_safe":true}
   }
 }

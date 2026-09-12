@@ -1,7 +1,7 @@
 {
-  "version": "2.0",
-  "as_of": "2026-09-10",
-  "verification_mode": "source readback, artifact integrity verification, repository regression contract, authoritative project-state reconciliation, Drive control-plane rescan, and GitHub Pages deployment verification",
+  "version": "2.1-sync",
+  "as_of": "2026-09-12",
+  "verification_mode": "cross-project evidence reconciliation, repository regression contract, public-claim boundary review, and resume parity gate",
   "public_pages": [
     "index.html",
     "aios.html",
@@ -16,42 +16,43 @@
     "resume.html"
   ],
   "checks": {
-    "portfolio_version_2_0": true,
+    "portfolio_v2_1_sync_open": true,
     "live_github_pages_base_configured": true,
     "robots_uses_live_sitemap": true,
-    "sitemap_contains_hops": true,
-    "sitemap_contains_skills": true,
+    "sitemap_contains_all_public_pages": true,
     "hops_independence_boundary_present": true,
-    "hops_v2_3_validation_metrics_present": true,
-    "hops_drive_branding_reconciled": true,
+    "hops_v2_6_validation_metrics_present": true,
+    "hops_v2_6_public_validation_artifact_present": true,
     "hops_company_vs_project_boundary_preserved": true,
+    "aios_v1_release_boundary_preserved": true,
+    "aios_phase25_developer_tool_boundary_present": true,
     "mlb_v0_2_2_validated_baseline_present": true,
     "mlb_v0_3_0_candidate_boundary_present": true,
-    "mlb_authoritative_project_state_reconciled": true,
     "nfl_week1_kickoff_hardening_present": true,
+    "nfl_weekly_production_loop_marked_next_gate": true,
     "nfl_live_prediction_overclaim_blocked": true,
-    "nfl_authoritative_main_reconciled": true,
     "skills_active_testing_count": 47,
     "skills_active_count": 30,
     "skills_testing_count": 17,
     "skills_planned_candidates": 339,
     "skills_registry_entries": 386,
     "planned_skills_excluded_from_capability_claim": true,
-    "skl_386_hops_branding_and_testing_state_reconciled": true,
-    "hub_project_map_reconciled": true,
-    "hub_system_registry_reconciled": true,
-    "resume_browser_aligned": true,
-    "resume_docx_integrity_verified": true,
-    "resume_pdf_integrity_verified": true,
-    "resume_50_plus_evaluations_present": true,
-    "evidence_policy_v2_boundaries_present": true,
+    "skills_qa_relationship_based": true,
     "canonical_claim_registry_present": true,
     "portfolio_regression_workflow_present": true,
-    "pages_deployment_pipeline_verified": true,
-    "gate_7_complete": true,
-    "gate_7_passed": true,
-    "final_system_scan_passed": true
+    "new_canonical_resume_verified": true,
+    "new_canonical_resume_visual_qa_passed": true,
+    "resume_browser_aligned_to_12sep26": false,
+    "resume_docx_replaced_with_12sep26": false,
+    "resume_pdf_replaced_with_12sep26": false,
+    "gate_7_complete": false,
+    "gate_7_passed": false,
+    "final_system_scan_passed": false
   },
-  "issues": [],
-  "launch_blockers": []
+  "issues": [
+    "The September 12 canonical resume renders cleanly, but the GitHub-connected write surface does not expose direct binary upload from the mounted Drive file. Browser/DOCX/PDF parity therefore remains open."
+  ],
+  "launch_blockers": [
+    "Replace resume.html, files/Sean_Kaspar_Resume.docx, and files/Sean_Kaspar_Resume.pdf together from Sean_Kaspar_Resume_12SEP26.docx, then rerun the full Portfolio v2.1 QA suite."
+  ]
 }
