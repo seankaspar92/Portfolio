@@ -21,7 +21,16 @@ for(const key of new Set(refs)){
 const required=['service_years','soldiers_trained','featured_projects','aios_release','mba_credential','ai_skills_count','career_apply_threshold','hops_release','hops_regression','hops_security','hops_browser_qa'];
 for(const key of required)if(!claims.claims[key])fail(`required canonical claim missing: ${key}`);
 const skillCount=Number((skills.match(/counts:\s*\{\s*total:\s*(\d+)/)||[])[1]);
+const activeCount=Number((skills.match(/counts:\s*\{[^}]*active:\s*(\d+)/)||[])[1]);
+const testingCount=Number((skills.match(/counts:\s*\{[^}]*testing:\s*(\d+)/)||[])[1]);
+const plannedCount=Number((skills.match(/counts:\s*\{[^}]*planned:\s*(\d+)/)||[])[1]);
+const registryTotal=Number((skills.match(/counts:\s*\{[^}]*registryTotal:\s*(\d+)/)||[])[1]);
 if(String(skillCount)!==claims.claims.ai_skills_count.value)fail(`AI skills count drift: registry ${skillCount} claims ${claims.claims.ai_skills_count.value}`);else pass('AI skills count reconciled to skills-data.js');
+if(String(plannedCount)!==claims.claims.ai_skills_planned.value)fail(`AI planned-skill drift: registry ${plannedCount} claims ${claims.claims.ai_skills_planned.value}`);else pass('Planned skill inventory reconciled to skills-data.js');
+if(String(registryTotal)!==claims.claims.ai_skills_registry_total.value)fail(`AI registry-total drift: registry ${registryTotal} claims ${claims.claims.ai_skills_registry_total.value}`);else pass('AI registry total reconciled to skills-data.js');
+if(skillCount!==activeCount+testingCount)fail('Active + Testing does not equal governed public skill total');else pass('Active + Testing relationship reconciled');
+if(registryTotal!==skillCount+plannedCount)fail('Governed public skills + Planned does not equal registry total');else pass('Registry lifecycle totals reconcile');
+if(!/\{id:"SKL-011",name:"tailor_resume_to_job",version:"1\.0",status:"Active"/.test(skills))fail('SKL-011 Active promotion missing or regressed');else pass('SKL-011 Active lifecycle promotion preserved');
 if(`${career.decision_thresholds.apply_min.toFixed(1)}+`!==claims.claims.career_apply_threshold.value)fail('career APPLY threshold drift');else pass('Career threshold reconciled to CAR-M001 contract');
 const projectCount=(index.match(/class="landing-project-card(?:\s|\")/g)||[]).length;
 if(String(projectCount)!==claims.claims.featured_projects.value)fail(`featured-project count drift: ${projectCount}`);else pass('featured-project count derived from homepage cards');
