@@ -16,7 +16,8 @@ Close the cross-project audit findings and restore the public portfolio to a cur
 - AIOS public case study records Phase 25 Context Mode as post-v1 developer tooling while preserving v1.0.0 / Phase 24 as the stable runtime contract.
 - NFL EDGE current hardening retained and the real weekly production feedback loop explicitly labeled as the next gate rather than completed capability.
 - MLB maturity boundary preserved: v0.2.2 locally validated, v0.3.0 Candidate until authentic local validation passes.
-- AI Skills QA changed from frozen lifecycle constants to relationship-based checks while retaining the current 30 Active, 17 Testing, 339 Planned, 386-entry snapshot.
+- AI Skills QA changed from frozen lifecycle constants to relationship-based checks. The initial v2.1 release snapshot was 30 Active, 17 Testing, 339 Planned, and 386 registry entries.
+- Post-release lifecycle reconciliation on September 12 promoted SKL-011 `tailor_resume_to_job` to Active after governed field validation and incorporated 11 newly registered Planned LinkedIn candidates. Current snapshot: 31 Active, 16 Testing, 350 Planned, 397 entries total; Active + Testing remains 47.
 - Service-years canonical claim corrected to 12+, with rendered homepage fallback reconciliation.
 - September 12 canonical resume evidence set synchronized across browser resume and public download artifacts.
 - The original canonical DOCX source hash is retained separately from the compact public DOCX hash so the release does not claim byte-for-byte identity where the public artifact was regenerated.
@@ -41,7 +42,7 @@ Close the cross-project audit findings and restore the public portfolio to a cur
 - Do not claim HOPS can approve configuration, release production, accept assets, order spares, task workforce, or issue mission tasking.
 - Do not promote MLB EDGE v0.3.0 beyond Candidate until authentic local validation is recorded.
 - Do not represent AIOS Context Mode as a production runtime feature.
-- Do not count Planned ECC-derived skills as demonstrated capability.
+- Do not count Planned external skills as demonstrated capability.
 - Do not treat a green synchronization test as evidence for capability outside the claims explicitly covered by the portfolio evidence policy.
 
 ## Release gate
