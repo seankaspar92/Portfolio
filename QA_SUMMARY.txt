@@ -36,13 +36,18 @@ EVIDENCE-BOUNDARY CHECKS
 
 AI SKILLS LIFECYCLE CHECK
 - Active + Testing governed skills: 47
-- Active: 31
-- Testing: 16
+- Active: 41
+- Testing: 6
 - Planned external candidates: 350
 - Canonical registry entries: 397
+- SKL-004 through SKL-010 semantic foundation: ACTIVE after controlled thresholds plus representative field validation
 - SKL-011 tailor_resume_to_job: ACTIVE after controlled regression plus 3 representative field validations; hard gaps preserved
+- SKL-031 audit_IDES_evidence: ACTIVE after 3 authorized real reviews including missing-record and chronology-ambiguity cases plus privacy audit
+- SKL-032 calculate_veteran_benefit_scenario: ACTIVE after 5 current federal/state planning scenarios with official-source and uncertainty controls
+- SKL-033 evaluate_location_for_family: ACTIVE after 3 real comparisons including hard rejection and close-call tradeoff
+- SKL-003, SKL-034, SKL-037, SKL-038, SKL-045, and SKL-386 remain TESTING pending their explicit evidence gates
 - Planned candidates excluded from demonstrated capability count: PASS
-- Lifecycle QA uses relationship checks instead of frozen date/count assertions: PASS
+- Lifecycle QA uses relationship checks plus promotion/blocker assertions: PASS
 
 CLAIM REGISTRY
 - Canonical claim registry generated_at: 2026-09-12
@@ -68,6 +73,7 @@ FINAL CROSS-SYSTEM SCAN
 - AIOS v1 / Phase 25 boundary reconciled: PASS
 - EDGE maturity boundaries and next gates reconciled: PASS
 - AI Skills lifecycle relationships reconciled: PASS
+- Ten validated promotions and six unresolved Testing gates explicitly bound in regression: PASS
 - Resume browser/DOCX/PDF evidence parity reconciled: PASS
 - Claim registry / manifest / QA contract reconciled: PASS
 - Residual release documentation reconciled: PASS
@@ -76,5 +82,6 @@ RELEASE STATE
 - Gate 7: PASSED in release candidate contract
 - Final system scan: PASSED in release candidate contract
 - launch_ready: TRUE in v2.1 manifest
-- Open QA blockers: 0
+- Open Portfolio release blockers: 0
+- External/private operational evidence gates remain tracked outside Portfolio release state
 - Merge authorization: ONLY after Portfolio QA passes on the exact PR head
