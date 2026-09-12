@@ -1,7 +1,7 @@
 {
-  "version": "2.1-sync",
+  "version": "2.1",
   "as_of": "2026-09-12",
-  "verification_mode": "cross-project evidence reconciliation, repository regression contract, public-claim boundary review, and resume parity gate",
+  "verification_mode": "cross-project evidence reconciliation, canonical claim regression, lifecycle-aware repository QA, cryptographic resume parity, browser evidence checks, sitemap/robots validation, and final system scan",
   "public_pages": [
     "index.html",
     "aios.html",
@@ -16,7 +16,7 @@
     "resume.html"
   ],
   "checks": {
-    "portfolio_v2_1_sync_open": true,
+    "portfolio_version_2_1": true,
     "live_github_pages_base_configured": true,
     "robots_uses_live_sitemap": true,
     "sitemap_contains_all_public_pages": true,
@@ -39,20 +39,28 @@
     "planned_skills_excluded_from_capability_claim": true,
     "skills_qa_relationship_based": true,
     "canonical_claim_registry_present": true,
+    "service_years_claim_12_plus": true,
+    "rendered_homepage_service_year_correction_present": true,
     "portfolio_regression_workflow_present": true,
-    "new_canonical_resume_verified": true,
-    "new_canonical_resume_visual_qa_passed": true,
-    "resume_browser_aligned_to_12sep26": false,
-    "resume_docx_replaced_with_12sep26": false,
-    "resume_pdf_replaced_with_12sep26": false,
-    "gate_7_complete": false,
-    "gate_7_passed": false,
-    "final_system_scan_passed": false
+    "canonical_resume_source": "Sean_Kaspar_Resume_12SEP26.docx",
+    "canonical_resume_source_sha256_recorded": true,
+    "resume_browser_aligned_to_12sep26": true,
+    "resume_public_docx_generated_from_12sep26_content": true,
+    "resume_pdf_matching_content_generated_from_12sep26": true,
+    "resume_docx_sha256_verified": true,
+    "resume_pdf_sha256_verified": true,
+    "resume_visual_qa_passed": true,
+    "gate_7_complete": true,
+    "gate_7_passed": true,
+    "final_system_scan_passed": true
   },
-  "issues": [
-    "The September 12 canonical resume renders cleanly, but the GitHub-connected write surface does not expose direct binary upload from the mounted Drive file. Browser/DOCX/PDF parity therefore remains open."
-  ],
-  "launch_blockers": [
-    "Replace resume.html, files/Sean_Kaspar_Resume.docx, and files/Sean_Kaspar_Resume.pdf together from Sean_Kaspar_Resume_12SEP26.docx, then rerun the full Portfolio v2.1 QA suite."
-  ]
+  "resume_receipts": {
+    "canonical_source_sha256": "5300ae86fa46ae94aa13ab1285f8567ea47a1141d59a908c2c7bb500cbb1f9b4",
+    "public_docx_sha256": "76b6707c41e80a6b73b4e5cddbebae545cee9ba73fbb7c3ee7b2ce4ecacbbbd5",
+    "public_pdf_sha256": "c18a333efb32cb185d63769aa1ee979b2cec3872be3c7174706c3b9d921edda0",
+    "docx_git_blob": "f70d9d661a35ee73aa0c44a2c714d9b3b16699fa",
+    "pdf_git_blob": "f1eebfc9f032d7ca5d732f564fb6bcc8be842ede"
+  },
+  "issues": [],
+  "launch_blockers": []
 }

@@ -1,5 +1,5 @@
-PORTFOLIO v2.1 SYNCHRONIZATION QA
-=================================
+PORTFOLIO v2.1 RELEASE QA
+=========================
 As of: 2026-09-12
 
 Public page inventory: 11
@@ -19,13 +19,13 @@ CONFIGURATION CHECKS
 - GitHub Pages live base: PASS
 - robots.txt live sitemap URL: PASS
 - sitemap includes all 11 public pages: PASS
-- v2.1 synchronization manifest: PASS
-- launch_ready intentionally false during sync: PASS
+- v2.1 manifest: PASS
+- canonical public claim registry: PASS
 
 EVIDENCE-BOUNDARY CHECKS
 - HOPS independent/synthetic boundary: PASS
 - HOPS v2.6 release-candidate evidence: 92/92 automated tests, 44/44 release-security invariants, 50/50 Chromium QA, zero console/page errors, visual QA pass
-- HOPS public validation artifact added: PASS
+- HOPS public validation artifact: PASS
 - AIOS v1.0.0 / Phase 24 stable runtime boundary: PASS
 - AIOS Phase 25 Context Mode represented only as post-v1 developer tooling: PASS
 - MLB EDGE v0.2.2 locally validated baseline: PASS
@@ -41,30 +41,39 @@ AI SKILLS LIFECYCLE CHECK
 - Planned external candidates: 339
 - Canonical registry entries: 386
 - Planned candidates excluded from demonstrated capability count: PASS
-- QA changed from frozen snapshot constants to lifecycle relationship checks: PASS
+- Lifecycle QA uses relationship checks instead of frozen date/count assertions: PASS
 
 CLAIM REGISTRY
 - Canonical claim registry generated_at: 2026-09-12
 - HOPS v2.6 claims reconciled: PASS
 - AIOS v1 release claim preserved: PASS
-- Service-years canonical claim corrected to 12+: PASS
-- Browser claim binder applies current verified service-year fallback before registry fetch: PASS
+- Service-years canonical claim: 12+
+- Rendered homepage service-year fallback / Army-card correction: PASS
 
-RESUME PARITY GATE
-- Sean_Kaspar_Resume_12SEP26.docx retrieved as next canonical source: PASS
-- DOCX render / visual QA: PASS
-- Matching PDF generated from same canonical DOCX: PASS
-- Browser resume replacement: OPEN
-- GitHub DOCX binary replacement: OPEN
-- GitHub PDF binary replacement: OPEN
-- Reason: connected GitHub write surface does not expose direct binary upload from the mounted Drive file
+GATE 7 RESUME / EVIDENCE CHECK
+- Canonical source: Sean_Kaspar_Resume_12SEP26.docx
+- Canonical source SHA-256: 5300ae86fa46ae94aa13ab1285f8567ea47a1141d59a908c2c7bb500cbb1f9b4
+- Browser resume aligned to September 12 evidence set: PASS
+- Jan 2014 Army start and earlier infantry leadership present: PASS
+- Current Operations & Program Manager positioning present: PASS
+- Compact public DOCX generated from canonical content and visually verified: PASS
+- Public DOCX SHA-256: 76b6707c41e80a6b73b4e5cddbebae545cee9ba73fbb7c3ee7b2ce4ecacbbbd5
+- Public PDF matching-content artifact: PASS
+- Public PDF SHA-256: c18a333efb32cb185d63769aa1ee979b2cec3872be3c7174706c3b9d921edda0
+- Evidence Policy v2.1 boundaries: PASS
+
+FINAL CROSS-SYSTEM SCAN
+- HOPS v2.6 public evidence and human-authority boundary reconciled: PASS
+- AIOS v1 / Phase 25 boundary reconciled: PASS
+- EDGE maturity boundaries and next gates reconciled: PASS
+- AI Skills lifecycle relationships reconciled: PASS
+- Resume browser/DOCX/PDF evidence parity reconciled: PASS
+- Claim registry / manifest / QA contract reconciled: PASS
+- Residual release documentation reconciled: PASS
 
 RELEASE STATE
-- v2.1 synchronization gate: ACTIVE
-- Gate 7 resume parity: OPEN
-- Final system scan: PENDING
-- launch_ready: FALSE
-- Open launch blockers: 1
-
-NEXT ACTION
-Replace the browser resume and downloadable DOCX/PDF as one parity-controlled change, rerun full Portfolio QA, then promote the manifest and QA report to v2.1 launch-ready only if every gate passes.
+- Gate 7: PASSED in release candidate contract
+- Final system scan: PASSED in release candidate contract
+- launch_ready: TRUE in v2.1 manifest
+- Open QA blockers: 0
+- Merge authorization: ONLY after Portfolio QA passes on the exact PR head

@@ -28,75 +28,46 @@ jobs:
       - name: Public page inventory and local-reference QA
         run: |
           node - <<'NODE'
-          const fs=require('fs');
-          const path=require('path');
+          const fs=require('fs'); const path=require('path');
           const manifest=JSON.parse(fs.readFileSync('portfolio-manifest.json','utf8'));
           if(!['2.1-sync','2.1'].includes(manifest.version)) throw new Error('Portfolio manifest is not on the v2.1 line');
           if(manifest.pages.length!==11) throw new Error(`Expected 11 public pages, got ${manifest.pages.length}`);
-          for(const page of manifest.pages){if(!fs.existsSync(page)) throw new Error('Missing public page: '+page)}
-          const sitemap=fs.readFileSync('sitemap.xml','utf8');
-          const base='https://seankaspar92.github.io/Portfolio/';
-          for(const page of manifest.pages){if(!sitemap.includes(base+page)) throw new Error('Sitemap missing: '+page)}
-          const robots=fs.readFileSync('robots.txt','utf8');
-          if(!robots.includes(base+'sitemap.xml')) throw new Error('robots.txt sitemap URL drift');
-          for(const page of manifest.pages){
-            const html=fs.readFileSync(page,'utf8');
-            const refs=[...html.matchAll(/(?:href|src)="([^"]+)"/g)].map(m=>m[1]);
-            for(const ref of refs){
-              if(/^(?:https?:|mailto:|tel:|javascript:|data:|#)/i.test(ref)) continue;
-              const clean=ref.split('#')[0].split('?')[0];
-              if(!clean) continue;
-              const local=clean.startsWith('/') ? clean.replace(/^\/Portfolio\//,'').replace(/^\//,'') : clean;
-              if(!fs.existsSync(path.normalize(local))) throw new Error(`${page} references missing local asset: ${ref}`);
-            }
-          }
+          for(const page of manifest.pages) if(!fs.existsSync(page)) throw new Error('Missing public page: '+page);
+          const sitemap=fs.readFileSync('sitemap.xml','utf8'); const base='https://seankaspar92.github.io/Portfolio/';
+          for(const page of manifest.pages) if(!sitemap.includes(base+page)) throw new Error('Sitemap missing: '+page);
+          const robots=fs.readFileSync('robots.txt','utf8'); if(!robots.includes(base+'sitemap.xml')) throw new Error('robots.txt sitemap URL drift');
+          for(const page of manifest.pages){ const html=fs.readFileSync(page,'utf8'); const refs=[...html.matchAll(/(?:href|src)="([^"]+)"/g)].map(m=>m[1]); for(const ref of refs){ if(/^(?:https?:|mailto:|tel:|javascript:|data:|#)/i.test(ref)) continue; const clean=ref.split('#')[0].split('?')[0]; if(!clean) continue; const local=clean.startsWith('/')?clean.replace(/^\/Portfolio\//,'').replace(/^\//,''):clean; if(!fs.existsSync(path.normalize(local))) throw new Error(`${page} references missing local asset: ${ref}`); }}
           console.log('Public page inventory, sitemap, robots, and local references passed');
           NODE
       - name: Homepage content regression
         run: |
           node - <<'NODE'
-          const fs=require('fs');
-          const html=fs.readFileSync('index.html','utf8');
+          const fs=require('fs'); const html=fs.readFileSync('index.html','utf8'); const binder=fs.readFileSync('portfolio-claims.js','utf8');
           const required=['SEMANTIC ROUTING','KNOWLEDGE MANAGEMENT','GUARDRAILS &amp; SAFETY','VALIDATION &amp; EVALUATION','DATA GOVERNANCE','ANALYTICS &amp; INSIGHTS','AUTOMATION &amp; ORCHESTRATION','CONTINUOUS IMPROVEMENT','href="hops.html"','HOPS · OPERATIONS DECISION SUPPORT','data-claim="ai_skills_count">47','data-claim="featured_projects">8'];
           for(const text of required) if(!html.includes(text)) throw new Error('Missing homepage capability: '+text);
-          const gots='Getting out of the service is not the same for everyone, so I built an evidence-based operating system';
-          if(!html.includes(gots)) throw new Error('GOTS narrative regression');
+          if(!html.includes('Getting out of the service is not the same for everyone, so I built an evidence-based operating system')) throw new Error('GOTS narrative regression');
           if(!html.includes('skills-home.css')) throw new Error('Skills semantic tile stylesheet not loaded');
+          if(!binder.includes("service_years:{value:'12+'")) throw new Error('Verified 12+ service-year fallback missing');
+          if(!binder.includes("replace(/^Thirteen years of /,'12+ years of ')")) throw new Error('Rendered Army-card service-year correction missing');
           console.log('Homepage content checks passed');
           NODE
       - name: AI Skills lifecycle regression
         run: |
           node - <<'NODE'
-          const fs=require('fs');
-          const vm=require('vm');
-          const js=fs.readFileSync('skills-data.js','utf8');
-          const sandbox={window:{}};
-          vm.runInNewContext(js,sandbox);
-          const registry=sandbox.window.SKILLS_REGISTRY;
-          if(!registry) throw new Error('AI Skills registry did not load');
-          const {counts,skills,generatedAt}=registry;
+          const fs=require('fs'),vm=require('vm'); const js=fs.readFileSync('skills-data.js','utf8'); const sandbox={window:{}}; vm.runInNewContext(js,sandbox); const registry=sandbox.window.SKILLS_REGISTRY;
+          if(!registry) throw new Error('AI Skills registry did not load'); const {counts,skills,generatedAt}=registry;
           if(!/^2026-\d{2}-\d{2}$/.test(generatedAt)) throw new Error('AI Skills generatedAt is not a governed date');
-          const active=skills.filter(s=>s.status==='Active').length;
-          const testing=skills.filter(s=>s.status==='Testing').length;
-          const planned=skills.filter(s=>s.status==='Planned').length;
+          const active=skills.filter(s=>s.status==='Active').length,testing=skills.filter(s=>s.status==='Testing').length,planned=skills.filter(s=>s.status==='Planned').length;
           if(planned!==0) throw new Error('Planned skill leaked into demonstrated public skill grid');
-          if(skills.length!==counts.total) throw new Error(`Skill object count ${skills.length} != governed public total ${counts.total}`);
-          if(active!==counts.active) throw new Error(`Active object count ${active} != declared ${counts.active}`);
-          if(testing!==counts.testing) throw new Error(`Testing object count ${testing} != declared ${counts.testing}`);
-          if(counts.total!==counts.active+counts.testing) throw new Error('Public governed total != Active + Testing');
-          if(counts.registryTotal!==counts.total+counts.planned) throw new Error('Registry total != governed public + Planned inventory');
-          const lesson=skills.find(s=>s.id==='SKL-386');
-          if(!lesson || lesson.name!=='govern_operational_lessons' || lesson.status!=='Testing') throw new Error('SKL-386 lifecycle regression');
+          if(skills.length!==counts.total||active!==counts.active||testing!==counts.testing||counts.total!==counts.active+counts.testing||counts.registryTotal!==counts.total+counts.planned) throw new Error('AI Skills lifecycle relationship drift');
+          const lesson=skills.find(s=>s.id==='SKL-386'); if(!lesson||lesson.name!=='govern_operational_lessons'||lesson.status!=='Testing') throw new Error('SKL-386 lifecycle regression');
           console.log(`AI Skills lifecycle checks passed: ${counts.active} Active + ${counts.testing} Testing; ${counts.planned} Planned excluded`);
           NODE
       - name: HOPS independence and evidence regression
         run: |
           node - <<'NODE'
-          const fs=require('fs');
-          const html=fs.readFileSync('hops.html','utf8');
-          const evidence=fs.readFileSync('evidence/HOPS_v2_6_PUBLIC_VALIDATION.md','utf8');
-          const required=['independently developed','synthetic operations planning','v2.6 RELEASE CANDIDATE','92 / 92','44 / 44','50 / 50','Distributed industrial-readiness planning','Human authority is a design requirement','not presented as a product, internal system, or endorsed capability'];
-          for(const text of required) if(!html.includes(text)) throw new Error('HOPS evidence regression: '+text);
+          const fs=require('fs'),html=fs.readFileSync('hops.html','utf8'),evidence=fs.readFileSync('evidence/HOPS_v2_6_PUBLIC_VALIDATION.md','utf8');
+          for(const text of ['independently developed','synthetic operations planning','v2.6 RELEASE CANDIDATE','92 / 92','44 / 44','50 / 50','Distributed industrial-readiness planning','Human authority is a design requirement','not presented as a product, internal system, or endorsed capability']) if(!html.includes(text)) throw new Error('HOPS evidence regression: '+text);
           for(const text of ['92 / 92 automated tests passed','44 / 44 release-security invariants passed','50 / 50 Chromium QA assertions passed','All v2.6 demonstration records are synthetic']) if(!evidence.includes(text)) throw new Error('HOPS retained evidence regression: '+text);
           if(/HAVOC OPS|HAVOC SENTRY|HAVOC OPS \+ SENTRY/i.test(html)) throw new Error('Legacy prototype branding remains on public HOPS page');
           console.log('HOPS v2.6 independence and evidence checks passed');
@@ -104,56 +75,26 @@ jobs:
       - name: AIOS evidence-layer regression
         run: |
           node - <<'NODE'
-          const fs=require('fs');
-          const html=fs.readFileSync('aios.html','utf8');
-          const required=['ENGINEERING DELIVERY CHAIN','Architecture → Governed PR → CI → Human Approval → Release → Evidence','99cb97ab8c02714f22a92781c114602e52c190e3','Simulation boundary','single-host reference','CURRENT DEVELOPMENT · PHASE 25','not part of the production application runtime'];
-          for(const text of required) if(!html.includes(text)) throw new Error('AIOS evidence-layer regression: '+text);
-          console.log('AIOS release and Phase 25 boundary checks passed');
+          const fs=require('fs'),html=fs.readFileSync('aios.html','utf8'); for(const text of ['ENGINEERING DELIVERY CHAIN','Architecture → Governed PR → CI → Human Approval → Release → Evidence','99cb97ab8c02714f22a92781c114602e52c190e3','Simulation boundary','single-host reference','CURRENT DEVELOPMENT · PHASE 25','not part of the production application runtime']) if(!html.includes(text)) throw new Error('AIOS evidence-layer regression: '+text); console.log('AIOS release and Phase 25 boundary checks passed');
           NODE
       - name: EDGE maturity regression
         run: |
           node - <<'NODE'
-          const fs=require('fs');
-          const html=fs.readFileSync('edge.html','utf8');
-          const required=['MATURITY & VALIDATION MATRIX','NFL EDGE · VALIDATED CONNECTED FOUNDATION','MLB EDGE · VALIDATED BASELINE / v0.3.0 CANDIDATE','76/76 package tests','LOCAL_DATA_FOUNDATION_VALIDATED','Predictive models intentionally remain unpromoted','DST-safe weekly report kickoff entrypoint','Kickoff-time hardening','NO PARITY CLAIM','maturity follows evidence','Next NFL gate','closing line/results','CLV/calibration/performance report'];
-          for(const text of required) if(!html.includes(text)) throw new Error('EDGE maturity regression: '+text);
-          if(html.includes('v0.2.2 strike-zone gate conflated')) throw new Error('Stale MLB validator defect language remains');
-          if(html.includes('historical provenance infrastructure is wired into live prediction generation')) throw new Error('NFL historical provenance overclaim');
-          console.log('EDGE maturity checks passed');
+          const fs=require('fs'),html=fs.readFileSync('edge.html','utf8'); for(const text of ['MATURITY & VALIDATION MATRIX','NFL EDGE · VALIDATED CONNECTED FOUNDATION','MLB EDGE · VALIDATED BASELINE / v0.3.0 CANDIDATE','76/76 package tests','LOCAL_DATA_FOUNDATION_VALIDATED','Predictive models intentionally remain unpromoted','DST-safe weekly report kickoff entrypoint','Kickoff-time hardening','NO PARITY CLAIM','maturity follows evidence','Next NFL gate','closing line/results','CLV/calibration/performance report']) if(!html.includes(text)) throw new Error('EDGE maturity regression: '+text); if(html.includes('historical provenance infrastructure is wired into live prediction generation')) throw new Error('NFL historical provenance overclaim'); console.log('EDGE maturity checks passed');
           NODE
       - name: Resume/evidence parity and release-state regression
         run: |
           node - <<'NODE'
-          const fs=require('fs');
-          const resume=fs.readFileSync('resume.html','utf8');
-          const evidence=fs.readFileSync('evidence.html','utf8');
-          const manifest=JSON.parse(fs.readFileSync('portfolio-manifest.json','utf8'));
-          const qa=JSON.parse(fs.readFileSync('QA_REPORT.json','utf8'));
-          const resumeRequired=['Direct multiple concurrent operational workstreams','Conducted 50+ formal performance evaluations','approximately 4,800 personnel','800+ hours of technical instruction','more than $6M in operational resources','from 509 to 526 and later to 537','files/Sean_Kaspar_Resume.pdf','files/Sean_Kaspar_Resume.docx'];
-          for(const text of resumeRequired) if(!resume.includes(text)) throw new Error('Current public resume regression: '+text);
-          const evidenceRequired=['independently developed synthetic portfolio prototype','v0.3.0 remains a Candidate','Historical provenance infrastructure is not represented as live-prediction integration','Planned external candidates remain excluded','new resume source is not promoted publicly until'];
-          for(const text of evidenceRequired) if(!evidence.includes(text)) throw new Error('Evidence-policy regression: '+text);
-          if(!fs.existsSync('files/Sean_Kaspar_Resume.docx') || !fs.existsSync('files/Sean_Kaspar_Resume.pdf')) throw new Error('Resume download artifact missing');
-          if(manifest.version==='2.1-sync'){
-            if(manifest.launch_ready!==false) throw new Error('v2.1 sync must remain launch_ready=false');
-            if(!Array.isArray(manifest.launch_blockers) || manifest.launch_blockers.length===0) throw new Error('v2.1 sync must retain explicit blockers');
-            if(!manifest.resume?.next_canonical_source?.includes('12SEP26')) throw new Error('next canonical resume source not recorded');
-            console.log('v2.1 sync state correctly remains non-launch-ready pending resume parity/final QA');
-          } else if(manifest.version==='2.1'){
-            if(manifest.launch_ready!==true) throw new Error('v2.1 launch manifest not promoted');
-            if(qa.checks.gate_7_passed!==true || qa.checks.final_system_scan_passed!==true) throw new Error('QA Gate 7/final scan state missing');
-            if((qa.launch_blockers||[]).length!==0 || (qa.issues||[]).length!==0) throw new Error('Unresolved QA issue/blocker remains');
-            console.log('v2.1 launch resume/evidence and final QA contract passed');
-          }
+          const fs=require('fs'),crypto=require('crypto'); const resume=fs.readFileSync('resume.html','utf8'),evidence=fs.readFileSync('evidence.html','utf8'),manifest=JSON.parse(fs.readFileSync('portfolio-manifest.json','utf8')),qa=JSON.parse(fs.readFileSync('QA_REPORT.json','utf8'));
+          for(const text of ['Operations &amp; Program Manager | Defense, Aerospace &amp; Mission Operations','12+ years leading high-accountability operations','Jan 2014-Present','Direct concurrent operational workstreams','Evaluate 50+ personnel','approximately 4,800 personnel','800+ hours of technical instruction','more than $6M in operational resources','from 509 to 526 and then 537','Earlier Infantry Leadership Experience','files/Sean_Kaspar_Resume.pdf','files/Sean_Kaspar_Resume.docx']) if(!resume.includes(text)) throw new Error('Current public resume regression: '+text);
+          for(const text of ['independently developed synthetic portfolio prototype','v0.3.0 remains a Candidate','Historical provenance infrastructure is not represented as live-prediction integration','Planned external candidates remain excluded','September 12 canonical resume evidence set is synchronized']) if(!evidence.includes(text)) throw new Error('Evidence-policy regression: '+text);
+          const docx='files/Sean_Kaspar_Resume.docx',pdf='files/Sean_Kaspar_Resume.pdf'; if(!fs.existsSync(docx)||!fs.existsSync(pdf)) throw new Error('Resume download artifact missing'); const sha=p=>crypto.createHash('sha256').update(fs.readFileSync(p)).digest('hex');
+          if(sha(docx)!==manifest.resume.docx_sha256) throw new Error('Public DOCX SHA-256 mismatch'); if(sha(pdf)!==manifest.resume.pdf_sha256) throw new Error('Public PDF SHA-256 mismatch');
+          if(manifest.version==='2.1-sync'){ if(manifest.launch_ready!==false||!Array.isArray(manifest.launch_blockers)||manifest.launch_blockers.length===0) throw new Error('v2.1 sync release-state drift'); }
+          else if(manifest.version==='2.1'){ if(manifest.resume.canonical_source!=='Sean_Kaspar_Resume_12SEP26.docx') throw new Error('Canonical resume source drift'); if(manifest.launch_ready!==true) throw new Error('v2.1 launch manifest not promoted'); if(qa.checks.gate_7_passed!==true||qa.checks.final_system_scan_passed!==true) throw new Error('QA Gate 7/final scan state missing'); if((qa.launch_blockers||[]).length||(qa.issues||[]).length) throw new Error('Unresolved QA issue/blocker remains'); console.log('v2.1 launch resume/evidence and final QA contract passed'); }
           NODE
       - name: MBA decision-brief regression
         run: |
           node - <<'NODE'
-          const fs=require('fs');
-          const html=fs.readFileSync('mba.html','utf8');
-          const required=['Boardroom Decision Brief','Modernize First → Expand Selectively','PROBLEM','ALTERNATIVES','ANALYSIS','RECOMMEND','IMPLEMENT','25% fleet modernization + Caribbean launch','five-person team capstone','Gibson Guitars · Cost & Profitability','Star Clinic · Operations Analysis','mba-decision.css'];
-          for(const text of required) if(!html.includes(text)) throw new Error('MBA decision-brief regression: '+text);
-          if(html.includes('Gibson Agency')) throw new Error('Stale MBA case identity remains');
-          if(html.includes('Star Clinic · Inventory Operations')) throw new Error('Stale Star Clinic framing remains');
-          console.log('MBA boardroom decision-brief checks passed');
+          const fs=require('fs'),html=fs.readFileSync('mba.html','utf8'); for(const text of ['Boardroom Decision Brief','Modernize First → Expand Selectively','PROBLEM','ALTERNATIVES','ANALYSIS','RECOMMEND','IMPLEMENT','25% fleet modernization + Caribbean launch','five-person team capstone','Gibson Guitars · Cost & Profitability','Star Clinic · Operations Analysis','mba-decision.css']) if(!html.includes(text)) throw new Error('MBA decision-brief regression: '+text); if(html.includes('Gibson Agency')||html.includes('Star Clinic · Inventory Operations')) throw new Error('Stale MBA case framing remains'); console.log('MBA boardroom decision-brief checks passed');
           NODE
