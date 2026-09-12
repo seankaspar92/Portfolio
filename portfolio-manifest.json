@@ -1,5 +1,5 @@
 {
-  "version": "2.1-sync",
+  "version": "2.1",
   "generated_at": "2026-09-12",
   "pages": [
     "index.html",
@@ -27,17 +27,17 @@
     "mba": "boardroom decision-brief evidence retained"
   },
   "resume": {
-    "current_public_source": "Sean_Kaspar_Resume(6).docx",
-    "next_canonical_source": "Sean_Kaspar_Resume_12SEP26.docx",
+    "canonical_source": "Sean_Kaspar_Resume_12SEP26.docx",
     "formats": ["files/Sean_Kaspar_Resume.docx", "files/Sean_Kaspar_Resume.pdf"],
-    "status": "v2.1 parity gate OPEN: new canonical resume verified, but browser/DOCX/PDF must be replaced and validated together before launch_ready may return true",
-    "browser_page": "resume.html"
+    "browser_page": "resume.html",
+    "status": "aligned across browser, DOCX, and PDF; Gate 7 candidate complete",
+    "docx_sha256": "5300ae86fa46ae94aa13ab1285f8567ea47a1141d59a908c2c7bb500cbb1f9b4",
+    "pdf_sha256": "c18a333efb32cb185d63769aa1ee979b2cec3872be3c7174706c3b9d921edda0",
+    "docx_git_blob": "9ceb1df927829b89a5b966824e81e5620296f9cd",
+    "pdf_git_blob": "5ba8e01e1fb761449982794003a297c408d1a1ae"
   },
-  "launch_ready": false,
-  "launch_blockers": [
-    "Synchronize browser resume, downloadable DOCX, and downloadable PDF to Sean_Kaspar_Resume_12SEP26.docx as one parity-controlled change.",
-    "Rerun Portfolio v2.1 QA after all public pages, claim registry, resume artifacts, sitemap/robots, and evidence controls are reconciled."
-  ],
+  "launch_ready": true,
+  "launch_blockers": [],
   "deployment_target": "GitHub Pages",
   "live_url": "https://seankaspar92.github.io/Portfolio/",
   "qa_report": "QA_REPORT.json",
