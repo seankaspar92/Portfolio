@@ -1,7 +1,7 @@
 window.SKILLS_REGISTRY = {
-  generatedAt: "2026-09-10",
+  generatedAt: "2026-09-12",
   source: "00_AI Skills Registry · canonical lifecycle snapshot",
-  counts: { total: 47, active: 30, testing: 17, planned: 339, registryTotal: 386 },
+  counts: { total: 47, active: 31, testing: 16, planned: 350, registryTotal: 397 },
   scopeNote: "Public governed-skill count includes Active and Testing skills only. Planned external candidates remain excluded until internal specification, safety/tool review, and representative validation gates are satisfied.",
   skills: [
     {id:"SKL-001",name:"evaluate_job_opportunity",version:"1.2",status:"Active",domain:"Career Intelligence",purpose:"Evaluate job opportunities with verified evidence, semantic context, Career Fit scoring, hard gates, source reconciliation, and provenance.",evaluation:"Governed scoring; >=80% evidence coverage for precise score; hard gates override score; material claims traceable."},
@@ -14,7 +14,7 @@ window.SKILLS_REGISTRY = {
     {id:"SKL-008",name:"validate_semantic_consistency",version:"0.1",status:"Testing",domain:"Semantic Foundation",purpose:"Audit semantic-layer integrity across entities, metrics, relationships, provenance, vocabularies, and versions.",evaluation:"100% seeded critical-defect detection; >=95% noncritical recall."},
     {id:"SKL-009",name:"trace_claim_provenance",version:"0.1",status:"Testing",domain:"Semantic Foundation",purpose:"Trace claims to source evidence, canonical entities, transformations, effective dates, and derivation logic.",evaluation:"100% verified claims trace to valid evidence; zero fabricated references."},
     {id:"SKL-010",name:"query_semantic_context",version:"0.1",status:"Testing",domain:"Semantic Foundation",purpose:"Return the minimum authoritative semantic context an agent or API needs to interpret a task correctly.",evaluation:">=95% required-context recall; 100% material ambiguity disclosure."},
-    {id:"SKL-011",name:"tailor_resume_to_job",version:"1.0",status:"Testing",domain:"Career Intelligence",purpose:"Create truthful ATS-optimized resumes using verified evidence, Career Intelligence context, and governed ATS Match scoring.",evaluation:"Zero unsupported claims; full substantive claim traceability; genuine gaps preserved."},
+    {id:"SKL-011",name:"tailor_resume_to_job",version:"1.0",status:"Active",domain:"Career Intelligence",purpose:"Create truthful ATS-optimized resumes using verified evidence, Career Intelligence context, and governed ATS Match scoring.",evaluation:"Zero unsupported claims; full substantive claim traceability; genuine gaps preserved."},
     {id:"SKL-012",name:"research_and_synthesize",version:"1.0",status:"Active",domain:"Reasoning & Intelligence",purpose:"Gather, rank, reconcile, and synthesize evidence into actionable research conclusions with provenance and uncertainty.",evaluation:">=95% material-claim support; zero fabricated citations."},
     {id:"SKL-013",name:"requirements_extractor",version:"1.0",status:"Active",domain:"Reasoning & Intelligence",purpose:"Extract atomic, testable requirements while preserving obligation strength, applicability, evidence, timing, and exceptions.",evaluation:">=95% recall, >=98% precision, zero obligation-strength distortion."},
     {id:"SKL-014",name:"verify_claims_and_evidence",version:"1.0",status:"Active",domain:"Reasoning & Intelligence",purpose:"Classify material claims as verified, user-reported, inferred, contradicted, or unknown using authoritative evidence.",evaluation:"100% critical claims traceable; zero unsupported VERIFIED classifications."},
