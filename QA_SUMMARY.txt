@@ -36,10 +36,11 @@ EVIDENCE-BOUNDARY CHECKS
 
 AI SKILLS LIFECYCLE CHECK
 - Active + Testing governed skills: 47
-- Active: 30
-- Testing: 17
-- Planned external candidates: 339
-- Canonical registry entries: 386
+- Active: 31
+- Testing: 16
+- Planned external candidates: 350
+- Canonical registry entries: 397
+- SKL-011 tailor_resume_to_job: ACTIVE after controlled regression plus 3 representative field validations; hard gaps preserved
 - Planned candidates excluded from demonstrated capability count: PASS
 - Lifecycle QA uses relationship checks instead of frozen date/count assertions: PASS
 
