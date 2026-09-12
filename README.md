@@ -1,4 +1,4 @@
-# Sean Kaspar Portfolio v2.1 Sync
+# Sean Kaspar Portfolio v2.1
 
 Public portfolio for evidence-backed AI, analytics, operations, leadership, and business decision systems.
 
@@ -29,15 +29,15 @@ The portfolio deliberately separates:
 
 No planned capability is presented as implemented merely because it appears in a registry or roadmap.
 
-## v2.1 synchronization state
+## v2.1 current state
 
-This README is the v2.1 cross-project synchronization layer opened on September 12, 2026. The v2.0 public site remains the last full launch-ready page release until page-level QA is rerun.
+Portfolio v2.1 reconciles the September 12, 2026 cross-project audit and closes the public resume parity gate. The release candidate is governed by `portfolio-manifest.json`, `portfolio-claims.json`, `QA_REPORT.json`, the Portfolio QA workflow, and the evidence policy.
 
 ### HOPS
 
 - Independent synthetic operations planning and decision-support prototype.
 - Public branding is HOPS and does not present the prototype as a product or internal system of any employer or third party.
-- v2.6 release-candidate evidence is now the current internal presentation baseline:
+- v2.6 release-candidate evidence is the current presentation baseline:
   - 92/92 automated tests passed.
   - 44/44 release-security invariants passed.
   - 50/50 browser QA assertions passed.
@@ -68,38 +68,39 @@ This README is the v2.1 cross-project synchronization layer opened on September 
 
 ### AI Skills
 
-- Canonical registry reconciled again on September 12, 2026.
+- Canonical registry reconciled September 12, 2026.
+- 47 governed Active/Testing skills are represented publicly: 30 Active and 17 Testing.
+- 339 Planned external candidates remain excluded from demonstrated-capability counts.
 - Operating mode has shifted from expansion to promotion/validation.
-- Highest-priority promotion backlog includes:
-  - SKL-011 `tailor_resume_to_job`
-  - SKL-031 `audit_IDES_evidence`
-  - SKL-032 `calculate_veteran_benefit_scenario`
-  - SKL-033 `evaluate_location_for_family`
-  - SKL-034 `evaluate_home_purchase`
-  - SKL-037 `analyze_personal_finances`
-  - SKL-038 `analyze_baseball_data`
-  - SKL-004 through SKL-010 semantic-foundation skills
-- Planned ECC-derived external skill candidates remain excluded from demonstrated-capability counts until internal specification, safety/tool review, and representative tests are complete.
+- Highest-priority promotion backlog includes SKL-011, SKL-031 through SKL-034, SKL-037, SKL-038, and the SKL-004 through SKL-010 semantic-foundation skills.
+- Planned ECC-derived external skill candidates remain excluded until internal specification, safety/tool review, and representative tests are complete.
+
+### Resume parity
+
+- Canonical public source: `Sean_Kaspar_Resume_12SEP26.docx`.
+- Browser resume, downloadable DOCX, and downloadable PDF are aligned to the September 12 base resume.
+- Resume artifacts are protected by SHA-256 checks in the Portfolio QA workflow.
+- The browser resume includes the Jan 2014 Army start, 12+ years of experience, the current Operations & Program Manager positioning, earlier infantry leadership, and the current evidence-backed metrics.
 
 ### Other evidence systems
 
 - AIOS release evidence and claim boundaries retained.
 - GOTS and Career Intelligence sanitized examples retained.
 - Army and MBA evidence pages retained.
-- Browser resume, downloadable DOCX/PDF, and Evidence Policy remain bound to public-claim controls.
+- Evidence Policy remains the public-claim control boundary.
 
 ## Deployment
 
 GitHub Pages target: `https://seankaspar92.github.io/Portfolio/`
 
-`robots.txt` and `sitemap.xml` use the live GitHub Pages base URL. The sitemap includes all v2.0 public pages.
+`robots.txt` and `sitemap.xml` use the live GitHub Pages base URL and include all 11 public pages.
 
 ## Release discipline
 
-`portfolio-claims.json` is the canonical public-claim registry for homepage proof metrics. Repository QA checks are expected to fail if HOPS independence boundaries, EDGE maturity boundaries, skill lifecycle counts, resume/evidence alignment, or other protected public claims drift.
+`portfolio-claims.json` is the canonical public-claim registry for homepage proof metrics. Repository QA fails if HOPS independence boundaries, EDGE maturity boundaries, skill lifecycle relationships, resume hashes/evidence alignment, sitemap/robots state, or other protected public claims drift.
 
 ## Release state
 
-Portfolio v2.0 completed the seven-gate reconciliation and final cross-system scan on September 10, 2026. `launch_ready` was true and the QA report had zero open blockers.
+Portfolio v2.0 completed the prior seven-gate reconciliation on September 10, 2026.
 
-Portfolio v2.1 is a synchronization gate opened on September 12, 2026. It updates project-state documentation but should not be treated as a full public launch until the public pages, claim registry, sitemap, resume links, and QA reports are rerun and reconciled.
+Portfolio v2.1 closes the September 12 synchronization work with HOPS v2.6 evidence, AIOS Phase 25 boundaries, EDGE next-gate controls, lifecycle-aware AI Skills QA, current service-year claims, and cryptographically bound resume parity. `launch_ready` is true in the release candidate manifest and remains subject to the repository QA workflow on the exact PR head before merge.
