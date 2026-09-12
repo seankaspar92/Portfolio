@@ -31,7 +31,7 @@ jobs:
           const fs=require('fs');
           const path=require('path');
           const manifest=JSON.parse(fs.readFileSync('portfolio-manifest.json','utf8'));
-          if(manifest.version!=='2.0') throw new Error('Portfolio manifest is not v2.0');
+          if(!['2.1-sync','2.1'].includes(manifest.version)) throw new Error('Portfolio manifest is not on the v2.1 line');
           if(manifest.pages.length!==11) throw new Error(`Expected 11 public pages, got ${manifest.pages.length}`);
           for(const page of manifest.pages){if(!fs.existsSync(page)) throw new Error('Missing public page: '+page)}
           const sitemap=fs.readFileSync('sitemap.xml','utf8');
@@ -68,45 +68,60 @@ jobs:
         run: |
           node - <<'NODE'
           const fs=require('fs');
+          const vm=require('vm');
           const js=fs.readFileSync('skills-data.js','utf8');
-          const required=['generatedAt: "2026-09-10"','total: 47','active: 30','testing: 17','planned: 339','registryTotal: 386','id:"SKL-386"','name:"govern_operational_lessons"','status:"Testing"'];
-          for(const text of required) if(!js.includes(text)) throw new Error('AI Skills lifecycle regression: '+text);
-          const skillObjects=(js.match(/\{id:"SKL-/g)||[]).length;
-          if(skillObjects!==47) throw new Error(`Expected 47 public Active/Testing skill objects, got ${skillObjects}`);
-          if(js.includes('status:"Planned"')) throw new Error('Planned skill leaked into demonstrated public skill grid');
-          console.log('AI Skills lifecycle checks passed');
+          const sandbox={window:{}};
+          vm.runInNewContext(js,sandbox);
+          const registry=sandbox.window.SKILLS_REGISTRY;
+          if(!registry) throw new Error('AI Skills registry did not load');
+          const {counts,skills,generatedAt}=registry;
+          if(!/^2026-\d{2}-\d{2}$/.test(generatedAt)) throw new Error('AI Skills generatedAt is not a governed date');
+          const active=skills.filter(s=>s.status==='Active').length;
+          const testing=skills.filter(s=>s.status==='Testing').length;
+          const planned=skills.filter(s=>s.status==='Planned').length;
+          if(planned!==0) throw new Error('Planned skill leaked into demonstrated public skill grid');
+          if(skills.length!==counts.total) throw new Error(`Skill object count ${skills.length} != governed public total ${counts.total}`);
+          if(active!==counts.active) throw new Error(`Active object count ${active} != declared ${counts.active}`);
+          if(testing!==counts.testing) throw new Error(`Testing object count ${testing} != declared ${counts.testing}`);
+          if(counts.total!==counts.active+counts.testing) throw new Error('Public governed total != Active + Testing');
+          if(counts.registryTotal!==counts.total+counts.planned) throw new Error('Registry total != governed public + Planned inventory');
+          const lesson=skills.find(s=>s.id==='SKL-386');
+          if(!lesson || lesson.name!=='govern_operational_lessons' || lesson.status!=='Testing') throw new Error('SKL-386 lifecycle regression');
+          console.log(`AI Skills lifecycle checks passed: ${counts.active} Active + ${counts.testing} Testing; ${counts.planned} Planned excluded`);
           NODE
       - name: HOPS independence and evidence regression
         run: |
           node - <<'NODE'
           const fs=require('fs');
           const html=fs.readFileSync('hops.html','utf8');
-          const required=['independently developed','synthetic operations planning','74 / 74','30 / 30','29 / 29','Human authority is a design requirement','not presented as a product, internal system, or endorsed capability'];
+          const evidence=fs.readFileSync('evidence/HOPS_v2_6_PUBLIC_VALIDATION.md','utf8');
+          const required=['independently developed','synthetic operations planning','v2.6 RELEASE CANDIDATE','92 / 92','44 / 44','50 / 50','Distributed industrial-readiness planning','Human authority is a design requirement','not presented as a product, internal system, or endorsed capability'];
           for(const text of required) if(!html.includes(text)) throw new Error('HOPS evidence regression: '+text);
+          for(const text of ['92 / 92 automated tests passed','44 / 44 release-security invariants passed','50 / 50 Chromium QA assertions passed','All v2.6 demonstration records are synthetic']) if(!evidence.includes(text)) throw new Error('HOPS retained evidence regression: '+text);
           if(/HAVOC OPS|HAVOC SENTRY|HAVOC OPS \+ SENTRY/i.test(html)) throw new Error('Legacy prototype branding remains on public HOPS page');
-          console.log('HOPS independence and evidence checks passed');
+          console.log('HOPS v2.6 independence and evidence checks passed');
           NODE
       - name: AIOS evidence-layer regression
         run: |
           node - <<'NODE'
           const fs=require('fs');
           const html=fs.readFileSync('aios.html','utf8');
-          const required=['ENGINEERING DELIVERY CHAIN','Architecture → Governed PR → CI → Human Approval → Release → Evidence','99cb97ab8c02714f22a92781c114602e52c190e3','Simulation boundary','single-host reference'];
+          const required=['ENGINEERING DELIVERY CHAIN','Architecture → Governed PR → CI → Human Approval → Release → Evidence','99cb97ab8c02714f22a92781c114602e52c190e3','Simulation boundary','single-host reference','CURRENT DEVELOPMENT · PHASE 25','not part of the production application runtime'];
           for(const text of required) if(!html.includes(text)) throw new Error('AIOS evidence-layer regression: '+text);
-          console.log('AIOS evidence-layer checks passed');
+          console.log('AIOS release and Phase 25 boundary checks passed');
           NODE
       - name: EDGE maturity regression
         run: |
           node - <<'NODE'
           const fs=require('fs');
           const html=fs.readFileSync('edge.html','utf8');
-          const required=['MATURITY & VALIDATION MATRIX','NFL EDGE · VALIDATED CONNECTED FOUNDATION','MLB EDGE · VALIDATED BASELINE / v0.3.0 CANDIDATE','76/76 package tests','LOCAL_DATA_FOUNDATION_VALIDATED','Predictive models intentionally remain unpromoted','DST-safe weekly report kickoff entrypoint','Kickoff-time hardening','NO PARITY CLAIM','maturity follows evidence'];
+          const required=['MATURITY & VALIDATION MATRIX','NFL EDGE · VALIDATED CONNECTED FOUNDATION','MLB EDGE · VALIDATED BASELINE / v0.3.0 CANDIDATE','76/76 package tests','LOCAL_DATA_FOUNDATION_VALIDATED','Predictive models intentionally remain unpromoted','DST-safe weekly report kickoff entrypoint','Kickoff-time hardening','NO PARITY CLAIM','maturity follows evidence','Next NFL gate','closing line/results','CLV/calibration/performance report'];
           for(const text of required) if(!html.includes(text)) throw new Error('EDGE maturity regression: '+text);
           if(html.includes('v0.2.2 strike-zone gate conflated')) throw new Error('Stale MLB validator defect language remains');
           if(html.includes('historical provenance infrastructure is wired into live prediction generation')) throw new Error('NFL historical provenance overclaim');
           console.log('EDGE maturity checks passed');
           NODE
-      - name: Gate 7 resume and evidence regression
+      - name: Resume/evidence parity and release-state regression
         run: |
           node - <<'NODE'
           const fs=require('fs');
@@ -115,14 +130,21 @@ jobs:
           const manifest=JSON.parse(fs.readFileSync('portfolio-manifest.json','utf8'));
           const qa=JSON.parse(fs.readFileSync('QA_REPORT.json','utf8'));
           const resumeRequired=['Direct multiple concurrent operational workstreams','Conducted 50+ formal performance evaluations','approximately 4,800 personnel','800+ hours of technical instruction','more than $6M in operational resources','from 509 to 526 and later to 537','files/Sean_Kaspar_Resume.pdf','files/Sean_Kaspar_Resume.docx'];
-          for(const text of resumeRequired) if(!resume.includes(text)) throw new Error('Resume evidence regression: '+text);
-          const evidenceRequired=['independently developed synthetic portfolio prototype','v0.3.0 remains a Candidate','Historical provenance infrastructure is not represented as live-prediction integration','Planned external candidates remain excluded','user-supplied canonical resume'];
+          for(const text of resumeRequired) if(!resume.includes(text)) throw new Error('Current public resume regression: '+text);
+          const evidenceRequired=['independently developed synthetic portfolio prototype','v0.3.0 remains a Candidate','Historical provenance infrastructure is not represented as live-prediction integration','Planned external candidates remain excluded','new resume source is not promoted publicly until'];
           for(const text of evidenceRequired) if(!evidence.includes(text)) throw new Error('Evidence-policy regression: '+text);
           if(!fs.existsSync('files/Sean_Kaspar_Resume.docx') || !fs.existsSync('files/Sean_Kaspar_Resume.pdf')) throw new Error('Resume download artifact missing');
-          if(manifest.launch_ready!==true) throw new Error('Manifest launch_ready not promoted after Gate 7');
-          if(qa.checks.gate_7_passed!==true || qa.checks.final_system_scan_passed!==true) throw new Error('QA Gate 7/final scan state missing');
-          if(qa.launch_blockers.length!==0 || qa.issues.length!==0) throw new Error('Unresolved QA issue/blocker remains');
-          console.log('Gate 7 resume/evidence and final QA contract passed');
+          if(manifest.version==='2.1-sync'){
+            if(manifest.launch_ready!==false) throw new Error('v2.1 sync must remain launch_ready=false');
+            if(!Array.isArray(manifest.launch_blockers) || manifest.launch_blockers.length===0) throw new Error('v2.1 sync must retain explicit blockers');
+            if(!manifest.resume?.next_canonical_source?.includes('12SEP26')) throw new Error('next canonical resume source not recorded');
+            console.log('v2.1 sync state correctly remains non-launch-ready pending resume parity/final QA');
+          } else if(manifest.version==='2.1'){
+            if(manifest.launch_ready!==true) throw new Error('v2.1 launch manifest not promoted');
+            if(qa.checks.gate_7_passed!==true || qa.checks.final_system_scan_passed!==true) throw new Error('QA Gate 7/final scan state missing');
+            if((qa.launch_blockers||[]).length!==0 || (qa.issues||[]).length!==0) throw new Error('Unresolved QA issue/blocker remains');
+            console.log('v2.1 launch resume/evidence and final QA contract passed');
+          }
           NODE
       - name: MBA decision-brief regression
         run: |
