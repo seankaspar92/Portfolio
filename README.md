@@ -68,12 +68,14 @@ Portfolio v2.1 reconciles the September 12, 2026 cross-project audit and closes 
 
 ### AI Skills
 
-- Canonical registry reconciled September 12, 2026 after the SKL-011 promotion gate and LinkedIn candidate intake.
-- 47 governed Active/Testing skills are represented publicly: 31 Active and 16 Testing.
-- SKL-011 `tailor_resume_to_job` is Active after controlled regression passed with zero critical failures and three representative real role/resume field validations; genuine hard gaps remained visible rather than being written around.
-- 350 Planned external candidates remain excluded from demonstrated-capability counts; the canonical registry now contains 397 entries total.
+- Canonical registry reconciled September 12, 2026 after the governed promotion sweep.
+- 47 governed Active/Testing skills are represented publicly: **41 Active and 6 Testing**.
+- Newly validated on September 12: semantic-foundation SKL-004 through SKL-010 plus SKL-031 `audit_IDES_evidence`, SKL-032 `calculate_veteran_benefit_scenario`, and SKL-033 `evaluate_location_for_family`.
+- SKL-011 `tailor_resume_to_job` remains Active after controlled regression and three representative role/resume field validations; genuine hard gaps remained visible rather than being written around.
+- Six skills remain intentionally Testing because their exact evidence gates are not yet satisfied: SKL-003, SKL-034, SKL-037, SKL-038, SKL-045, and SKL-386.
+- Their blockers are evidence-specific rather than administrative: transcript access, linked personal-finance data/property cases, baseball analysis/model-validation evidence, a full-media technical tutorial, and real external AAR/lesson-lifecycle validation.
+- 350 Planned external candidates remain excluded from demonstrated-capability counts; the canonical registry contains 397 entries total.
 - Operating mode remains promotion/validation rather than expansion.
-- Highest-priority promotion backlog now includes SKL-031 through SKL-034, SKL-037, SKL-038, and the SKL-004 through SKL-010 semantic-foundation skills.
 - Planned external skill candidates, including ECC-, gstack-, and LinkedIn-derived entries, remain excluded until internal specification, safety/tool/platform-policy review where applicable, and representative tests are complete.
 
 ### Resume parity
@@ -98,7 +100,7 @@ GitHub Pages target: `https://seankaspar92.github.io/Portfolio/`
 
 ## Release discipline
 
-`portfolio-claims.json` is the canonical public-claim registry for homepage proof metrics. Repository QA fails if HOPS independence boundaries, EDGE maturity boundaries, skill lifecycle relationships, resume hashes/evidence alignment, sitemap/robots state, or other protected public claims drift.
+`portfolio-claims.json` is the canonical public-claim registry for homepage proof metrics. Repository QA fails if HOPS independence boundaries, EDGE maturity boundaries, skill lifecycle relationships and promotion/blocker states, resume hashes/evidence alignment, sitemap/robots state, or other protected public claims drift.
 
 ## Release state
 
