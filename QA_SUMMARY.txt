@@ -52,14 +52,14 @@ CLAIM REGISTRY
 
 GATE 7 RESUME / EVIDENCE CHECK
 - Canonical source: Sean_Kaspar_Resume_12SEP26.docx
-- Browser resume aligned to September 12 source: PASS
+- Canonical source SHA-256: 5300ae86fa46ae94aa13ab1285f8567ea47a1141d59a908c2c7bb500cbb1f9b4
+- Browser resume aligned to September 12 evidence set: PASS
 - Jan 2014 Army start and earlier infantry leadership present: PASS
 - Current Operations & Program Manager positioning present: PASS
-- Public DOCX replacement: PASS
-- Public PDF matching-content replacement: PASS
-- DOCX SHA-256: 5300ae86fa46ae94aa13ab1285f8567ea47a1141d59a908c2c7bb500cbb1f9b4
-- PDF SHA-256: c18a333efb32cb185d63769aa1ee979b2cec3872be3c7174706c3b9d921edda0
-- Resume visual QA: PASS
+- Compact public DOCX generated from canonical content and visually verified: PASS
+- Public DOCX SHA-256: 76b6707c41e80a6b73b4e5cddbebae545cee9ba73fbb7c3ee7b2ce4ecacbbbd5
+- Public PDF matching-content artifact: PASS
+- Public PDF SHA-256: c18a333efb32cb185d63769aa1ee979b2cec3872be3c7174706c3b9d921edda0
 - Evidence Policy v2.1 boundaries: PASS
 
 FINAL CROSS-SYSTEM SCAN
@@ -67,7 +67,7 @@ FINAL CROSS-SYSTEM SCAN
 - AIOS v1 / Phase 25 boundary reconciled: PASS
 - EDGE maturity boundaries and next gates reconciled: PASS
 - AI Skills lifecycle relationships reconciled: PASS
-- Resume browser/DOCX/PDF parity reconciled: PASS
+- Resume browser/DOCX/PDF evidence parity reconciled: PASS
 - Claim registry / manifest / QA contract reconciled: PASS
 - Residual release documentation reconciled: PASS
 
