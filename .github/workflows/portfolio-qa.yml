@@ -57,11 +57,14 @@ jobs:
           node - <<'NODE'
           const fs=require('fs');
           const html=fs.readFileSync('index.html','utf8');
+          const binder=fs.readFileSync('portfolio-claims.js','utf8');
           const required=['SEMANTIC ROUTING','KNOWLEDGE MANAGEMENT','GUARDRAILS &amp; SAFETY','VALIDATION &amp; EVALUATION','DATA GOVERNANCE','ANALYTICS &amp; INSIGHTS','AUTOMATION &amp; ORCHESTRATION','CONTINUOUS IMPROVEMENT','href="hops.html"','HOPS · OPERATIONS DECISION SUPPORT','data-claim="ai_skills_count">47','data-claim="featured_projects">8'];
           for(const text of required) if(!html.includes(text)) throw new Error('Missing homepage capability: '+text);
           const gots='Getting out of the service is not the same for everyone, so I built an evidence-based operating system';
           if(!html.includes(gots)) throw new Error('GOTS narrative regression');
           if(!html.includes('skills-home.css')) throw new Error('Skills semantic tile stylesheet not loaded');
+          if(!binder.includes("service_years:{value:'12+'")) throw new Error('Verified 12+ service-year fallback missing');
+          if(!binder.includes("replace(/^Thirteen years of /,'12+ years of ')")) throw new Error('Rendered Army-card service-year correction missing');
           console.log('Homepage content checks passed');
           NODE
       - name: AI Skills lifecycle regression
@@ -125,21 +128,26 @@ jobs:
         run: |
           node - <<'NODE'
           const fs=require('fs');
+          const crypto=require('crypto');
           const resume=fs.readFileSync('resume.html','utf8');
           const evidence=fs.readFileSync('evidence.html','utf8');
           const manifest=JSON.parse(fs.readFileSync('portfolio-manifest.json','utf8'));
           const qa=JSON.parse(fs.readFileSync('QA_REPORT.json','utf8'));
-          const resumeRequired=['Direct multiple concurrent operational workstreams','Conducted 50+ formal performance evaluations','approximately 4,800 personnel','800+ hours of technical instruction','more than $6M in operational resources','from 509 to 526 and later to 537','files/Sean_Kaspar_Resume.pdf','files/Sean_Kaspar_Resume.docx'];
+          const resumeRequired=['Operations &amp; Program Manager | Defense, Aerospace &amp; Mission Operations','12+ years leading high-accountability operations','Jan 2014-Present','Direct concurrent operational workstreams','Evaluate 50+ personnel','approximately 4,800 personnel','800+ hours of technical instruction','more than $6M in operational resources','from 509 to 526 and then 537','Earlier Infantry Leadership Experience','files/Sean_Kaspar_Resume.pdf','files/Sean_Kaspar_Resume.docx'];
           for(const text of resumeRequired) if(!resume.includes(text)) throw new Error('Current public resume regression: '+text);
           const evidenceRequired=['independently developed synthetic portfolio prototype','v0.3.0 remains a Candidate','Historical provenance infrastructure is not represented as live-prediction integration','Planned external candidates remain excluded','new resume source is not promoted publicly until'];
           for(const text of evidenceRequired) if(!evidence.includes(text)) throw new Error('Evidence-policy regression: '+text);
-          if(!fs.existsSync('files/Sean_Kaspar_Resume.docx') || !fs.existsSync('files/Sean_Kaspar_Resume.pdf')) throw new Error('Resume download artifact missing');
+          const docx='files/Sean_Kaspar_Resume.docx', pdf='files/Sean_Kaspar_Resume.pdf';
+          if(!fs.existsSync(docx) || !fs.existsSync(pdf)) throw new Error('Resume download artifact missing');
+          const sha=p=>crypto.createHash('sha256').update(fs.readFileSync(p)).digest('hex');
+          if(sha(docx)!==manifest.resume.docx_sha256) throw new Error('Canonical DOCX SHA-256 mismatch');
+          if(sha(pdf)!==manifest.resume.pdf_sha256) throw new Error('Canonical PDF SHA-256 mismatch');
           if(manifest.version==='2.1-sync'){
             if(manifest.launch_ready!==false) throw new Error('v2.1 sync must remain launch_ready=false');
             if(!Array.isArray(manifest.launch_blockers) || manifest.launch_blockers.length===0) throw new Error('v2.1 sync must retain explicit blockers');
-            if(!manifest.resume?.next_canonical_source?.includes('12SEP26')) throw new Error('next canonical resume source not recorded');
-            console.log('v2.1 sync state correctly remains non-launch-ready pending resume parity/final QA');
+            console.log('v2.1 sync state remains non-launch-ready');
           } else if(manifest.version==='2.1'){
+            if(manifest.resume.canonical_source!=='Sean_Kaspar_Resume_12SEP26.docx') throw new Error('Canonical resume source drift');
             if(manifest.launch_ready!==true) throw new Error('v2.1 launch manifest not promoted');
             if(qa.checks.gate_7_passed!==true || qa.checks.final_system_scan_passed!==true) throw new Error('QA Gate 7/final scan state missing');
             if((qa.launch_blockers||[]).length!==0 || (qa.issues||[]).length!==0) throw new Error('Unresolved QA issue/blocker remains');
