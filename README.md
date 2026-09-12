@@ -68,12 +68,13 @@ Portfolio v2.1 reconciles the September 12, 2026 cross-project audit and closes 
 
 ### AI Skills
 
-- Canonical registry reconciled September 12, 2026.
-- 47 governed Active/Testing skills are represented publicly: 30 Active and 17 Testing.
-- 339 Planned external candidates remain excluded from demonstrated-capability counts.
-- Operating mode has shifted from expansion to promotion/validation.
-- Highest-priority promotion backlog includes SKL-011, SKL-031 through SKL-034, SKL-037, SKL-038, and the SKL-004 through SKL-010 semantic-foundation skills.
-- Planned ECC-derived external skill candidates remain excluded until internal specification, safety/tool review, and representative tests are complete.
+- Canonical registry reconciled September 12, 2026 after the SKL-011 promotion gate and LinkedIn candidate intake.
+- 47 governed Active/Testing skills are represented publicly: 31 Active and 16 Testing.
+- SKL-011 `tailor_resume_to_job` is Active after controlled regression passed with zero critical failures and three representative real role/resume field validations; genuine hard gaps remained visible rather than being written around.
+- 350 Planned external candidates remain excluded from demonstrated-capability counts; the canonical registry now contains 397 entries total.
+- Operating mode remains promotion/validation rather than expansion.
+- Highest-priority promotion backlog now includes SKL-031 through SKL-034, SKL-037, SKL-038, and the SKL-004 through SKL-010 semantic-foundation skills.
+- Planned external skill candidates, including ECC-, gstack-, and LinkedIn-derived entries, remain excluded until internal specification, safety/tool/platform-policy review where applicable, and representative tests are complete.
 
 ### Resume parity
 
