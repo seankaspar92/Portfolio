@@ -19,7 +19,7 @@
   "evidence_replacement_status": {
     "aios": "v1.0.0 / Phase 24 remains the verified runtime release; Phase 25 is bounded post-v1 developer-context tooling",
     "hops": "sanitized independent v2.6 release-candidate case study and public validation evidence added; synthetic/employer boundaries preserved",
-    "skills": "canonical lifecycle snapshot rechecked 2026-09-12: 47 Active/Testing governed skills (31 Active, 16 Testing); 350 Planned candidates excluded from capability claims; 397 registered entries total",
+    "skills": "canonical lifecycle snapshot rechecked 2026-09-12: 47 Active/Testing governed skills (41 Active, 6 Testing); 350 Planned candidates excluded from capability claims; 397 registered entries total; unresolved Testing skills retain explicit evidence gates",
     "edge": "NFL EDGE current hardening retained; MLB EDGE remains governed by explicit v0.2.2 Validated to v0.3.0 Candidate maturity gates",
     "gots": "sanitized operating and career-evidence examples retained",
     "career": "sanitized end-to-end opportunity evaluation case retained",
