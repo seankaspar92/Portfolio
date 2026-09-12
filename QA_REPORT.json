@@ -43,8 +43,9 @@
     "rendered_homepage_service_year_correction_present": true,
     "portfolio_regression_workflow_present": true,
     "canonical_resume_source": "Sean_Kaspar_Resume_12SEP26.docx",
+    "canonical_resume_source_sha256_recorded": true,
     "resume_browser_aligned_to_12sep26": true,
-    "resume_docx_replaced_with_12sep26": true,
+    "resume_public_docx_generated_from_12sep26_content": true,
     "resume_pdf_matching_content_generated_from_12sep26": true,
     "resume_docx_sha256_verified": true,
     "resume_pdf_sha256_verified": true,
@@ -54,10 +55,11 @@
     "final_system_scan_passed": true
   },
   "resume_receipts": {
-    "docx_sha256": "5300ae86fa46ae94aa13ab1285f8567ea47a1141d59a908c2c7bb500cbb1f9b4",
-    "pdf_sha256": "c18a333efb32cb185d63769aa1ee979b2cec3872be3c7174706c3b9d921edda0",
-    "docx_git_blob": "9ceb1df927829b89a5b966824e81e5620296f9cd",
-    "pdf_git_blob": "5ba8e01e1fb761449982794003a297c408d1a1ae"
+    "canonical_source_sha256": "5300ae86fa46ae94aa13ab1285f8567ea47a1141d59a908c2c7bb500cbb1f9b4",
+    "public_docx_sha256": "76b6707c41e80a6b73b4e5cddbebae545cee9ba73fbb7c3ee7b2ce4ecacbbbd5",
+    "public_pdf_sha256": "c18a333efb32cb185d63769aa1ee979b2cec3872be3c7174706c3b9d921edda0",
+    "docx_git_blob": "f70d9d661a35ee73aa0c44a2c714d9b3b16699fa",
+    "pdf_git_blob": "f1eebfc9f032d7ca5d732f564fb6bcc8be842ede"
   },
   "issues": [],
   "launch_blockers": []
