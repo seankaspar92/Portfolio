@@ -82,3 +82,8 @@ footer{padding:28px 24px 45px;display:flex;justify-content:space-between;gap:20p
 @media (prefers-reduced-motion: reduce){.portrait-uniform-wrap,.portrait-divider{animation:none}.portrait-uniform-wrap{clip-path:inset(0 50% 0 0)}.portrait-divider{left:50%}}
 @media(max-width:900px){.portrait-frame{min-height:520px;max-width:620px;width:100%;margin:0 auto}.hero-portrait{order:2}}
 @media(max-width:560px){.portrait-frame{min-height:460px}.portrait-caption{font-size:8px}}
+
+.landing-gate9{max-width:var(--max);margin:0 auto;padding:80px 24px;border-top:1px solid rgba(255,255,255,.08)}
+.landing-project-grid.compact{grid-template-columns:repeat(3,1fr)}
+.landing-project-grid.compact .landing-project-card{min-height:220px}
+@media(max-width:900px){.landing-project-grid.compact{grid-template-columns:1fr}}

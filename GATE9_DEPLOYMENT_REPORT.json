@@ -1,0 +1,13 @@
+{
+  "gate": 9,
+  "mode": "additive deployment",
+  "repository": "seankaspar92/Portfolio",
+  "base_preserved": "main",
+  "new_pages": [
+    "train-the-trainer.html",
+    "field-deployment.html",
+    "resume-gates.html"
+  ],
+  "resume_gate_files": 5,
+  "rationale": "The live repo already contained richer v2.1 evidence than the older v1.9 package base, so Gate 9 deploys only additive updates."
+}

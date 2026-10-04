@@ -47,7 +47,7 @@ Portfolio v2.1 reconciles the September 12, 2026 cross-project audit and closes 
 - v2.6 adds a distributed industrial-readiness lane above partner-fleet sustainment and integration qualification.
 - The lane tracks synthetic platform/autonomy configuration identity, non-binding monthly planning capacity, qualified-workforce coverage, critical-spares depth, supplier constraints, acceptance queues, and reconstitution readiness across distributed industrial nodes.
 - Human authority remains explicit for operational, legal, funding, acquisition, production, supply-chain, workforce, quality, configuration, and release decisions.
-- v2.6 records are synthetic and do not represent actual Havoc or partner production capacity, workforce, suppliers, inventory, configuration approvals, acceptance queues, or operational status.
+- v2.6 records are synthetic and do not represent actual organization or partner production capacity, workforce, suppliers, inventory, configuration approvals, acceptance queues, or operational status.
 
 ### EDGE Sports Analytics
 
@@ -107,3 +107,14 @@ GitHub Pages target: `https://seankaspar92.github.io/Portfolio/`
 Portfolio v2.0 completed the prior seven-gate reconciliation on September 10, 2026.
 
 Portfolio v2.1 closes the September 12 synchronization work with HOPS v2.6 evidence, AIOS Phase 25 boundaries, EDGE next-gate controls, lifecycle-aware AI Skills QA, current service-year claims, and cryptographically bound resume parity. `launch_ready` is true in the release candidate manifest and remains subject to the repository QA workflow on the exact PR head before merge.
+
+
+## Gate 9 additive deployment
+
+Gate 9 preserves the existing v2.1 evidence base and adds three current expansion surfaces:
+
+- `train-the-trainer.html` for the Train the Trainer architecture.
+- `field-deployment.html` for the Field Deployment and Operator Enablement framework.
+- `resume-gates.html` for the five current resume gates.
+
+The deployment is additive by design so existing HOPS, AI Skills, Army, MBA, EDGE, GOTS, Career, and QA evidence remains intact.

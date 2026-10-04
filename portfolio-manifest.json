@@ -12,7 +12,10 @@
     "army.html",
     "mba.html",
     "evidence.html",
-    "resume.html"
+    "resume.html",
+    "train-the-trainer.html",
+    "field-deployment.html",
+    "resume-gates.html"
   ],
   "evidence_policy": "Only verified implementation, documented workflow, retained validation, or sanitized real operating-use claims are public evidence.",
   "concept_graphics": [],
@@ -29,7 +32,10 @@
   "resume": {
     "canonical_source": "Sean_Kaspar_Resume_12SEP26.docx",
     "canonical_source_sha256": "5300ae86fa46ae94aa13ab1285f8567ea47a1141d59a908c2c7bb500cbb1f9b4",
-    "formats": ["files/Sean_Kaspar_Resume.docx", "files/Sean_Kaspar_Resume.pdf"],
+    "formats": [
+      "files/Sean_Kaspar_Resume.docx",
+      "files/Sean_Kaspar_Resume.pdf"
+    ],
     "browser_page": "resume.html",
     "status": "browser resume and compact public DOCX/PDF aligned to the September 12 canonical evidence set; Gate 7 candidate complete",
     "docx_sha256": "76b6707c41e80a6b73b4e5cddbebae545cee9ba73fbb7c3ee7b2ce4ecacbbbd5",
@@ -47,5 +53,22 @@
     "uniform": "images/sean-uniform.jpg",
     "business": "images/sean-business.jpg",
     "effect": "animated split transition with reduced-motion fallback"
+  },
+  "gate_9": {
+    "deployed_at": "2026-10-04",
+    "mode": "additive deployment",
+    "new_pages": [
+      "train-the-trainer.html",
+      "field-deployment.html",
+      "resume-gates.html"
+    ],
+    "resume_gates": [
+      "files/Sean_Kaspar_Master_Resume_Gate_1.docx",
+      "files/Sean_Kaspar_Master_Resume_Gate_2_Organization_Redacted.docx",
+      "files/Sean_Kaspar_Master_Resume_Gate_3_ATS_Operations.docx",
+      "files/Sean_Kaspar_Master_Resume_Gate_4_Mission_Operations.docx",
+      "files/Sean_Kaspar_Master_Resume_Gate_5_Training_Enablement.docx"
+    ],
+    "preserved_existing_v2_1_evidence": true
   }
 }

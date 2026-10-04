@@ -8,7 +8,7 @@ Scope: Independent synthetic portfolio prototype
 
 HOPS is an independently developed, synthetic operations planning and decision-support prototype. This evidence does not represent an employer or third-party product, internal system, operational deployment, government approval, production authorization, or third-party adoption.
 
-All v2.6 demonstration records are synthetic. They do not represent actual Havoc or partner production capacity, workforce, suppliers, inventory, configuration approvals, acceptance queues, or operational status.
+All v2.6 demonstration records are synthetic. They do not represent actual organization or partner production capacity, workforce, suppliers, inventory, configuration approvals, acceptance queues, or operational status.
 
 ## v2.6 scope
 

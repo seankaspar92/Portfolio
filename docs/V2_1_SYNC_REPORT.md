@@ -50,7 +50,7 @@ Close the cross-project audit findings and restore the public portfolio to a cur
 
 ## Explicit boundaries
 
-- Do not claim HOPS uses actual Havoc or partner production data.
+- Do not claim HOPS uses actual organization or partner production data.
 - Do not claim HOPS can approve configuration, release production, accept assets, order spares, task workforce, or issue mission tasking.
 - Do not promote MLB EDGE v0.3.0 beyond Candidate until authentic local validation is recorded.
 - Do not represent AIOS Context Mode as a production runtime feature.
