@@ -21,3 +21,7 @@ Repository baseline: 557e612f07b200aca66599cc5f81bc9d7a177bbc, v0.6 documentatio
 The previous project-count regression failed before this change. New inventory, local-target, fragment, and public-evidence checks are included for CI alongside the existing claims, scoring, resume hash, and maturity checks. CI results and publication must be verified for the resulting commit; this document does not claim those results in advance.
 
 Browser/device visual QA was not performed locally because workspace execution was unavailable. Layout changes use responsive native HTML/CSS and existing design variables. Existing resume artifacts, source evidence dates, and project maturity boundaries are preserved.
+
+## Step 2 resolution
+
+Execution access recovered. All nine FleetVoice archives were extracted, hashed and compared. The divergent branches were reconciled into v0.15.1 while preserving the human-trial, reference-review and PCM decoder path. Fresh software and Linux launcher restart/persistence evidence supersedes the earlier blocked-integration status. Human/acoustic/field and browser acceptance remain open. See evidence/FLEETVOICE_CONSOLIDATION.json for the exact source and public scope.

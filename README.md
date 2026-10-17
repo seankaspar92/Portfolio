@@ -123,4 +123,4 @@ The deployment is additive by design so existing HOPS, AI Skills, Army, MBA, EDG
 
 Featured projects now include FleetVoice, Mobile Drone Operations, training, and field deployment. Public case studies include clearly labeled walkthroughs and sample artifacts. Navigation and project counts are reconciled; recursive reference/fragment checks protect the page inventory.
 
-FleetVoice's public baseline is pinned to 557e612f07b200aca66599cc5f81bc9d7a177bbc. Later v0.7–v0.15 packages are not promoted as integrated or accepted. See docs/PORTFOLIO_REVIEW_2026_10_17.md for exact scope and verification limits.
+FleetVoice's v0.15.1 software source now reconciles the nine v0.7–v0.15 packages with the preserved human-trial/reference-review path. Human and field acceptance remain open. See docs/PORTFOLIO_REVIEW_2026_10_17.md for exact scope and verification limits.

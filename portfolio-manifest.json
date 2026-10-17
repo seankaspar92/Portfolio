@@ -30,7 +30,7 @@
     "career": "sanitized end-to-end opportunity evaluation case retained",
     "army": "source-backed leadership and operations evidence retained",
     "mba": "boardroom decision-brief evidence retained",
-    "fleetvoice": "Public summary of pinned v0.6 repository evidence; later packages and human acceptance remain open",
+    "fleetvoice": "Consolidated v0.15.1 software evidence with public receipt; microphone, human acoustic and field acceptance remain open",
     "mobile_operations": "Public concept storyboard; physical performance and integrated backend not claimed"
   },
   "resume": {
@@ -78,8 +78,8 @@
   "portfolio_review": {
     "date": "2026-10-17",
     "report": "docs/PORTFOLIO_REVIEW_2026_10_17.md",
-    "fleetvoice_baseline": "557e612f07b200aca66599cc5f81bc9d7a177bbc",
-    "package_reconciliation": "Later package inspection and integration pending; no v0.15 release promotion",
+    "fleetvoice_baseline": "1f75ca1f8bbdf82aabc8f93656d09923d6388afc",
+    "package_reconciliation": "Nine archives extracted and reconciled into v0.15.1; 215 Python passed, 18 optional skips, 26 JavaScript passed; Linux restart/persistence verified",
     "demo_access": "Existing restricted audiences preserved",
     "browser_qa": "Not performed in this update: workspace execution unavailable"
   }
