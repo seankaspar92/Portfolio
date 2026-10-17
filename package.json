@@ -1,0 +1,11 @@
+{
+  "name": "hops-improvement-loop",
+  "version": "2.9.0",
+  "private": true,
+  "scripts": {
+    "test": "node --test tests/hops-*.test.mjs && node tests/hops-artifact-integrity.mjs"
+  },
+  "devDependencies": {
+    "jsdom": "26.1.0"
+  }
+}

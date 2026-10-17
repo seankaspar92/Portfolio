@@ -23,7 +23,7 @@
   "concept_graphics": [],
   "evidence_replacement_status": {
     "aios": "v1.0.0 / Phase 24 remains the verified runtime release; Phase 25 is bounded post-v1 developer-context tooling",
-    "hops": "Retained v2.6 validation plus separately labeled v2.8 concept mission-thread walkthrough",
+    "hops": "Retained v2.6 validation, v2.8 concept mission thread, and separately tested v2.9 synthetic browser-local improvement loop",
     "skills": "canonical lifecycle snapshot rechecked 2026-09-12: 47 Active/Testing governed skills (41 Active, 6 Testing); 350 Planned candidates excluded from capability claims; 397 registered entries total; unresolved Testing skills retain explicit evidence gates",
     "edge": "NFL EDGE current hardening retained; MLB EDGE remains governed by explicit v0.2.2 Validated to v0.3.0 Candidate maturity gates",
     "gots": "sanitized operating and career-evidence examples retained",
@@ -82,5 +82,12 @@
     "package_reconciliation": "Nine archives extracted and reconciled into v0.15.1; 215 Python passed, 18 optional skips, 26 JavaScript passed; Linux restart/persistence verified",
     "demo_access": "Existing restricted audiences preserved",
     "browser_qa": "Not performed in this update: workspace execution unavailable"
+  },
+  "hops_improvement": {
+    "version": "2.9",
+    "receipt": "evidence/HOPS_IMPROVEMENT_RECEIPT.json",
+    "canonical_source": "Existing HOPS Site source, dist/improvement-*.mjs and CSS",
+    "browser_storage": "Separate per origin; no shared backend",
+    "fleetvoice_verification": "Deferred"
   }
 }
