@@ -22,6 +22,8 @@ jobs:
         run: node tests/portfolio-claims-regression.mjs
       - name: Public navigation and evidence regression
         run: node tests/public-navigation-regression.mjs
+      - name: Lesson package integrity
+        run: node tests/lesson-package-integrity.mjs
       - name: Canonical contract checks
         run: |
           node - <<'NODE'

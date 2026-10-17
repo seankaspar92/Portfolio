@@ -17,7 +17,8 @@
     "field-deployment.html",
     "resume-gates.html",
     "fleetvoice.html",
-    "mobile-drone-operations.html"
+    "mobile-drone-operations.html",
+    "readiness-lesson.html"
   ],
   "evidence_policy": "Only verified implementation, documented workflow, retained validation, or sanitized real operating-use claims are public evidence.",
   "concept_graphics": [],
@@ -89,5 +90,13 @@
     "canonical_source": "Existing HOPS Site source, dist/improvement-*.mjs and CSS",
     "browser_storage": "Separate per origin; no shared backend",
     "fleetvoice_verification": "Deferred"
+  },
+  "readiness_lesson": {
+    "version": "1.0",
+    "status": "Proposed classroom pilot",
+    "walkthrough": "readiness-lesson.html",
+    "receipt": "evidence/RR01_LESSON_VALIDATION.json",
+    "duration_minutes": 90,
+    "pilot_run": false
   }
 }
