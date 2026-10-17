@@ -1,6 +1,6 @@
 {
   "version": "2.1",
-  "generated_at": "2026-09-12",
+  "generated_at": "2026-10-17",
   "pages": [
     "index.html",
     "aios.html",
@@ -15,19 +15,23 @@
     "resume.html",
     "train-the-trainer.html",
     "field-deployment.html",
-    "resume-gates.html"
+    "resume-gates.html",
+    "fleetvoice.html",
+    "mobile-drone-operations.html"
   ],
   "evidence_policy": "Only verified implementation, documented workflow, retained validation, or sanitized real operating-use claims are public evidence.",
   "concept_graphics": [],
   "evidence_replacement_status": {
     "aios": "v1.0.0 / Phase 24 remains the verified runtime release; Phase 25 is bounded post-v1 developer-context tooling",
-    "hops": "sanitized independent v2.6 release-candidate case study and public validation evidence added; synthetic/employer boundaries preserved",
+    "hops": "Retained v2.6 validation plus separately labeled v2.8 concept mission-thread walkthrough",
     "skills": "canonical lifecycle snapshot rechecked 2026-09-12: 47 Active/Testing governed skills (41 Active, 6 Testing); 350 Planned candidates excluded from capability claims; 397 registered entries total; unresolved Testing skills retain explicit evidence gates",
     "edge": "NFL EDGE current hardening retained; MLB EDGE remains governed by explicit v0.2.2 Validated to v0.3.0 Candidate maturity gates",
     "gots": "sanitized operating and career-evidence examples retained",
     "career": "sanitized end-to-end opportunity evaluation case retained",
     "army": "source-backed leadership and operations evidence retained",
-    "mba": "boardroom decision-brief evidence retained"
+    "mba": "boardroom decision-brief evidence retained",
+    "fleetvoice": "Public summary of pinned v0.6 repository evidence; later packages and human acceptance remain open",
+    "mobile_operations": "Public concept storyboard; physical performance and integrated backend not claimed"
   },
   "resume": {
     "canonical_source": "Sean_Kaspar_Resume_12SEP26.docx",
@@ -70,5 +74,13 @@
       "files/Sean_Kaspar_Master_Resume_Gate_5_Training_Enablement.docx"
     ],
     "preserved_existing_v2_1_evidence": true
+  },
+  "portfolio_review": {
+    "date": "2026-10-17",
+    "report": "docs/PORTFOLIO_REVIEW_2026_10_17.md",
+    "fleetvoice_baseline": "557e612f07b200aca66599cc5f81bc9d7a177bbc",
+    "package_reconciliation": "Later package inspection and integration pending; no v0.15 release promotion",
+    "demo_access": "Existing restricted audiences preserved",
+    "browser_qa": "Not performed in this update: workspace execution unavailable"
   }
 }

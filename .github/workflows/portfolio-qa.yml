@@ -16,6 +16,8 @@ jobs:
         run: node tests/career-score-regression.mjs
       - name: Canonical portfolio claims regression
         run: node tests/portfolio-claims-regression.mjs
+      - name: Public navigation and evidence regression
+        run: node tests/public-navigation-regression.mjs
       - name: Canonical contract checks
         run: |
           node - <<'NODE'
@@ -31,7 +33,7 @@ jobs:
           const fs=require('fs'); const path=require('path');
           const manifest=JSON.parse(fs.readFileSync('portfolio-manifest.json','utf8'));
           if(!['2.1-sync','2.1'].includes(manifest.version)) throw new Error('Portfolio manifest is not on the v2.1 line');
-          if(manifest.pages.length!==11) throw new Error(`Expected 11 public pages, got ${manifest.pages.length}`);
+          if(manifest.pages.length!==new Set(manifest.pages).size) throw new Error('Duplicate public page in manifest');
           for(const page of manifest.pages) if(!fs.existsSync(page)) throw new Error('Missing public page: '+page);
           const sitemap=fs.readFileSync('sitemap.xml','utf8'); const base='https://seankaspar92.github.io/Portfolio/';
           for(const page of manifest.pages) if(!sitemap.includes(base+page)) throw new Error('Sitemap missing: '+page);
@@ -43,7 +45,7 @@ jobs:
         run: |
           node - <<'NODE'
           const fs=require('fs'); const html=fs.readFileSync('index.html','utf8'); const binder=fs.readFileSync('portfolio-claims.js','utf8');
-          const required=['SEMANTIC ROUTING','KNOWLEDGE MANAGEMENT','GUARDRAILS &amp; SAFETY','VALIDATION &amp; EVALUATION','DATA GOVERNANCE','ANALYTICS &amp; INSIGHTS','AUTOMATION &amp; ORCHESTRATION','CONTINUOUS IMPROVEMENT','href="hops.html"','HOPS · OPERATIONS DECISION SUPPORT','data-claim="ai_skills_count">47','data-claim="featured_projects">8'];
+          const required=['SEMANTIC ROUTING','KNOWLEDGE MANAGEMENT','GUARDRAILS &amp; SAFETY','VALIDATION &amp; EVALUATION','DATA GOVERNANCE','ANALYTICS &amp; INSIGHTS','AUTOMATION &amp; ORCHESTRATION','CONTINUOUS IMPROVEMENT','href="hops.html"','HOPS · OPERATIONS DECISION SUPPORT','data-claim="ai_skills_count">47','data-claim="featured_projects">12'];
           for(const text of required) if(!html.includes(text)) throw new Error('Missing homepage capability: '+text);
           if(!html.includes('Getting out of the service is not the same for everyone, so I built an evidence-based operating system')) throw new Error('GOTS narrative regression');
           if(!html.includes('skills-home.css')) throw new Error('Skills semantic tile stylesheet not loaded');

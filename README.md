@@ -118,3 +118,9 @@ Gate 9 preserves the existing v2.1 evidence base and adds three current expansio
 - `resume-gates.html` for the five current resume gates.
 
 The deployment is additive by design so existing HOPS, AI Skills, Army, MBA, EDGE, GOTS, Career, and QA evidence remains intact.
+
+## October 17, 2026 portfolio review
+
+Featured projects now include FleetVoice, Mobile Drone Operations, training, and field deployment. Public case studies include clearly labeled walkthroughs and sample artifacts. Navigation and project counts are reconciled; recursive reference/fragment checks protect the page inventory.
+
+FleetVoice's public baseline is pinned to 557e612f07b200aca66599cc5f81bc9d7a177bbc. Later v0.7–v0.15 packages are not promoted as integrated or accepted. See docs/PORTFOLIO_REVIEW_2026_10_17.md for exact scope and verification limits.
