@@ -1,0 +1,21 @@
+{
+  "lesson_id": "RR-01",
+  "version": "1.0",
+  "status": "Proposed classroom pilot",
+  "pilot_run": false,
+  "rendered_pages": {
+    "Instructor_Guide": 4,
+    "Learner_Packet": 5,
+    "Evaluator_Guide": 4
+  },
+  "visual_review": "All 13 final PDF pages inspected",
+  "package": "files/RR01_Readiness_Review_Lesson_v1.0.zip",
+  "package_sha256": "2d7b78b1be38b83d4c664acd29d0e77f57a72e1e232f88c633d004e9e1be125e",
+  "files": {
+    "RR01_Instructor_Guide.pdf": "c2dcf548ceec12a1c4b0b8620b64406dcc51791a622d1ab9afacb1272536668d",
+    "RR01_Learner_Packet.pdf": "e43d8dced306089f7216f628e6fa70d8a3534dc2aef57a7e182f01f6c97b29af",
+    "RR01_Evaluator_Guide.pdf": "b56465be14abfe55d18d677e68f877608451edb66836596f16200645e53114a3"
+  },
+  "hops_reference_stage": "TRAINING_REVISED",
+  "fleetvoice_verification": "Deferred"
+}

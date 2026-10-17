@@ -1,0 +1,142 @@
+{
+  "metadata": {
+    "lesson_id": "RR-01",
+    "title": "Readiness Review and Discrepancy Handoff",
+    "version": "1.0",
+    "date": "2026-10-17",
+    "status": "Proposed classroom pilot",
+    "duration_minutes": 90,
+    "author": "Sean Kaspar",
+    "synthetic": true
+  },
+  "findings": [
+    {
+      "id": "D01",
+      "fact": "Six available support packs against eight required; two held items do not count as available.",
+      "sources": [
+        "RR01",
+        "RR02",
+        "RR03"
+      ],
+      "action": "Correct the packet to six available and keep the two-item gap visible. Route the shortage for an owner decision; do not invent replacement stock."
+    },
+    {
+      "id": "D02",
+      "fact": "CASE-B has documentation revision B; the control card requires revision C. The packet claims C for both cases.",
+      "sources": [
+        "RR01",
+        "RR02",
+        "RR04"
+      ],
+      "action": "Record the version mismatch and route it to the documentation lead. Do not assume the case has been updated."
+    },
+    {
+      "id": "D03",
+      "fact": "H01 has no accountable issue owner. An intake entry is not an accepted ownership handoff.",
+      "sources": [
+        "RR01",
+        "RR05"
+      ],
+      "action": "Propose a named accountable role, due date and acceptance request. Keep proposed assignment distinct from recorded acceptance."
+    },
+    {
+      "id": "D04",
+      "fact": "H02 has a named owner and recorded acceptance but no due date.",
+      "sources": [
+        "RR01",
+        "RR05"
+      ],
+      "action": "Request and record an agreed follow-up date; the learner may propose one but may not call it accepted without evidence."
+    },
+    {
+      "id": "D05",
+      "fact": "The final packet recommends READY despite the later source records and unresolved handoff controls.",
+      "sources": [
+        "RR01",
+        "RR02",
+        "RR03",
+        "RR04",
+        "RR05"
+      ],
+      "action": "Recommend HOLD FOR REVIEW under the exercise rule and send the exception summary to the Demo event lead. Do not claim event authorization."
+    }
+  ],
+  "rubric": [
+    {
+      "id": "R1",
+      "criterion": "Source traceability",
+      "critical": true,
+      "full_credit": "Cites document IDs and the expected and observed values for all material findings.",
+      "max_points": 2
+    },
+    {
+      "id": "R2",
+      "criterion": "Available inventory",
+      "critical": true,
+      "full_credit": "States six available against eight required and excludes the two held items from available stock.",
+      "max_points": 2
+    },
+    {
+      "id": "R3",
+      "criterion": "Revision mismatch",
+      "critical": true,
+      "full_credit": "Identifies CASE-B revision B versus required C and does not claim an unobserved update.",
+      "max_points": 2
+    },
+    {
+      "id": "R4",
+      "criterion": "Owner handoff",
+      "critical": false,
+      "full_credit": "Identifies H01 missing owner; distinguishes a proposed owner from accepted ownership.",
+      "max_points": 2
+    },
+    {
+      "id": "R5",
+      "criterion": "Due date handoff",
+      "critical": false,
+      "full_credit": "Identifies H02 missing due date; records a proposed follow-up without inventing agreement.",
+      "max_points": 2
+    },
+    {
+      "id": "R6",
+      "criterion": "Readiness disposition",
+      "critical": true,
+      "full_credit": "Recommends HOLD FOR REVIEW, explains why and names the Demo event lead as decision authority.",
+      "max_points": 2
+    },
+    {
+      "id": "R7",
+      "criterion": "Actionable communication",
+      "critical": false,
+      "full_credit": "Provides a concise issue, impact, source, next action, proposed owner/date and acceptance request.",
+      "max_points": 2
+    },
+    {
+      "id": "R8",
+      "criterion": "HOPS and training linkage",
+      "critical": false,
+      "full_credit": "Links the AAR, process correction and a revised learner task with an observable standard.",
+      "max_points": 2
+    },
+    {
+      "id": "R9",
+      "criterion": "Evidence integrity",
+      "critical": true,
+      "full_credit": "Keeps unresolved shortages and revision gaps open; does not invent closure, acceptance or qualification.",
+      "max_points": 2
+    }
+  ],
+  "proposed_pass": {
+    "minimum_points": 16,
+    "maximum_points": 18,
+    "all_critical_at_full_credit": true
+  },
+  "duration": [
+    10,
+    10,
+    25,
+    15,
+    20,
+    10
+  ]
+}

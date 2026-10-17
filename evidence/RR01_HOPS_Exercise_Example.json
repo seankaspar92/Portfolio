@@ -1,0 +1,127 @@
+{
+  "schema": "hops.improvement-loop/v1",
+  "synthetic": true,
+  "stage": "TRAINING_REVISED",
+  "cycle": 1,
+  "trainingVersion": 2,
+  "issue": {
+    "id": "ISS-001",
+    "summary": "Late source reconciliation led to an unsupported READY recommendation",
+    "observation": "RR02 final review at 1540 did not reconcile the inventory, revision and handoff facts in RR03 through RR05.",
+    "evidence": "RR01 control card; RR02 final recommendation; RR03 inventory; RR04 revisions; RR05 handoffs"
+  },
+  "assignment": {
+    "owner": "Demo preparation process lead",
+    "due": "2026-10-23"
+  },
+  "aar": {
+    "id": "AAR-1",
+    "issueId": "ISS-001",
+    "expected": "Reconcile source records and handoff controls before the final packet recommendation.",
+    "observed": "The packet recommended READY while quantity, revision, owner and due-date conditions remained unresolved.",
+    "cause": "Proposed cause: no assigned source-reconciliation and handoff-completeness checkpoint before the final review.",
+    "evidence": "RR01 through RR05 synthetic learner records; classroom review only"
+  },
+  "action": {
+    "id": "ACT-1",
+    "aarId": "AAR-1",
+    "description": "Add source reconciliation and owner/date checks before recommendation; retain HOLD while conditions remain unresolved.",
+    "owner": "Demo preparation process lead",
+    "due": "2026-10-24",
+    "success": "The revised administrative record accurately shows six available support packs, CASE-B revision B, outstanding conditions and HOLD FOR REVIEW."
+  },
+  "correction": {
+    "actionId": "ACT-1",
+    "evidence": "ED01 synthetic administrative addendum in the evaluator guide",
+    "result": "The sample record is reconciled and recommends HOLD. It does not replace stock, update CASE-B or establish real owner/date acceptance."
+  },
+  "training": {
+    "id": "TRN-POWER-CHECK",
+    "version": 2,
+    "actionId": "ACT-1",
+    "objective": "Reconcile readiness source records and produce a truthful discrepancy handoff.",
+    "task": "Independently compare a fresh synthetic packet with inventory, revision and handoff records; cite the facts and brief a proposed disposition.",
+    "standard": "Identify all material seeded facts with sources, separate proposed from accepted actions, and preserve HOLD and decision authority when controls are unresolved.",
+    "change": "Replace a guided familiarization walkthrough with independent source comparison, an explicit handoff and an evidence-based recommendation."
+  },
+  "verification": null,
+  "closure": null,
+  "events": [
+    {
+      "sequence": 1,
+      "type": "capture",
+      "actor": "Synthetic classroom reference",
+      "at": "2026-10-17T14:00:00.000Z",
+      "cycle": 1,
+      "payload": {
+        "summary": "Late source reconciliation led to an unsupported READY recommendation",
+        "observation": "RR02 final review at 1540 did not reconcile the inventory, revision and handoff facts in RR03 through RR05.",
+        "evidence": "RR01 control card; RR02 final recommendation; RR03 inventory; RR04 revisions; RR05 handoffs"
+      }
+    },
+    {
+      "sequence": 2,
+      "type": "assign",
+      "actor": "Synthetic classroom reference",
+      "at": "2026-10-17T14:00:00.000Z",
+      "cycle": 1,
+      "payload": {
+        "owner": "Demo preparation process lead",
+        "due": "2026-10-23"
+      }
+    },
+    {
+      "sequence": 3,
+      "type": "aar",
+      "actor": "Synthetic classroom reference",
+      "at": "2026-10-17T14:00:00.000Z",
+      "cycle": 1,
+      "payload": {
+        "expected": "Reconcile source records and handoff controls before the final packet recommendation.",
+        "observed": "The packet recommended READY while quantity, revision, owner and due-date conditions remained unresolved.",
+        "cause": "Proposed cause: no assigned source-reconciliation and handoff-completeness checkpoint before the final review.",
+        "evidence": "RR01 through RR05 synthetic learner records; classroom review only"
+      }
+    },
+    {
+      "sequence": 4,
+      "type": "plan",
+      "actor": "Synthetic classroom reference",
+      "at": "2026-10-17T14:00:00.000Z",
+      "cycle": 1,
+      "payload": {
+        "description": "Add source reconciliation and owner/date checks before recommendation; retain HOLD while conditions remain unresolved.",
+        "owner": "Demo preparation process lead",
+        "due": "2026-10-24",
+        "success": "The revised administrative record accurately shows six available support packs, CASE-B revision B, outstanding conditions and HOLD FOR REVIEW."
+      }
+    },
+    {
+      "sequence": 5,
+      "type": "correct",
+      "actor": "Synthetic classroom reference",
+      "at": "2026-10-17T14:00:00.000Z",
+      "cycle": 1,
+      "payload": {
+        "evidence": "ED01 synthetic administrative addendum in the evaluator guide",
+        "result": "The sample record is reconciled and recommends HOLD. It does not replace stock, update CASE-B or establish real owner/date acceptance."
+      }
+    },
+    {
+      "sequence": 6,
+      "type": "train",
+      "actor": "Synthetic classroom reference",
+      "at": "2026-10-17T14:00:00.000Z",
+      "cycle": 1,
+      "payload": {
+        "objective": "Reconcile readiness source records and produce a truthful discrepancy handoff.",
+        "task": "Independently compare a fresh synthetic packet with inventory, revision and handoff records; cite the facts and brief a proposed disposition.",
+        "standard": "Identify all material seeded facts with sources, separate proposed from accepted actions, and preserve HOLD and decision authority when controls are unresolved.",
+        "change": "Replace a guided familiarization walkthrough with independent source comparison, an explicit handoff and an evidence-based recommendation."
+      }
+    }
+  ],
+  "notice": "Synthetic browser-local workflow demonstration. Reviewer labels are not authenticated identities. No mission, training qualification, FleetVoice acceptance, or operational release is authorized.",
+  "lesson_id": "RR-01",
+  "reference_only": true
+}
