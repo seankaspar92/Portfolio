@@ -1,0 +1,18 @@
+import test from 'node:test';
+import assert from 'node:assert/strict';
+import {initialState,reduce,restore,example,exportRecord} from '../hops-loop/improvement-loop.mjs';
+const at='2026-10-17T13:30:00.000Z';
+const apply=(s,type,overrides={})=>reduce(s,{...example(type,s.trainingVersion),...overrides},{at});
+function through(end='close'){let s=initialState();for(const t of ['capture','assign','aar','plan','correct','train','verify','close']){s=apply(s,t);if(t===end)break;}return s;}
+test('complete linked synthetic issue-to-training cycle',()=>{const s=through();assert.equal(s.stage,'CLOSED');assert.equal(s.training.version,2);assert.equal(s.training.actionId,s.action.id);assert.equal(s.action.aarId,s.aar.id);assert.equal(s.aar.issueId,s.issue.id);assert.equal(s.events.length,8);assert.equal(s.verification.trainingVersion,2);});
+test('no skipping evidence or ownership gates',()=>{assert.throws(()=>apply(initialState(),'close'));let s=through('assign');assert.throws(()=>apply(s,'train'));assert.throws(()=>apply(s,'aar',{evidence:''}));});
+test('real dates and bounded fields are required',()=>{const s=through('capture');assert.throws(()=>apply(s,'assign',{due:'2026-02-30'}));assert.throws(()=>apply(initialState(),'capture',{summary:'a'.repeat(601)}));assert.throws(()=>apply(s,'assign',{extra:true}));});
+test('self-review and stale training evidence cannot close',()=>{const s=through('train');assert.throws(()=>apply(s,'verify',{reviewer:s.action.owner}));assert.throws(()=>apply(s,'verify',{trainingVersion:1}));});
+test('failed simulated review stays open',()=>{const s=apply(through('train'),'verify',{outcome:'failed'});assert.equal(s.stage,'TRAINING_REVISED');assert.throws(()=>apply(s,'close'));});
+test('closure requires the recorded reviewer and is not repeatable',()=>{const s=through('verify');assert.throws(()=>apply(s,'close',{reviewer:'Different reviewer'}));assert.throws(()=>apply(through(),'close'));});
+test('training revision invalidates prior verification and closure',()=>{let s=apply(through(),'train');assert.equal(s.stage,'TRAINING_REVISED');assert.equal(s.trainingVersion,3);assert.equal(s.verification,null);assert.equal(s.closure,null);assert.throws(()=>apply(s,'close'));assert.throws(()=>apply(s,'verify',{trainingVersion:2}));});
+test('recurrence reopens and retains historical closure without reusing it',()=>{const s=apply(through(),'reopen');assert.equal(s.stage,'OWNED');assert.equal(s.cycle,2);assert.equal(s.closure,null);assert.equal(s.action,null);assert.equal(s.events.filter(e=>e.type==='close').length,1);assert.throws(()=>apply(s,'close'));});
+test('saved state is rebuilt from events rather than trusting closure fields',()=>{let s=through('assign');s.stage='CLOSED';s.closure={fake:true};const r=restore(s);assert.equal(r.stage,'OWNED');assert.equal(r.closure,null);assert.throws(()=>apply(s,'close'));assert.deepEqual(restore(JSON.parse(JSON.stringify(through()))),through());});
+test('malformed, oversized or reordered event journals are rejected',()=>{const s=through();s.events[1].sequence=99;assert.throws(()=>restore(s));assert.throws(()=>restore({schema:'other',synthetic:true,events:[]}));assert.throws(()=>restore({...initialState(),events:Array(101).fill({})}));});
+test('export keeps synthetic scope, provenance and all links',()=>{const e=exportRecord(through());assert.equal(e.synthetic,true);assert.match(e.notice,/not authenticated/);assert.match(e.notice,/No mission/);assert.equal(e.events[0].payload.evidence,'SYN-OBS-001: exercise inventory worksheet');});
+test('backdated transitions are refused',()=>{const s=through('capture');assert.throws(()=>reduce(s,example('assign'),{at:'2026-10-16T00:00:00Z'}));});

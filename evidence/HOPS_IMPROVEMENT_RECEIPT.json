@@ -1,0 +1,20 @@
+{
+  "schema": "hops.improvement-evidence/v1",
+  "date": "2026-10-17",
+  "version": "2.9",
+  "scope": "Synthetic browser-local issue-to-training workflow; no authenticated approval, shared backend or operational acceptance",
+  "tests": {
+    "reducer": 12,
+    "jsdom": 7,
+    "passed": 19,
+    "failed": 0
+  },
+  "visual_browser_qa": "not performed: managed browser controller unavailable",
+  "fleetvoice_verification": "deferred and unchanged",
+  "source_files": {
+    "improvement-loop.mjs": "c5cd32cf5c7dc5d7bac429d7c353c253f5e2ef747206f4cbe0fd704d4d0f4758",
+    "improvement-panel.mjs": "c378887f583336908bd905a248881c426080cabc48d9c2394c3c3708aa905f6e",
+    "improvement-loop.css": "c25c4bb44cf9d986e9e3235a9aabc7993bceedcc713e731d600947361423a488"
+  },
+  "canonical_source_commit": "c53923a4facd96b80393dfd8ffcfa36217b27475"
+}

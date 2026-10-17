@@ -12,6 +12,10 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: '22'
+      - name: Install DOM test dependency
+        run: npm ci --ignore-scripts
+      - name: HOPS improvement reducer and DOM regression
+        run: npm test
       - name: Career scoring regression suite
         run: node tests/career-score-regression.mjs
       - name: Canonical portfolio claims regression
