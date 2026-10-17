@@ -1,0 +1,51 @@
+{
+  "schema": "fleetvoice.public-software-receipt/v1",
+  "reviewed_at": "2026-10-17",
+  "version": "0.15.1",
+  "source_commit": "1f75ca1f8bbdf82aabc8f93656d09923d6388afc",
+  "source_access": "private repository; public aggregate receipt",
+  "archives_reconciled": 9,
+  "python": {
+    "discovered": 233,
+    "passed": 215,
+    "skipped_optional_dependencies": 18
+  },
+  "javascript": {
+    "passed": 26,
+    "failed": 0
+  },
+  "launcher_smoke": {
+    "schema": "fleetvoice.consolidation-smoke/v1",
+    "date": "2026-10-17",
+    "rounds": [
+      {
+        "round": 1,
+        "version": "0.15.1",
+        "note_persisted": true,
+        "trial_items": 171,
+        "reference_entries": 162,
+        "physical_control": false
+      },
+      {
+        "round": 2,
+        "version": "0.15.1",
+        "note_persisted": true,
+        "trial_items": 171,
+        "reference_entries": 162,
+        "physical_control": false
+      }
+    ],
+    "graceful_stop": "passed_twice",
+    "restart_persistence": "passed",
+    "scope": "Linux launcher subprocess and HTTP, synthetic local records; no microphone, acoustic inference, or field acceptance"
+  },
+  "human_reviews_supplied": 0,
+  "human_review_items_pending": 171,
+  "microphone_validated": false,
+  "human_asr_validated": false,
+  "field_approved": false,
+  "browser_visual_qa": "not performed",
+  "limits": "Software integration and Linux subprocess/HTTP checks only. No physical control, acoustic accuracy, field adoption, or shared hosted backend claim.",
+  "merged_commit": "864e394ac6877e1595688b55ced206902c40ced6",
+  "ci": "GitHub FleetVoice software regression passed for the tested source commit"
+}

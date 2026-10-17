@@ -1,28 +1,25 @@
-# FleetVoice public evidence summary
+# FleetVoice v0.15.1 public software evidence
 
-Reviewed October 17, 2026. This is a public summary of inspected source records, not a new runtime test receipt.
+Verified October 17, 2026. Consolidated source commit: 1f75ca1f8bbdf82aabc8f93656d09923d6388afc. Source repository is private; this page exposes the bounded aggregate evidence.
 
-## Pinned source
+## Consolidation completed
 
-- Private repository: seankaspar92/FleetVoice.
-- Inspected main commit: 557e612f07b200aca66599cc5f81bc9d7a177bbc.
-- Source records: README.md and BUILD_STATUS.md.
-- Documentation release line: v0.6, including the guided first-human-trial increment.
+All nine v0.7–v0.15 development archives were extracted and compared against the GitHub baseline. They were cumulative snapshots on a divergent source path. Integration preserved guided human trials, recording review, citation-backed references, the direct-PCM Whisper decoder fix, prior regression tests and baseline binary evidence.
 
-## Bounded implemented workflow
+The combined prototype includes a platform gateway, target-bound confirmation, read-only recovery/runtime source readers, HOPS status and context-bound local updates, SQLite persistence, a read-only adapter kit and a local launcher. It does not establish physical aircraft control or shared state with hosted static HOPS.
 
-The local simulator interprets bounded inspection requests, presents a proposal for separate confirmation, checks session ownership and current state, records per-aircraft outcomes, and supports read-only exported replay. The documented example distinguishes one aircraft completing from another rejecting.
+## Fresh verification
 
-The guided-trial increment records 161 Python and 21 JavaScript tests. These are retained source-reported results and were not rerun for this portfolio update. They do not establish speech recognition accuracy or human acceptance.
+- Python: 233 discovered, 215 passed, 18 optional-dependency tests skipped.
+- JavaScript: 26 passed, zero failed.
+- Python compilation, browser-module syntax and POSIX start-script syntax passed.
+- An actual Linux launcher subprocess started twice, stopped gracefully twice, and retained a confirmed synthetic AAR note through restart.
+- Trial and source-review HTTP endpoints retained their 171 review items and 162 general-reference entries.
+
+Machine-readable public receipt: FLEETVOICE_CONSOLIDATION.json. Original package hashes, conflict resolutions and detailed regression logs remain with the private source.
 
 ## Open acceptance
 
-The inspected baseline records zero human reviews and 171 pending items: 162 terminology rows and nine manual checks. Actual microphone/device trials, comprehension, acoustic comparisons, and field acceptance remain open. No physical aircraft integration is established.
+Zero human reviews were supplied. The 171-item review gate remains open. Optional recognizer dependencies were not installed for the regression run; this is not a model inference or accuracy result. Microphone/device trials, human acoustic comparison, desktop-browser usability, Windows/macOS startup and field acceptance remain unverified.
 
-## Later packages
-
-Development packages named v0.7 through v0.15 exist separately. Their labels cover platform, browser gateway, recovery connector, runtime producer, HOPS integration/commands, adapter kit, and launcher increments. The archive contents have not been reconciled in this review because workspace execution was unavailable. They are not promoted into the pinned baseline or counted as accepted capabilities.
-
-## Public illustration
-
-fleetvoice.html reconstructs the documented request/review/confirm/outcome workflow. It does not run the simulator, recognize speech, capture a microphone, or command aircraft.
+The portfolio walkthrough is an illustrative reconstruction of documented behavior, not a remotely running FleetVoice service. Software integration does not promote human, acoustic or field readiness.
