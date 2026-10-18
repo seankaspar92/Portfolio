@@ -16,7 +16,7 @@
     "improvement-panel.mjs": "9beaa34fe0ddcfc5a512a57c8db5c194538648aefc8e7d74783f36f70c4e3aae",
     "improvement-loop.css": "6b43edc26f22d1de14d538716fd32dae8a4b8e06b8301e8e50d111e3778f5503"
   },
-  "canonical_source_commit": "d25256c967793076593d3ba4fd2b566c9bb3c538",
+  "canonical_source_commit": "3968c3c06f4a0e98d08d190468f7f2a94be786f1",
   "usability_changes": [
     "Focus advances to new step heading after save",
     "A valid storage replacement recovers from invalid saved state",

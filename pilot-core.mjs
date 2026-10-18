@@ -16,7 +16,8 @@ export function metadata(m){
 }
 export function attempt(a){
  alias(a.learner,'Learner');alias(a.evaluator,'Evaluator');if(!Number.isInteger(a.attempt)||a.attempt<1||a.attempt>20)throw Error('Attempt must be 1–20.');
- return {learner:a.learner,evaluator:a.evaluator,attempt:a.attempt,scores:[...a.scores],evidence:text(a.evidence,'Evidence'),remediation:text(a.remediation,'Remediation'),assessment:score(a.scores)};
+ const assessment=score(a.scores),evidence=text(a.evidence,'Evidence');if(assessment.complete&&!evidence)throw Error('Cite observed evidence before recording a complete assessment.');
+ return {learner:a.learner,evaluator:a.evaluator,attempt:a.attempt,scores:[...a.scores],evidence,remediation:text(a.remediation,'Remediation'),assessment};
 }
 export function normalize(s){
  if(!s||s.schema!=='rr01-pilot/v1'||!Array.isArray(s.attempts)||s.attempts.length>100)throw Error('Invalid pilot record. Export the original or explicitly reset.');

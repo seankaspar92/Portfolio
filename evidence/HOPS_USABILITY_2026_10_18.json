@@ -1,0 +1,15 @@
+{
+  "date": "2026-10-18",
+  "scope": "Public portfolio shared HOPS component; native Site publication verified separately",
+  "shared_source_commit": "3968c3c06f4a0e98d08d190468f7f2a94be786f1",
+  "automated": {
+    "passed": 21,
+    "failed": 0
+  },
+  "desktop_workflow": "Final release check pending",
+  "responsive_viewports": "Final release check pending",
+  "real_device_safari_touch": "Not performed",
+  "native_site_browser_qa": "Not performed: managed Sites preview controller unavailable",
+  "fleetvoice_verification": "Deferred",
+  "cache_handling": "Content-versioned HOPS CSS/module URLs prevent stale returning-browser assets"
+}
