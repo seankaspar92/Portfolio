@@ -6,10 +6,63 @@
     "passed": 21,
     "failed": 0
   },
-  "desktop_workflow": "Final release check pending",
-  "responsive_viewports": "Final release check pending",
+  "desktop_workflow": {
+    "browser": "Chromium",
+    "scope": "Synthetic public portfolio component",
+    "passed": [
+      "Evidence-gated progression through closure",
+      "Failed simulated evaluation remains open",
+      "New step receives keyboard focus",
+      "JSON packet download",
+      "Proposed training-task download",
+      "Reload preserves closure",
+      "Recurrence reopens cycle 2",
+      "Explicit reset after exporting QA record"
+    ]
+  },
+  "responsive_viewports": [
+    {
+      "iframe_width": 320,
+      "document_client_width": 305,
+      "document_scroll_width": 305,
+      "horizontal_page_overflow": false
+    },
+    {
+      "iframe_width": 390,
+      "document_client_width": 375,
+      "document_scroll_width": 375,
+      "horizontal_page_overflow": false
+    },
+    {
+      "iframe_width": 768,
+      "document_client_width": 753,
+      "document_scroll_width": 753,
+      "horizontal_page_overflow": false
+    },
+    {
+      "iframe_width": 1280,
+      "document_client_width": 1265,
+      "document_scroll_width": 1265,
+      "horizontal_page_overflow": false
+    }
+  ],
   "real_device_safari_touch": "Not performed",
   "native_site_browser_qa": "Not performed: managed Sites preview controller unavailable",
   "fleetvoice_verification": "Deferred",
-  "cache_handling": "Content-versioned HOPS CSS/module URLs prevent stale returning-browser assets"
+  "cache_handling": "Content-versioned HOPS CSS/module URLs prevent stale returning-browser assets",
+  "small_screen_controls": {
+    "measured_input_font_px": 16,
+    "measured_primary_button_height_px": 44
+  },
+  "responsive_method": "Real Chromium iframe viewport, including its scrollbar; not a mobile hardware or Safari emulator",
+  "pilot_capture_browser_checks": [
+    "Synthetic session labeling",
+    "Two independent evaluator records",
+    "17/18 critical failure produces REMEDIATE",
+    "Scoring disagreement on R1 retained",
+    "Reload preserves both records",
+    "JSON download",
+    "Synthetic QA records cleared after export",
+    "390px viewport with no page overflow"
+  ]
 }
