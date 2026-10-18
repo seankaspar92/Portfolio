@@ -1,0 +1,106 @@
+{
+  "schema": "portfolio-project-status/v1",
+  "as_of": "2026-10-18",
+  "boundary": "Manually curated public-safe summary. Not an export of the private PCC registry, live operational readiness or automatic promotion.",
+  "projects": [
+    {
+      "name": "AI Operating System",
+      "version": "v1.0.0 / Phase 25",
+      "maturity": "Released reference runtime",
+      "page": "aios.html",
+      "evidence_date": "2026-09-12",
+      "verified": "Published release and governed runtime; enterprise workload remains simulated.",
+      "next_action": "PCC-002 planning foundation; private board runtime remains a separate ticket."
+    },
+    {
+      "name": "HOPS",
+      "version": "2.9",
+      "maturity": "Synthetic implementation",
+      "page": "hops.html#improvement-loop",
+      "evidence_date": "2026-10-18",
+      "verified": "21 workflow tests including focus progression and storage recovery; browser checks retain their own scope.",
+      "next_action": "Preserve desktop/responsive checks and evidence exports; no operational acceptance."
+    },
+    {
+      "name": "FleetVoice",
+      "version": "0.15.1",
+      "maturity": "Software verified",
+      "page": "fleetvoice.html",
+      "evidence_date": "2026-10-17",
+      "verified": "215 Python and 26 JavaScript tests in retained consolidation evidence; 18 optional skips.",
+      "next_action": "Human/acoustic/device/field verification deferred."
+    },
+    {
+      "name": "Training lesson",
+      "version": "RR-01 v1.0",
+      "maturity": "Proposed pilot",
+      "page": "readiness-lesson.html",
+      "evidence_date": "2026-10-18",
+      "verified": "13 reviewed PDF pages, source records, rubric and HOPS reference.",
+      "next_action": "Use pilot capture; actual timing, scores and learning outcomes remain unobserved."
+    },
+    {
+      "name": "Drone Recovery",
+      "version": "Gate 61 archive / concept v1.1",
+      "maturity": "External evidence blocked",
+      "page": "mobile-drone-operations.html",
+      "evidence_date": "2026-10-18",
+      "verified": "153 fresh package tests pass; Gate 50\u201361 contracts reconciled.",
+      "next_action": "Resolve Gate 51 simulator provenance; no HIL, field or physical recovery acceptance."
+    },
+    {
+      "name": "Field enablement",
+      "version": "Pilot v0.1",
+      "maturity": "Proposed framework",
+      "page": "field-deployment.html",
+      "evidence_date": "2026-10-12",
+      "verified": "Readiness, task assessment, sustainment, issue intake and handover templates.",
+      "next_action": "Confirm a representative event and approved references before building a tracker."
+    },
+    {
+      "name": "AI Skills",
+      "version": "47 governed skills",
+      "maturity": "Published registry snapshot",
+      "page": "skills.html",
+      "evidence_date": "2026-09-12",
+      "verified": "41 Active and six Testing; 350 Planned excluded from capability count.",
+      "next_action": "Refresh the authoritative registry and evaluate one Testing skill."
+    },
+    {
+      "name": "NFL EDGE",
+      "version": "2.7",
+      "maturity": "Connected foundation",
+      "page": "edge.html",
+      "evidence_date": "2026-10-18",
+      "verified": "Snapshot transport, research isolation and historical provenance controls.",
+      "next_action": "Close a timestamped weekly prediction-to-results evaluation cycle."
+    },
+    {
+      "name": "MLB EDGE",
+      "version": "0.2.2 / 0.3.0 Candidate",
+      "maturity": "Local gate pending",
+      "page": "edge.html",
+      "evidence_date": "2026-10-18",
+      "verified": "Validated baseline retained; candidate package checks do not prove authentic-data validation.",
+      "next_action": "Run authentic Statcast regression, archive/load and gate audit."
+    },
+    {
+      "name": "GOTS and Career Intelligence",
+      "version": "Governed workflows",
+      "maturity": "Sanitized public examples",
+      "page": "gots.html",
+      "evidence_date": "2026-10-18",
+      "verified": "Career scoring and evidence/constraint checks pass.",
+      "next_action": "Link private application decisions to actual outcomes; keep private records excluded."
+    },
+    {
+      "name": "Army and MBA evidence",
+      "version": "Source-backed case studies",
+      "maturity": "Supporting evidence",
+      "page": "army.html",
+      "evidence_date": "2026-10-18",
+      "verified": "Established experience and academic contribution boundaries.",
+      "next_action": "Maintain source attribution and develop concise interview stories."
+    }
+  ]
+}
