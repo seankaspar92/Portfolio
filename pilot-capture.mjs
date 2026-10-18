@@ -1,4 +1,4 @@
-import {PHASES,CRITERIA,CRITICAL,normalize,metadata,attempt,disagreements} from './pilot-core.mjs';
+import {PHASES,CRITERIA,CRITICAL,normalize,metadata,attempt,disagreements} from './pilot-core.mjs?v=ae883a673702';
 const $=s=>document.querySelector(s),key='rr01-pilot-v1';let state=null,saved=null,invalid=false;
 const msg=t=>$('#pilot-message').textContent=t;
 const field=(name,label,type='text')=>{const l=document.createElement('label');l.textContent=label;const i=document.createElement('input');i.name=name;i.type=type;l.append(i);return l;};

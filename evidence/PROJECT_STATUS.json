@@ -10,7 +10,7 @@
       "page": "aios.html",
       "evidence_date": "2026-09-12",
       "verified": "Published release and governed runtime; enterprise workload remains simulated.",
-      "next_action": "PCC-002 planning foundation; private board runtime remains a separate ticket."
+      "next_action": "Implement PCC-003 private read-only board against the completed PCC-002 specs."
     },
     {
       "name": "HOPS",

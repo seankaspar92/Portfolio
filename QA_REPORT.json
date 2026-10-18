@@ -82,6 +82,7 @@
     "pilot_outcomes": "Not observed",
     "recovery_package_tests": 153,
     "fleetvoice_verification": "Deferred",
-    "device_boundary": "Chromium responsive viewport checks are separate from real device acceptance"
+    "device_boundary": "Chromium responsive viewport checks are separate from real device acceptance",
+    "pilot_tests": 7
   }
 }
