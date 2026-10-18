@@ -18,7 +18,9 @@
     "resume-gates.html",
     "fleetvoice.html",
     "mobile-drone-operations.html",
-    "readiness-lesson.html"
+    "readiness-lesson.html",
+    "project-status.html",
+    "rr01-pilot.html"
   ],
   "evidence_policy": "Only verified implementation, documented workflow, retained validation, or sanitized real operating-use claims are public evidence.",
   "concept_graphics": [],
@@ -98,5 +100,11 @@
     "receipt": "evidence/RR01_LESSON_VALIDATION.json",
     "duration_minutes": 90,
     "pilot_run": false
+  },
+  "project_review": {
+    "date": "2026-10-18",
+    "status_record": "evidence/PROJECT_STATUS.json",
+    "recovery_reconciliation": "evidence/RECOVERY_GATE_RECONCILIATION.json",
+    "pilot_capture": "rr01-pilot.html"
   }
 }

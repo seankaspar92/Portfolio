@@ -1,0 +1,167 @@
+{
+  "schema": "recovery-gate-reconciliation/v1",
+  "as_of": "2026-10-18",
+  "scope": "Archived software contracts and supplied synthetic fixtures only",
+  "archives": {
+    "usv-uav-recovery-gate49-zero-trust-c2-v46.zip": "f45d4eefdb7edf39c2e4c9b05fe34a6fda1cbb1086d0cb8c0cca905a828152bb",
+    "usv-uav-recovery-gate61-controlled-field-test-ladder-v58.zip": "5c71ba2b2b35f6b709e6c2b24b9af67c2ab741cf98fc871a16e38b47a29f5ad1"
+  },
+  "comparison": {
+    "baseline_files": 350,
+    "candidate_files": 411,
+    "added": 61,
+    "removed": 0,
+    "changed": 3
+  },
+  "fresh_package_tests": {
+    "command": "npm test",
+    "passed": 153,
+    "failed": 0,
+    "skipped": 0
+  },
+  "gates": [
+    {
+      "gate": 50,
+      "name": "gate50-evidence-based-readiness",
+      "source_gate": "gate49-zero-trust-c2-security",
+      "artifact_sha256": "1059ee3edcfee4ff7a6ce474933e7d245228628304b861a8853090c2ee7d312d",
+      "contract_validation": true,
+      "reported_status": "READINESS_GOVERNANCE_ACTIVE",
+      "evidence": {
+        "assessedCapabilities": 42
+      },
+      "acceptance": "Not established by package tests"
+    },
+    {
+      "gate": 51,
+      "name": "gate51-reproducible-px4-gazebo-runtime",
+      "source_gate": "gate50-evidence-based-readiness",
+      "artifact_sha256": "79dfcf35cab66b78db0b3b11c9bb5ad439606f3dd2626896ab6cc5d36cf12a50",
+      "contract_validation": true,
+      "reported_status": "BLOCKED",
+      "evidence": {
+        "runtimeReady": false
+      },
+      "acceptance": "Not established by package tests"
+    },
+    {
+      "gate": 52,
+      "name": "gate52-native-telemetry-time-integrity",
+      "source_gate": "gate51-reproducible-px4-gazebo-runtime",
+      "artifact_sha256": "42be8b551eb794597ebdae0cb94e80bfa228ae22e4d5200366c2e408953979cc",
+      "contract_validation": true,
+      "reported_status": "BLOCKED",
+      "evidence": {
+        "acceptedFixtures": 0
+      },
+      "acceptance": "Not established by package tests"
+    },
+    {
+      "gate": 53,
+      "name": "gate53-hil-recovery",
+      "source_gate": "gate52-native-telemetry-time-integrity",
+      "artifact_sha256": "9d06ca4e314571e167b62c1838a5f6258a4c79d6daa4ab74f74571bb6a9e5243",
+      "contract_validation": true,
+      "reported_status": "BLOCKED",
+      "evidence": {
+        "passedRuns": 0
+      },
+      "acceptance": "Not established by package tests"
+    },
+    {
+      "gate": 54,
+      "name": "gate54-integrated-safety-case",
+      "source_gate": "gate53-hil-recovery",
+      "artifact_sha256": "e681133316156cd0e4f08958bde54023cd99eb5bad584b91e59088b484dc7e42",
+      "contract_validation": true,
+      "reported_status": "SAFETY_MODEL_READY",
+      "evidence": {
+        "traceabilityCoverage": 1
+      },
+      "acceptance": "Not established by package tests"
+    },
+    {
+      "gate": 55,
+      "name": "gate55-terminal-maritime-perception",
+      "source_gate": "gate54-integrated-safety-case",
+      "artifact_sha256": "0e1dcac3a0a12228523653c868a16294fe1c8858ca2ebf407b81b84231c78651",
+      "contract_validation": true,
+      "reported_status": "EXPERIMENTAL",
+      "evidence": {},
+      "acceptance": "Not established by package tests"
+    },
+    {
+      "gate": 56,
+      "name": "gate56-distributed-fleet-resilience",
+      "source_gate": "gate55-terminal-maritime-perception",
+      "artifact_sha256": "60bf8eff703317fdaddf173c76c50455ca0065e0abe0ca6b14b6063a22194244",
+      "contract_validation": true,
+      "reported_status": "EXPERIMENTAL",
+      "evidence": {},
+      "acceptance": "Not established by package tests"
+    },
+    {
+      "gate": 57,
+      "name": "gate57-secure-platform-update-chain",
+      "source_gate": "gate56-distributed-fleet-resilience",
+      "artifact_sha256": "970ca8d3ae90f1c63149a316b3a3e5422bcb8f539784834f863798224988e507",
+      "contract_validation": true,
+      "reported_status": "CONTROL_CONTRACT_READY",
+      "evidence": {},
+      "acceptance": "Not established by package tests"
+    },
+    {
+      "gate": 58,
+      "name": "gate58-learning-assurance-shadow-mode",
+      "source_gate": "gate57-secure-platform-update-chain",
+      "artifact_sha256": "3efdf2c082ff7c393bae6561bd5133dc81206f243950aecb41d414ead3469c05",
+      "contract_validation": true,
+      "reported_status": "ADVISORY_ONLY",
+      "evidence": {},
+      "acceptance": "Not established by package tests"
+    },
+    {
+      "gate": 59,
+      "name": "gate59-c2-adapter-conformance-lab",
+      "source_gate": "gate58-learning-assurance-shadow-mode",
+      "artifact_sha256": "c492c7d0ddb6e9b5394d7e0c7cec0a3725b84721a9d036e448b35202be230ec7",
+      "contract_validation": true,
+      "reported_status": "BLOCKED",
+      "evidence": {
+        "passedVectors": 0
+      },
+      "acceptance": "Not established by package tests"
+    },
+    {
+      "gate": 60,
+      "name": "gate60-operator-maintainer-system",
+      "source_gate": "gate59-c2-adapter-conformance-lab",
+      "artifact_sha256": "ecd75db766e988e0c39d9202191c63dacf08dc086190dae4d09944b403cccbcc",
+      "contract_validation": true,
+      "reported_status": "PROTOTYPE_READY",
+      "evidence": {},
+      "acceptance": "Not established by package tests"
+    },
+    {
+      "gate": 61,
+      "name": "gate61-controlled-field-test-ladder",
+      "source_gate": "gate60-operator-maintainer-system",
+      "artifact_sha256": "9aa9730ce9f27c54cb7d24ba2b4fb54058892636062723b0726ad305ad17e630",
+      "contract_validation": true,
+      "reported_status": "BLOCKED_PENDING_CONTROLLED_TESTS",
+      "evidence": {
+        "completedLevelCount": 0,
+        "nextLevel": "bench"
+      },
+      "acceptance": "Not established by package tests"
+    }
+  ],
+  "external_acceptance": {
+    "simulator_execution": false,
+    "native_telemetry": false,
+    "hardware_in_loop": false,
+    "controlled_field_tests": false,
+    "operational_interoperability": false
+  },
+  "next_action": "Resolve Gate 51 simulator install/version/digest/build provenance; obtain authentic execution evidence before promotion."
+}

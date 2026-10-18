@@ -14,7 +14,7 @@ jobs:
           node-version: '22'
       - name: Install DOM test dependency
         run: npm ci --ignore-scripts
-      - name: HOPS improvement reducer and DOM regression
+      - name: Workflow, pilot and artifact regression
         run: npm test
       - name: Career scoring regression suite
         run: node tests/career-score-regression.mjs
@@ -39,6 +39,7 @@ jobs:
           const fs=require('fs'); const path=require('path');
           const manifest=JSON.parse(fs.readFileSync('portfolio-manifest.json','utf8'));
           if(!['2.1-sync','2.1'].includes(manifest.version)) throw new Error('Portfolio manifest is not on the v2.1 line');
+          const qa=JSON.parse(fs.readFileSync('QA_REPORT.json','utf8')); if(JSON.stringify(qa.public_pages)!==JSON.stringify(manifest.pages)) throw new Error('QA page inventory drift');
           if(manifest.pages.length!==new Set(manifest.pages).size) throw new Error('Duplicate public page in manifest');
           for(const page of manifest.pages) if(!fs.existsSync(page)) throw new Error('Missing public page: '+page);
           const sitemap=fs.readFileSync('sitemap.xml','utf8'); const base='https://seankaspar92.github.io/Portfolio/';

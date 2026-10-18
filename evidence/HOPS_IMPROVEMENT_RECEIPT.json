@@ -1,20 +1,25 @@
 {
   "schema": "hops.improvement-evidence/v1",
-  "date": "2026-10-17",
+  "date": "2026-10-18",
   "version": "2.9",
   "scope": "Synthetic browser-local issue-to-training workflow; no authenticated approval, shared backend or operational acceptance",
   "tests": {
     "reducer": 12,
-    "jsdom": 7,
-    "passed": 19,
+    "jsdom": 9,
+    "passed": 21,
     "failed": 0
   },
-  "visual_browser_qa": "not performed: managed browser controller unavailable",
+  "visual_browser_qa": "Desktop progression inspected; responsive and final-release verification recorded separately in HOPS_USABILITY_2026_10_18.json",
   "fleetvoice_verification": "deferred and unchanged",
   "source_files": {
     "improvement-loop.mjs": "c5cd32cf5c7dc5d7bac429d7c353c253f5e2ef747206f4cbe0fd704d4d0f4758",
-    "improvement-panel.mjs": "c378887f583336908bd905a248881c426080cabc48d9c2394c3c3708aa905f6e",
-    "improvement-loop.css": "c25c4bb44cf9d986e9e3235a9aabc7993bceedcc713e731d600947361423a488"
+    "improvement-panel.mjs": "9beaa34fe0ddcfc5a512a57c8db5c194538648aefc8e7d74783f36f70c4e3aae",
+    "improvement-loop.css": "6b43edc26f22d1de14d538716fd32dae8a4b8e06b8301e8e50d111e3778f5503"
   },
-  "canonical_source_commit": "c53923a4facd96b80393dfd8ffcfa36217b27475"
+  "canonical_source_commit": "d25256c967793076593d3ba4fd2b566c9bb3c538",
+  "usability_changes": [
+    "Focus advances to new step heading after save",
+    "A valid storage replacement recovers from invalid saved state",
+    "44px minimum controls, 16px small-screen fields and wrapping"
+  ]
 }

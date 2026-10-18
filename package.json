@@ -3,7 +3,7 @@
   "version": "2.9.0",
   "private": true,
   "scripts": {
-    "test": "node --test tests/hops-*.test.mjs && node tests/hops-artifact-integrity.mjs"
+    "test": "node --test tests/hops-*.test.mjs && node tests/hops-artifact-integrity.mjs && node --test tests/pilot-*.test.mjs && node tests/current-review-integrity.mjs"
   },
   "devDependencies": {
     "jsdom": "26.1.0"
