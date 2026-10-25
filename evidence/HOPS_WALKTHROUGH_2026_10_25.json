@@ -1,0 +1,36 @@
+{
+  "as_of": "2026-10-25",
+  "scope": "Automated desktop browser walkthrough of canonical HOPS Site source; synthetic data only",
+  "source_commit": "3968c3c06f4a0e98d08d190468f7f2a94be786f1",
+  "workflow_tests_passed": 21,
+  "steps": [
+    "readiness blockers inspected",
+    "capture",
+    "assign",
+    "aar",
+    "plan",
+    "correct",
+    "train",
+    "verify",
+    "close",
+    "JSON export"
+  ],
+  "stage": "CLOSED",
+  "cycle": 1,
+  "training_version": 2,
+  "event_count": 8,
+  "mission_decision": "Conditional Go",
+  "mission_blockers_resolved": false,
+  "human_pilot_run": false,
+  "real_device_acceptance": false,
+  "fleetvoice_acceptance": "deferred",
+  "packet": "evidence/HOPS_Walkthrough_Packet_2026_10_25.json",
+  "screenshot": "images/hops-closed-20261025.jpg",
+  "limitations": [
+    "Desktop Chrome automation, not a human pilot or Safari/touch acceptance.",
+    "Training-task download was not verified after the browser download observer timed out.",
+    "Simulation evidence does not establish operational readiness."
+  ],
+  "packet_sha256": "4f662f93af689557a671f74d6ae5679aecf126a64b78df39d96dd47de065a84e",
+  "screenshot_sha256": "5147a4be14d02874c57b76239c250d0d6567be43eb20f69dcc2cbfb8a0c67588"
+}

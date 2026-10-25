@@ -1,34 +1,34 @@
 {
   "schema": "portfolio-project-status/v1",
-  "as_of": "2026-10-18",
+  "as_of": "2026-10-25",
   "boundary": "Manually curated public-safe summary. Not an export of the private PCC registry, live operational readiness or automatic promotion.",
   "projects": [
     {
       "name": "AI Operating System",
-      "version": "v1.0.0 / Phase 25",
-      "maturity": "Released reference runtime",
+      "version": "v1.0.0 / MBA-CORE-001",
+      "maturity": "Merged library; workflow candidate",
       "page": "aios.html",
-      "evidence_date": "2026-09-12",
-      "verified": "Published release and governed runtime; enterprise workload remains simulated.",
-      "next_action": "Implement PCC-003 private read-only board against the completed PCC-002 specs."
+      "evidence_date": "2026-10-25",
+      "verified": "MBA advisory library merged. Private review candidate reproduced 97 Python tests, 133 subtests and four browser-logic tests; wheel boundary verified.",
+      "next_action": "Private workflow PR remains open after technical review. Independent governance approval, configured operator pilot and deployment remain separate gates."
     },
     {
       "name": "HOPS",
       "version": "2.9",
       "maturity": "Synthetic implementation",
       "page": "hops.html#improvement-loop",
-      "evidence_date": "2026-10-18",
-      "verified": "21 workflow tests including focus progression and storage recovery; browser checks retain their own scope.",
-      "next_action": "Preserve desktop/responsive checks and evidence exports; no operational acceptance."
+      "evidence_date": "2026-10-25",
+      "verified": "21 workflow tests passed. Current v2.9 source completed an automated desktop browser walkthrough through all eight gates, synthetic closure and JSON export.",
+      "next_action": "Run the human RR-01 pilot and real-device Safari/touch checks. Synthetic closure does not authorize a mission."
     },
     {
       "name": "FleetVoice",
       "version": "0.15.1",
       "maturity": "Software verified",
       "page": "fleetvoice.html",
-      "evidence_date": "2026-10-17",
-      "verified": "215 Python and 26 JavaScript tests in retained consolidation evidence; 18 optional skips.",
-      "next_action": "Human/acoustic/device/field verification deferred."
+      "evidence_date": "2026-10-20",
+      "verified": "v0.15.1 consolidation and read-only MBA capacity advisory merged; latest main-branch Linux software CI passed.",
+      "next_action": "Human/acoustic/device/field verification remains deferred. Windows baseline-specific failures remain unresolved."
     },
     {
       "name": "Training lesson",
@@ -41,21 +41,21 @@
     },
     {
       "name": "Drone Recovery",
-      "version": "Gate 61 archive / concept v1.1",
-      "maturity": "External evidence blocked",
+      "version": "Canonical Gate 61 / concept v1.1",
+      "maturity": "Simulation software; field evidence pending",
       "page": "mobile-drone-operations.html",
-      "evidence_date": "2026-10-18",
-      "verified": "153 fresh package tests pass; Gate 50\u201361 contracts reconciled.",
-      "next_action": "Resolve Gate 51 simulator provenance; no HIL, field or physical recovery acceptance."
+      "evidence_date": "2026-10-25",
+      "verified": "Canonical source and MBA economics integration merged. Node/AAR candidate reconciled with main and input validation corrected; both candidate CI workflows passed.",
+      "next_action": "Node/AAR PR remains open. Lifecycle correlation, external simulator provenance, HIL and physical recovery acceptance remain separate gates."
     },
     {
       "name": "Field enablement",
       "version": "Pilot v0.1",
       "maturity": "Proposed framework",
       "page": "field-deployment.html",
-      "evidence_date": "2026-10-12",
-      "verified": "Readiness, task assessment, sustainment, issue intake and handover templates.",
-      "next_action": "Confirm a representative event and approved references before building a tracker."
+      "evidence_date": "2026-10-20",
+      "verified": "Pilot templates retained; read-only deployment-planning adapter merged. Event authority and operating outcomes remain unknown.",
+      "next_action": "Confirm a representative event, workflow owner and approved references before an operator pilot."
     },
     {
       "name": "AI Skills",
