@@ -1,0 +1,69 @@
+{
+  "schema": "project-review-rerun/v1",
+  "run": 2,
+  "recorded_at_utc": "2026-10-25T15:35:03.017106+00:00",
+  "aios": {
+    "head": "6bb04957b3428c080a1f25d5741334c34a15dec2",
+    "state": "draft/open",
+    "source_files_verified": 224,
+    "python_tests_passed": 97,
+    "subtests_passed": 133,
+    "browser_logic_tests_passed": 4,
+    "registry_validation": "passed",
+    "wheel_boundary": "passed",
+    "warnings": [
+      "Existing Starlette/httpx deprecation warning"
+    ]
+  },
+  "drone_recovery": {
+    "head": "6c5a47e953270a3e74e016fd58643a53f4461ba3",
+    "state": "open",
+    "focused_tests_passed": 26,
+    "fresh_ci": [
+      {
+        "run": 40206598635,
+        "attempt": 2,
+        "job": 121210991488,
+        "name": "Python tests",
+        "conclusion": "success"
+      },
+      {
+        "run": 40206598586,
+        "attempt": 2,
+        "job": 121210996918,
+        "name": "Recovered Gate 61 tests",
+        "conclusion": "success"
+      }
+    ],
+    "candidate_python_tests_passed": 38,
+    "import_integrity_tests_passed": 9,
+    "canonical_javascript_tests_passed": 153
+  },
+  "hops": {
+    "source_commit": "3968c3c06f4a0e98d08d190468f7f2a94be786f1",
+    "site_version": 7,
+    "workflow_tests_passed": 21,
+    "fresh_desktop_walkthrough": "passed",
+    "closure": "CLOSED",
+    "events": 8,
+    "training_version": 2,
+    "export_replay": "passed",
+    "reload_persistence": "passed",
+    "synthetic": true,
+    "human_pilot_run": false,
+    "real_device_acceptance": false,
+    "mission_decision": "Conditional Go",
+    "fleetvoice_acceptance": "deferred",
+    "packet": "evidence/HOPS_Rerun_Packet_2026_10_25.json",
+    "screenshot": "images/hops-rerun-closed-20261025.jpg",
+    "training_task_download": "not verified; browser download observer timed out",
+    "packet_sha256": "5eba95afec84a530087ca1f37cd97aeaac65e922c9763e9bb4decb89cb6a60a7",
+    "screenshot_sha256": "a5e96e428f9350a0b3fc164e1b745714e3658fce62f96f90cb97f975054edf0d"
+  },
+  "portfolio": {
+    "workflow_tests_passed": 21,
+    "pilot_tests_passed": 7,
+    "claims_navigation_lesson_and_career_checks": "passed"
+  },
+  "merge_or_runtime_deployment_performed": false
+}

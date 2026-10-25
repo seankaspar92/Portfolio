@@ -1,0 +1,160 @@
+{
+  "schema": "hops.improvement-loop/v1",
+  "synthetic": true,
+  "stage": "CLOSED",
+  "cycle": 1,
+  "trainingVersion": 2,
+  "issue": {
+    "id": "ISS-001",
+    "summary": "Spare-power inventory discrepancy found late",
+    "observation": "Synthetic preparation exercise: the spare inventory count differed from the readiness packet.",
+    "evidence": "SYN-OBS-001: exercise inventory worksheet"
+  },
+  "assignment": {
+    "owner": "Demo logistics lead",
+    "due": "2026-10-20"
+  },
+  "aar": {
+    "id": "AAR-1",
+    "issueId": "ISS-001",
+    "expected": "Reconcile inventory against the readiness packet before the final review.",
+    "observed": "The count was checked only during the final exercise review.",
+    "cause": "The preparation checklist did not identify a reconciliation owner or earlier checkpoint.",
+    "evidence": "SYN-AAR-001: facilitated exercise review"
+  },
+  "action": {
+    "id": "ACT-1",
+    "aarId": "AAR-1",
+    "description": "Add an earlier inventory reconciliation checkpoint and named handoff owner.",
+    "owner": "Demo logistics lead",
+    "due": "2026-10-21",
+    "success": "The sample packet and inventory worksheet reconcile; any discrepancy has an owner before the final review."
+  },
+  "correction": {
+    "actionId": "ACT-1",
+    "evidence": "SYN-FIX-001: revised checklist and reconciled sample worksheet",
+    "result": "Synthetic desk review confirms the checkpoint, owner and discrepancy handoff are present."
+  },
+  "training": {
+    "id": "TRN-POWER-CHECK",
+    "version": 2,
+    "actionId": "ACT-1",
+    "objective": "Reconcile an inventory worksheet with a readiness packet and report discrepancies.",
+    "task": "Using supplied synthetic documents, compare counts, identify the discrepancy and route it to the named owner.",
+    "standard": "Identify every seeded discrepancy and document the owner and next action using the proposed rubric.",
+    "change": "Add the earlier reconciliation checkpoint, an explicit owner field and an independent learner attempt."
+  },
+  "verification": {
+    "actionId": "ACT-1",
+    "trainingId": "TRN-POWER-CHECK",
+    "reviewer": "Demo training evaluator",
+    "evidence": "SYN-CHECK-001: simulated rubric and corrected packet walkthrough",
+    "outcome": "passed",
+    "trainingVersion": 2
+  },
+  "closure": {
+    "reviewer": "Demo training evaluator",
+    "rationale": "The synthetic correction and current training revision have linked review evidence; no operational approval is implied.",
+    "at": "2026-10-25T15:33:16.185Z"
+  },
+  "events": [
+    {
+      "sequence": 1,
+      "type": "capture",
+      "actor": "Synthetic demo operator",
+      "at": "2026-10-25T15:32:21.798Z",
+      "cycle": 1,
+      "payload": {
+        "summary": "Spare-power inventory discrepancy found late",
+        "observation": "Synthetic preparation exercise: the spare inventory count differed from the readiness packet.",
+        "evidence": "SYN-OBS-001: exercise inventory worksheet"
+      }
+    },
+    {
+      "sequence": 2,
+      "type": "assign",
+      "actor": "Synthetic demo operator",
+      "at": "2026-10-25T15:32:23.850Z",
+      "cycle": 1,
+      "payload": {
+        "owner": "Demo logistics lead",
+        "due": "2026-10-20"
+      }
+    },
+    {
+      "sequence": 3,
+      "type": "aar",
+      "actor": "Synthetic demo operator",
+      "at": "2026-10-25T15:32:25.887Z",
+      "cycle": 1,
+      "payload": {
+        "expected": "Reconcile inventory against the readiness packet before the final review.",
+        "observed": "The count was checked only during the final exercise review.",
+        "cause": "The preparation checklist did not identify a reconciliation owner or earlier checkpoint.",
+        "evidence": "SYN-AAR-001: facilitated exercise review"
+      }
+    },
+    {
+      "sequence": 4,
+      "type": "plan",
+      "actor": "Synthetic demo operator",
+      "at": "2026-10-25T15:32:27.920Z",
+      "cycle": 1,
+      "payload": {
+        "description": "Add an earlier inventory reconciliation checkpoint and named handoff owner.",
+        "owner": "Demo logistics lead",
+        "due": "2026-10-21",
+        "success": "The sample packet and inventory worksheet reconcile; any discrepancy has an owner before the final review."
+      }
+    },
+    {
+      "sequence": 5,
+      "type": "correct",
+      "actor": "Synthetic demo operator",
+      "at": "2026-10-25T15:32:29.948Z",
+      "cycle": 1,
+      "payload": {
+        "evidence": "SYN-FIX-001: revised checklist and reconciled sample worksheet",
+        "result": "Synthetic desk review confirms the checkpoint, owner and discrepancy handoff are present."
+      }
+    },
+    {
+      "sequence": 6,
+      "type": "train",
+      "actor": "Synthetic demo operator",
+      "at": "2026-10-25T15:32:31.980Z",
+      "cycle": 1,
+      "payload": {
+        "objective": "Reconcile an inventory worksheet with a readiness packet and report discrepancies.",
+        "task": "Using supplied synthetic documents, compare counts, identify the discrepancy and route it to the named owner.",
+        "standard": "Identify every seeded discrepancy and document the owner and next action using the proposed rubric.",
+        "change": "Add the earlier reconciliation checkpoint, an explicit owner field and an independent learner attempt."
+      }
+    },
+    {
+      "sequence": 7,
+      "type": "verify",
+      "actor": "Synthetic demo operator",
+      "at": "2026-10-25T15:33:13.137Z",
+      "cycle": 1,
+      "payload": {
+        "reviewer": "Demo training evaluator",
+        "evidence": "SYN-CHECK-001: simulated rubric and corrected packet walkthrough",
+        "outcome": "passed",
+        "trainingVersion": 2
+      }
+    },
+    {
+      "sequence": 8,
+      "type": "close",
+      "actor": "Synthetic demo operator",
+      "at": "2026-10-25T15:33:16.185Z",
+      "cycle": 1,
+      "payload": {
+        "reviewer": "Demo training evaluator",
+        "rationale": "The synthetic correction and current training revision have linked review evidence; no operational approval is implied."
+      }
+    }
+  ],
+  "notice": "Synthetic browser-local workflow demonstration. Reviewer labels are not authenticated identities. No mission, training qualification, FleetVoice acceptance, or operational release is authorized."
+}

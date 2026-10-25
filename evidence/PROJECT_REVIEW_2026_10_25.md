@@ -10,3 +10,9 @@ Public-safe summary, manually curated from source and CI checks. Private registr
 - NFL EDGE, MLB EDGE and other unchanged records retain their prior evidence dates; this review did not rerun those systems.
 
 No PR was merged or runtime deployed by this review. The public portfolio update documents current evidence and remaining gates.
+
+## Requested rerun
+
+Second run recorded 2026-10-25T15:35:03.017106+00:00. PR heads and bases are unchanged. AIOS again passed 97 Python tests, 133 subtests, four browser-logic tests, registry validation and wheel verification. The PR is draft/open. Drone Recovery passed 26 focused local tests; both complete candidate CI workflows were freshly rerun and passed on attempt 2. A fresh HOPS browser cycle completed all eight gates, exported a replayable packet and retained closure after reload. All portfolio workflow, pilot, claims, navigation, lesson and career checks passed again. Training-task download remains unverified after a browser observer timeout. No new source defect was identified. Human, real-device and field acceptance remain open.
+
+Rerun receipt: [PROJECT_RERUN_2026_10_25.json](PROJECT_RERUN_2026_10_25.json).
