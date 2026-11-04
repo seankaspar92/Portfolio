@@ -51,13 +51,13 @@ Portfolio v2.1 reconciles the September 12, 2026 cross-project audit and closes 
 
 ### EDGE Sports Analytics
 
-- NFL EDGE v2.7 connected foundation remains bounded to repository evidence.
-- September 5 Week 1 hardening added DST-safe Eastern-to-UTC kickoff handling for weekly reporting with regression coverage.
-- The next NFL improvement gate is the real weekly production loop: authenticated data, timestamped snapshot, picks, closing line/results, calibration, CLV, and performance report.
-- Historical provenance infrastructure is not represented as wired into live prediction generation where the repository says it is not.
-- MLB EDGE v0.2.2 is the locally validated baseline with 20 local tests passed.
-- MLB EDGE v0.3.0 is a research-synchronized governed data-foundation Candidate. Its packaged build passed 76/76 tests, but it remains Candidate pending the authentic local-data validation gate.
-- The next MLB gate is local validation, not feature expansion.
+- NFL EDGE v2.7 remains a connected presentation foundation; it does not produce current production picks by itself.
+- As of November 4, the active repo's refresh workflow is manual-dispatch only. The checked-in `data/live_snapshot.json` is a demo fixture generated August 11, 2026, not a current production refresh.
+- No current production snapshot or timestamped prediction-to-results, closing-line, calibration, or CLV cycle was verified in this review. See [the dated status reconciliation](docs/PROJECT_STATUS_2026_11_04.md).
+- Historical provenance infrastructure is not represented as wired into live prediction generation.
+- MLB EDGE v0.2.2 remains the locally validated baseline with 20 local tests.
+- MLB EDGE v0.3.0 remains Candidate. Its package checks passed in the build environment, but the authentic 2026 local-data gate is still open.
+- The candidate branch contains no authentic Statcast CSV; the data folder holds only a placeholder. Do not promote the candidate until the authentic local gate passes.
 
 ### AI Operating System
 

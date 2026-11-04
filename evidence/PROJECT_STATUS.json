@@ -1,16 +1,16 @@
 {
   "schema": "portfolio-project-status/v1",
-  "as_of": "2026-10-25",
+  "as_of": "2026-11-04",
   "boundary": "Manually curated public-safe summary. Not an export of the private PCC registry, live operational readiness or automatic promotion.",
   "projects": [
     {
       "name": "AI Operating System",
       "version": "v1.0.0 / MBA-CORE-001",
-      "maturity": "Merged library; workflow candidate",
+      "maturity": "Stable v1.0.0; post-v1 draft PRs open",
       "page": "aios.html",
-      "evidence_date": "2026-10-25",
-      "verified": "MBA advisory library merged. Private review candidate reproduced 97 Python tests, 133 subtests and four browser-logic tests; wheel boundary verified.",
-      "next_action": "Private workflow PR remains open after technical review. Independent governance approval, configured operator pilot and deployment remain separate gates."
+      "evidence_date": "2026-11-04",
+      "verified": "Stable v1.0.0 release boundary unchanged. PR #10 and PR #21 remain draft/open and report non-mergeable state; the available CI/review notes are not current independent review.",
+      "next_action": "Resolve branch conflicts, collect current-head CI, obtain independent safety/governance review, and keep operator pilot and deployment separate."
     },
     {
       "name": "HOPS",
@@ -44,9 +44,9 @@
       "version": "Canonical Gate 61 / concept v1.1",
       "maturity": "Simulation software; field evidence pending",
       "page": "mobile-drone-operations.html",
-      "evidence_date": "2026-10-25",
+      "evidence_date": "2026-11-04",
       "verified": "Canonical source and MBA economics integration merged. Node/AAR candidate reconciled with main and input validation corrected; both candidate CI workflows passed.",
-      "next_action": "Node/AAR PR remains open. Lifecycle correlation, external simulator provenance, HIL and physical recovery acceptance remain separate gates."
+      "next_action": "PR #3 remains open; its recorded technical checks were authored under the repository owner account. Obtain independent review before merge; keep lifecycle correlation, HIL and field acceptance separate."
     },
     {
       "name": "Field enablement",
@@ -69,20 +69,20 @@
     {
       "name": "NFL EDGE",
       "version": "2.7",
-      "maturity": "Connected foundation",
+      "maturity": "Connected foundation; current production refresh unverified",
       "page": "edge.html",
-      "evidence_date": "2026-10-18",
-      "verified": "Snapshot transport, research isolation and historical provenance controls.",
-      "next_action": "Close a timestamped weekly prediction-to-results evaluation cycle."
+      "evidence_date": "2026-11-04",
+      "verified": "Active refresh workflow is manual-dispatch only. The committed live_snapshot.json is labeled environment=demo and generated 2026-08-11; it is not current production evidence.",
+      "next_action": "Retain demo labeling. Capture a source-attributed production refresh and a timestamped prediction-to-results cycle before current performance claims."
     },
     {
       "name": "MLB EDGE",
       "version": "0.2.2 / 0.3.0 Candidate",
-      "maturity": "Local gate pending",
+      "maturity": "Candidate; authentic local gate blocked by missing fixture",
       "page": "edge.html",
-      "evidence_date": "2026-10-18",
-      "verified": "Validated baseline retained; candidate package checks do not prove authentic-data validation.",
-      "next_action": "Run authentic Statcast regression, archive/load and gate audit."
+      "evidence_date": "2026-11-04",
+      "verified": "v0.3.0 candidate branch exists, but data/raw/statcast contains only a placeholder and reviewed Drive copies are v0.2.x. Local data gate has not run.",
+      "next_action": "Provide the authentic 2026 Statcast fixture and exact candidate package; run and retain validator, archive/load, DuckDB and gate-audit evidence."
     },
     {
       "name": "GOTS and Career Intelligence",
