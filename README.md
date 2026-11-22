@@ -15,6 +15,14 @@ Public portfolio for evidence-backed AI, analytics, operations, leadership, and 
 - `mba.html` — MBA business decision portfolio
 - `evidence.html` — public evidence policy
 - `resume.html` — browser resume and download entrypoint
+- `train-the-trainer.html` — instructor development case study
+- `field-deployment.html` — operator enablement case study
+- `resume-gates.html` — default public PDF and role-specific options
+- `fleetvoice.html` — operator interaction prototype
+- `mobile-drone-operations.html` — synthetic recovery storyboard
+- `readiness-lesson.html` — RR-01 lesson package
+- `project-status.html` — evidence and next actions
+- `rr01-pilot.html` — browser-local pilot capture
 
 ## Evidence controls
 
@@ -96,7 +104,7 @@ Portfolio v2.1 reconciles the September 12, 2026 cross-project audit and closes 
 
 GitHub Pages target: `https://seankaspar92.github.io/Portfolio/`
 
-`robots.txt` and `sitemap.xml` use the live GitHub Pages base URL and include all 11 public pages.
+`robots.txt` and `sitemap.xml` use the live GitHub Pages base URL and cover all 19 public pages declared in the manifest.
 
 ## Release discipline
 
@@ -117,6 +125,8 @@ Gate 9 preserves the existing v2.1 evidence base and adds three current expansio
 - `field-deployment.html` for the Field Deployment and Operator Enablement framework.
 - `resume-gates.html` for the five current resume gates.
 
+The current [resume selector](resume-gates.html) defaults to the organization-redacted [public PDF](files/Sean_Kaspar_Public_Resume.pdf) and offers operations and training DOCX variants. The September browser, PDF, and DOCX parity record describes the earlier full-detail resume.
+
 The deployment is additive by design so existing HOPS, AI Skills, Army, MBA, EDGE, GOTS, Career, and QA evidence remains intact.
 
 ## October 17, 2026 portfolio review
@@ -127,4 +137,8 @@ FleetVoice's v0.15.1 software source now reconciles the nine v0.7–v0.15 packag
 
 ## HOPS improvement loop
 
-The HOPS case study includes a working synthetic issue-to-training workflow. Core/UI/CSS copies are byte-identical to the existing HOPS Site component; evidence receipt hashes bind this copy. `npm ci --ignore-scripts && npm test` runs the nineteen reducer/DOM tests. FleetVoice verification remains deferred.
+The HOPS case study includes the public v2.9 synthetic issue-to-training workflow. Its [evidence receipt](evidence/HOPS_IMPROVEMENT_RECEIPT.json) binds the component hashes and records 21 tests (12 reducer and 9 DOM). The v2.6 release-candidate metrics above cover a separate baseline. The hosted HOPS mission-thread demo requires owner access. Run `npm ci --ignore-scripts && npm test` for the portfolio regression suite.
+
+## Selected work
+
+The [homepage](index.html#selected-work) leads with the public HOPS v2.9 workflow, AIOS v1.0.0 public release evidence, and the [OR Planning Lab synthetic demo](https://or-planning-lab-demo.seankaspar92.chatgpt.site/). The hosted HOPS 2.9 mission thread, HOPS v2.6 demo, Mobile Drone Operations, and Drone Recovery v1.1 require owner access. The public case studies provide evidence and walkthroughs for visitors.

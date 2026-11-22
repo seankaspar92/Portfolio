@@ -44,11 +44,21 @@
       "files/Sean_Kaspar_Resume.pdf"
     ],
     "browser_page": "resume.html",
-    "status": "browser resume and compact public DOCX/PDF aligned to the September 12 canonical evidence set; Gate 7 candidate complete",
+    "status": "Retained September 12 full-detail browser/PDF/DOCX parity; separate organization-redacted PDF is the default public download",
     "docx_sha256": "76b6707c41e80a6b73b4e5cddbebae545cee9ba73fbb7c3ee7b2ce4ecacbbbd5",
     "pdf_sha256": "c18a333efb32cb185d63769aa1ee979b2cec3872be3c7174706c3b9d921edda0",
     "docx_git_blob": "f70d9d661a35ee73aa0c44a2c714d9b3b16699fa",
-    "pdf_git_blob": "f1eebfc9f032d7ca5d732f564fb6bcc8be842ede"
+    "pdf_git_blob": "f1eebfc9f032d7ca5d732f564fb6bcc8be842ede",
+    "default_public_pdf": {
+      "path": "files/Sean_Kaspar_Public_Resume.pdf",
+      "sha256": "9bd0a9f3bcb3a65c4409381b85314b94129abd6fbbcfe5fdad38187592d0665e",
+      "source": "Organization-redacted Gate 2 resume, based on September 12, 2026 evidence",
+      "source_sha256": "405915aaf137b081e0589469a0bb26ee0becfd3dbb2c0c3c554cf8967c258567"
+    },
+    "role_specific_downloads": [
+      "files/Sean_Kaspar_Master_Resume_Gate_3_ATS_Operations.docx",
+      "files/Sean_Kaspar_Master_Resume_Gate_5_Training_Enablement.docx"
+    ]
   },
   "launch_ready": true,
   "launch_blockers": [],
@@ -70,7 +80,6 @@
       "resume-gates.html"
     ],
     "resume_gates": [
-      "files/Sean_Kaspar_Master_Resume_Gate_1.docx",
       "files/Sean_Kaspar_Master_Resume_Gate_2_Organization_Redacted.docx",
       "files/Sean_Kaspar_Master_Resume_Gate_3_ATS_Operations.docx",
       "files/Sean_Kaspar_Master_Resume_Gate_4_Mission_Operations.docx",
