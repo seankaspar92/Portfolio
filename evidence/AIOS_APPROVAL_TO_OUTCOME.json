@@ -1,0 +1,26 @@
+{
+  "schema": "portfolio.aios.approval-to-outcome/v1",
+  "source": "Retained AIOS Phase 23 enterprise validation for v1.0.0",
+  "release_commit": "99cb97ab8c02714f22a92781c114602e52c190e3",
+  "synthetic": true,
+  "workflow": "Strategic mitigation",
+  "sequence": [
+    {
+      "stage": "Decision",
+      "evidence": "The council workflow persists the decision."
+    },
+    {
+      "stage": "Human approval",
+      "evidence": "The final stage requires authorized approval and supporting evidence."
+    },
+    {
+      "stage": "Execution",
+      "evidence": "The permitted Files adapter writes the approved mitigation and verifies readback against the decision and approval."
+    },
+    {
+      "stage": "Outcome",
+      "evidence": "The durable event reaches PROCESSED. The simulated outcome links to the decision and workflow, and the operating brief includes the decision."
+    }
+  ],
+  "scope": "A public summary of the fictional enterprise scenario."
+}

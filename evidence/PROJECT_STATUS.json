@@ -10,7 +10,7 @@
       "page": "aios.html",
       "evidence_date": "2026-10-25",
       "verified": "MBA advisory library merged. Private review candidate reproduced 97 Python tests, 133 subtests and four browser-logic tests; wheel boundary verified.",
-      "next_action": "Private workflow PR remains open after technical review. Independent governance approval, configured operator pilot and deployment remain separate gates."
+      "next_action": "Private workflow PR #21 remains draft and unmergeable. Branch comparison reports one commit ahead and 22 behind main. Reconcile the branch and rerun validation before independent approval and an operator pilot."
     },
     {
       "name": "HOPS",

@@ -16,3 +16,36 @@ test('storage removal in another tab clears stale state',()=>{const {root,api,wi
 test('untrusted text is rendered as text and reset preserves no false closure',()=>{const {root,api}=setup();root.querySelector('[data-tool="example"]').click();root.querySelector('[name="summary"]').value='<img src=x onerror=alert(1)>';root.querySelector('form').dispatchEvent(new window.Event('submit',{bubbles:true,cancelable:true}));assert.equal(root.querySelectorAll('img').length,0);assert.match(root.querySelector('.il-packet').textContent,/<img/);root.querySelector('[data-tool="reset"]').click();assert.equal(api.snapshot().stage,'EMPTY');});
 test('saving advances keyboard focus to the new step heading',()=>{const {root,window}=setup();step(root);assert.equal(window.document.activeElement,root.querySelector('#il-step-heading'));assert.match(window.document.activeElement.textContent,/Assign/);});
 test('a valid replacement record clears an earlier invalid storage gate',()=>{const {root,api,window}=setup('{"schema":"bad"}');const good=reduce(initialState(),example('capture'));localStorage.setItem('test',JSON.stringify(good));window.dispatchEvent(new window.StorageEvent('storage',{key:'test',newValue:JSON.stringify(good)}));assert.equal(root.querySelector('[data-tool="example"]').disabled,false);step(root);assert.equal(api.snapshot().stage,'OWNED');});
+
+test('training task download includes the current revision and synthetic boundary', async () => {
+  const {root, api, window} = setup();
+  for (let gate = 0; gate < 6; gate++) step(root);
+  const {training, issue} = api.snapshot();
+  assert.equal(api.snapshot().stage, 'TRAINING_REVISED');
+
+  let generatedBlob;
+  let filename;
+  const originalCreate = URL.createObjectURL;
+  const originalRevoke = URL.revokeObjectURL;
+  URL.createObjectURL = blob => {
+    generatedBlob = blob;
+    return 'blob:https://hops.example.test/training';
+  };
+  URL.revokeObjectURL = () => {};
+  window.HTMLAnchorElement.prototype.click = function () {
+    filename = this.download;
+  };
+  try {
+    root.querySelector('[data-tool="training"]').click();
+    assert.equal(filename, 'HOPS_Proposed_Training_Task_v' + training.version + '.md');
+    assert.equal(generatedBlob.type, 'text/markdown');
+    const markdown = await generatedBlob.text();
+    for (const value of ['SYNTHETIC DEMONSTRATION', issue.id, training.actionId,
+      training.objective, training.task, training.standard, training.change, 'Simulated review: pending']) {
+      assert.ok(markdown.includes(value), 'Missing download text: ' + value);
+    }
+  } finally {
+    URL.createObjectURL = originalCreate;
+    URL.revokeObjectURL = originalRevoke;
+  }
+});
